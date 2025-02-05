@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Bodoni 72';
+    src: local('Bodoni 72');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Bodoni 72', serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    font-weight: bold;
+}
+
+.navbar .name {
+    font-size: 72px;
+}
+
+.navbar .menu a {
+    font-size: 60px;
+    margin-left: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar .menu a:visited {
+    color: gray;
+}
+
+.content {
+    position: absolute;
+    top: 225px;
+    left: 750px;
+    width: 927px;
+    height: 663px;
+}
+
+.description {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
