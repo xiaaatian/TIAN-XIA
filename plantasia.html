@@ -17,14 +17,26 @@
         </div>
     </div>
 
+    <!-- BACK 和 SUMMARY 按钮 -->
+    <div class="back-container">
+        <div class="back-button">
+            <a href="projects.html">&lt; Back</a>
+        </div>
+        <div class="summary-link">
+            <a href="plantasia-summary.html">Summary</a>
+        </div>
+    </div>
+
     <!-- 图片展示 -->
     <div class="project-container">
-        <!-- 翻页按钮 -->
-        <div class="nav-buttons">
-            <button class="nav-button" id="prev-btn">&lt;</button>
-            <button class="nav-button" id="next-btn">&gt;</button>
-        </div>
+        <!-- 左侧翻页按钮 -->
+        <button class="nav-button left" id="prev-btn">&lt;</button>
+
+        <!-- 图片 -->
         <img id="project-image" src="images/plantasia1.jpg" alt="Plantasia Image">
+
+        <!-- 右侧翻页按钮 -->
+        <button class="nav-button right" id="next-btn">&gt;</button>
     </div>
     
     <!-- JavaScript -->
@@ -48,14 +60,18 @@
         const prevButton = document.getElementById('prev-btn');
         const nextButton = document.getElementById('next-btn');
 
+        function updateImage() {
+            projectImage.src = images[currentIndex];
+        }
+
         prevButton.addEventListener('click', () => {
             currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            projectImage.src = images[currentIndex];
+            updateImage();
         });
 
         nextButton.addEventListener('click', () => {
             currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            projectImage.src = images[currentIndex];
+            updateImage();
         });
     </script>
 </body>
