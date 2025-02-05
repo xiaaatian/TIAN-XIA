@@ -27,12 +27,15 @@ body {
 }
 
 .navbar .menu {
-    margin-left: auto;
+    position: absolute;
+    left: 1080px
+    top: 36px
+    display: flex;
+    gap: 40px
 }
 
 .navbar .menu a {
     font-size: 60px;
-    margin-left: 40px;
     text-decoration: none;
     color: black;
 }
