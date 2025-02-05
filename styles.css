@@ -35,7 +35,7 @@ body {
 }
 
 .navbar .name a:visited {
-    color: black;
+    color: gray;
 }
 
 .navbar .name a:hover {
@@ -44,13 +44,13 @@ body {
 
 .navbar .menu {
     position: absolute;
-    right: 36px;
+    left: 1198px;
     display: flex;
     gap: 236px;
 }
 
 .navbar .menu a {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: bold;
     text-decoration: none;
     color: black;
@@ -62,8 +62,8 @@ body {
 
 .content {
     position: absolute;
-    top: 225px;
-    left: 750px;
+    top: 170px;
+    left: 684px;
     width: 927px;
     height: 663px;
 }
