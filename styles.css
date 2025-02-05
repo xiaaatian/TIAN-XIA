@@ -191,6 +191,93 @@ body {
     text-decoration: underline;
 }
 
+/* 返回按钮样式 */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.back-button a:hover {
+    color: darkgray;
+}
+
+/* 项目布局 */
+.project-layout {
+    display: flex;
+    flex-direction: row; /* 左右布局 */
+    justify-content: space-between;
+    align-items: flex-end;
+    height: calc(100vh - 100px); /* 减去导航栏高度 */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 图片展示区域 */
+.project-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; /* 图片靠右 */
+    flex: 1;
+}
+
+.project-container img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button {
+    background: none;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: black;
+    color: white;
+}
+
+/* 描述文字区域 */
+.description {
+    max-width: 300px; /* 限制描述文字宽度 */
+    text-align: left;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px; /* 留出边距 */
+    flex: 0 0 auto; /* 固定宽度 */
+}
+
+.description h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description p a {
+    color: black;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.description p a:hover {
+    color: darkgray;
+}
 .contact-container {
     max-width: 600px;
     margin: 120px auto 40px; /* 距导航栏有足够距离，居中 */
