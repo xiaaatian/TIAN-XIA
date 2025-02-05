@@ -175,7 +175,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 150px;
-    gap: 30px:
+    gap: 30px;
 }
 
 .project-title {
@@ -186,7 +186,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.project-title: hover {
+.project-title:hover {
     color: darkgray;
     text-decoration: underline;
 }
