@@ -4,7 +4,7 @@
 }
 
 body {
-    margin: 36px;
+    margin: 0;
     padding: 0;
     font-family: 'Bodoni Moda', serif;
     color: black;
@@ -20,11 +20,26 @@ body {
 }
 
 .navbar .name {
+    top: 36px;
     font-size: 72px;
     font-weight: bold;
     position: absolute;
     left: 36px;
-    top: 36px;
+}
+
+.navbar .name a {
+    font-size: 72px;
+    font-weight:bold;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar .name a:visited {
+    color: black;
+}
+
+.navbar .name a:hover {
+    color: darkgray;
 }
 
 .navbar .menu {
