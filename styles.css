@@ -16,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    justify-content: space=between;
+    justify-content: space-between;
     width: 100%;
     display: flex;
     align-items: center;
@@ -25,11 +25,10 @@ body {
 }
 
 .navbar .name {
-    top: 36px;
-    font-size: 72px;
-    font-weight: bold;
-    position: fixed;
-    left: 36px;
+    top: 0;
+    position: relative;
+    margin-left: 36px;
+    left: 0;
 }
 
 .navbar .name a {
@@ -48,10 +47,8 @@ body {
 }
 
 .navbar .menu {
-    position: absolute;
-    left: 1198px;
     display: flex;
-    gap: 236px;
+    gap: 50px;
 }
 
 .navbar .menu a {
