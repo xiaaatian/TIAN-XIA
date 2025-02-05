@@ -18,38 +18,49 @@
     </div>
 
     <!-- 图片展示 -->
-    <div class="project-container">
-        <!-- 翻页按钮 -->
-        <div class="nav-buttons">
+    <div class="project-layout">
+        <div class="project-container">
             <button class="nav-button" id="prev-btn">&lt;</button>
+            <img id="project-image" src="images/loop1.jpg" alt="Loop Image">
             <button class="nav-button" id="next-btn">&gt;</button>
         </div>
-        <img id="project-image" src="images/loop1.jpg" alt="Loop Image">
-    </div>
 
-    <!-- JavaScript -->
+        <!-- 右侧文字介绍 -->
+        <div class="image-description" id="image-text">
+            Description for loop1.jpg
+        </div>
+    </div>
+    
+   <!-- JavaScript -->
     <script>
         const images = [
-            'images/loop1.jpg', 'images/loop2.jpg', 'images/loop3.jpg', 'images/loop4.jpg',
-            'images/loop5.jpg', 'images/loop6.jpg', 'images/loop7.jpg', 'images/loop8.jpg',
-            'images/loop9.jpg', 'images/loop10.jpg'
+            { src: 'images/loop1.jpg', text: 'Xiamen Center, Abandoned Mall.' },
+            { src: 'images/loop2.jpg', text: 'Stone Factory. Place of Birth' },
+            { src: 'images/loop3.jpg', text: 'Place of Birth.' },
+            { src: 'images/loop4.jpg', text: 'Place of Birth.' },
+            { src: 'images/loop5.jpg', text: 'Place of Birth.' }
         ];
         let currentIndex = 0;
 
         const projectImage = document.getElementById('project-image');
+        const imageText = document.getElementById('image-text');
         const prevButton = document.getElementById('prev-btn');
         const nextButton = document.getElementById('next-btn');
 
+        function updateImage() {
+            projectImage.src = images[currentIndex].src;
+            imageText.innerText = images[currentIndex].text;
+        }
+
         prevButton.addEventListener('click', () => {
             currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            projectImage.src = images[currentIndex];
+            updateImage();
         });
 
         nextButton.addEventListener('click', () => {
             currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            projectImage.src = images[currentIndex];
+            updateImage();
         });
     </script>
 </body>
 </html>
-
