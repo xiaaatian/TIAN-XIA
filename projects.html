@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Tian Xia</title>
+    <title>Project - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        let currentIndex = 0;
+        let images = ["images/plantasia1.jpg", "images/plantasia2.jpg", "images/plantasia3.jpg"];
+
+        function showImage(index) {
+            if (index < 0) {
+                currentIndex = images.length - 1;
+            } else if (index >= images.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            document.getElementById("project-image").src = images[currentIndex];
+        }
+    </script>
 </head>
 <body>
     <div class="navbar">
@@ -15,19 +30,12 @@
             <a href="contact.html">Contact</a>
         </div>
     </div>
-    <div class="gallery">
-        <a href="project1.html" class="project-item">
-            <img src="images/plantasia-cover.jpg" alt="plantasia Cover">
-            <div class="project-title">plantasia cover</div>
-        </a>
-        <a href="project2.html" class="project-item">
-            <img src="images/project2-cover.jpg" alt="Project 2 Cover">
-            <div class="project-title">Project 2</div>
-        </a>
-        <a href="project3.html" class="project-item">
-            <img src="images/project3-cover.jpg" alt="Project 3 Cover">
-            <div class="project-title">Project 3</div>
-        </a>
+    <div class="project-container">
+        <img id="project-image" src="images/plantasia1.jpg" alt="Project Image" width="927" height="663">
+        <div class="navigation">
+            <button onclick="showImage(currentIndex - 1)">&lt; Prev</button>
+            <button onclick="showImage(currentIndex + 1)">Next &gt;</button>
+        </div>
     </div>
 </body>
 </html>
