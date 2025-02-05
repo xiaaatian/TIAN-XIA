@@ -382,7 +382,7 @@ body {
 /* Sub-link 样式（SUMMARY 或 IMAGE） */
 .name .sub-link {
     margin-top: 10px; /* 与主标题保持距离 */
-    font-size: 20px;
+    font-size: 16px;
     font-weight: normal;
 }
 
