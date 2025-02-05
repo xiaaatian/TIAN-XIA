@@ -31,7 +31,7 @@ body {
     left: 1080px
     top: 36px
     display: flex;
-    gap: 40px
+    gap: 60px
 }
 
 .navbar .menu a {
