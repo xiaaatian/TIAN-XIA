@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="name"><a href="index.html">TIAN XIA</a></div>
-        <div class="menu">
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+    <header class="main-header">
+        <div class="title"><a href="index.html">XIA TIAN</a></div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="Projects-gallery">
+        <!-- Plantasia -->
+        <div class="gallery-item">
+            <a href="plantasia.html">
+                <img src="images/plantasia-cover.jpg" alt="Plantasia">
+                <h2>Plantasia</h2>
+                <p>We are gazing at the same world.</p>
+            </a>
         </div>
-    </div>
-    <div class="gallery">
-        <a href="project1.html" class="project-item">
-            <img src="images/plantasia-cover.jpg" alt="Project Cover">
-            <div class="project-title">Project Cover</div>
-        </a>
-        <a href="project2.html" class="project-item">
-            <img src="images/loop-cover.jpg" alt="Loop Cover">
-            <div class="project-title">Loop Cover</div>
-        </a>
-        <a href="project3.html" class="project-item">
-            <img src="images/project3-cover.jpg" alt="Project 3 Cover">
-            <div class="project-title">Project 3</div>
-        </a>
-    </div>
+
+        <!-- Loop -->
+        <div class="gallery-item">
+            <a href="loop.html">
+                <img src="images/loop-cover.jpg" alt="Loop">
+                <h2>Loop</h2>
+                <p>An introspective project on the passage of time.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 XIA TIAN</p>
+    </footer>
 </body>
 </html>
+
