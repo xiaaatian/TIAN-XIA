@@ -75,7 +75,17 @@ body {
     .navbar .menu {
         flex-direction: column;
         gap: 20px;
+        align-items: center;
     }
+
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .navbar .name a {
+        font-size: 48px;
+    }
+}
 
     .content {
         padding: 0 10px;
