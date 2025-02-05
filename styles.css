@@ -107,7 +107,7 @@ body {
 
 .about-text {
     margin-top: 280px; /* 确保与导航栏有足够距离 */
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Bodoni 72', Book;
     font-weight: normal;
     max-width: 600px; /* 限制文字最大宽度 */
@@ -118,8 +118,8 @@ body {
 }
 
 .about-portrait {
-    width: 80%; /* 让头像的宽度占父容器的 80% */
-    max-width: 180px; /* 限制最大宽度，之前是 247.73px */
+    width: 50%; /* 让头像的宽度占父容器的 80% */
+    max-width: 140px; /* 限制最大宽度，之前是 247.73px */
     height: auto; /* 保持宽高比例 */
     margin: 20px auto;
     display: block; /* 让图片在 `margin: auto` 下居中 */
@@ -158,37 +158,25 @@ body {
     color: white;
 }
 
-.gallery {
-    max-width: 100%;
+.project-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 100px auto;
-    padding: 0 20px;
-}
-
-.project-item {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
-
-.project-item img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.project-item:hover img {
-    transform: scale(1.1);
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    gap: 30px:
 }
 
 .project-title {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.project-title: hover {
+    color: darkgray;
+    text-decoration: underline;
 }
 
 .contact-container {
