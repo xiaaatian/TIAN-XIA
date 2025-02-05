@@ -379,3 +379,40 @@ body {
     color: darkgray;
 }
 
+/* Sub-link 样式（SUMMARY 或 IMAGE） */
+.name .sub-link {
+    margin-top: 10px; /* 与主标题保持距离 */
+}
+
+.name .sub-link a {
+    font-size: 18px;
+    text-decoration: none;
+    color: gray;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.name .sub-link a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* Summary 容器样式 */
+.summary-container {
+    max-width: 800px;
+    margin: 150px auto;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+    padding: 0 20px;
+}
+
+.summary-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.summary-container p {
+    text-align: justify;
+}
