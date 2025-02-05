@@ -24,16 +24,14 @@ body {
     background: white;
     z-index: 10;
 }
+
 .navbar .name {
-    top: 0;
-    position: relative;
     margin-left: 36px;
-    left: 0;
 }
 
 .navbar .name a {
     font-size: 72px;
-    font-weight:bold;
+    font-weight: bold;
     text-decoration: none;
     color: black;
 }
@@ -52,21 +50,13 @@ body {
 }
 
 .navbar .menu a {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 24px;
     text-decoration: none;
     color: black;
 }
 
 .navbar .menu a:visited {
     color: gray;
-}
-
-.content {
-   position: relative;
-    margin: 100px auto 0; /* 距离导航栏留空 */
-    max-width: 927px;
-    text-align: center;
 }
 
 .content img{
@@ -76,6 +66,11 @@ body {
     margin: 0 auto;
 }
 
+.content {
+    margin-top: 100px; /* 给图片上方留出导航栏空间 */
+    text-align: center; /* 图片下方的文字居中 */
+}
+
 @media (max-width: 768px) {
     .navbar .menu {
         flex-direction: column;
@@ -83,7 +78,12 @@ body {
     }
 
     .content {
-        padding: 10px;
+        padding: 0 10px;
+    }
+
+    .content img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
