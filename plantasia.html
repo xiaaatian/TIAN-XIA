@@ -3,33 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantasia - TIAN XIA</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Plantasia - Tian Xia</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="title">
-            <a href="index.html" class="highlight">TIAN XIA</a>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <div class="name"><a href="index.html">TIAN XIA</a></div>
+        <div class="menu">
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
 
-    <main class="slideshow-container">
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <img id="slideshow-image" src="images/plantasia-1.jpg" alt="Plantasia">
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </main>
+    <!-- Image Viewer -->
+    <div class="project-container">
+        <button class="nav-button" id="prev-btn">&lt;</button>
+        <img id="project-image" src="images/plantasia1.jpg" alt="Plantasia">
+        <button class="nav-button" id="next-btn">&gt;</button>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 TIAN XIA</p>
-    </footer>
+    <!-- JavaScript -->
+    <script>
+        const images = [
+            'images/plantasia1.jpg',
+            'images/plantasia2.jpg',
+            'images/plantasia3.jpg'
+        ];
+        let currentIndex = 0;
 
-    <script src="script.js"></script>
+        const projectImage = document.getElementById('project-image');
+        const prevButton = document.getElementById('prev-btn');
+        const nextButton = document.getElementById('next-btn');
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            projectImage.src = images[currentIndex];
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            projectImage.src = images[currentIndex];
+        });
+    </script>
 </body>
 </html>
