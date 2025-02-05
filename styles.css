@@ -1,111 +1,78 @@
-/* 通用样式 */
-body, html {
+@font-face {
+    font-family: 'Bodoni 72';
+    src: local('Bodoni 72');
+}
+
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #000;
-    line-height: 1.6;
+    font-family: 'Bodoni 72', serif;
+    color: black;
 }
 
-/* 页头样式 */
-.main-header {
-    position: relative;
-    height: 80px;
-    border-bottom: 2px solid #f0f0f0;
-    background-color: #fff;
-}
-
-/* 标题样式 */
-.title .highlight {
+.navbar {
     position: absolute;
     top: 36px;
     left: 36px;
-    color: orange;
-    font-size: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .name {
+    font-size: 72px;
     font-weight: bold;
-    text-decoration: none;
-}
-
-/* 导航栏链接样式 */
-.nav-bar {
-    position: relative;
-}
-
-.nav-link {
     position: absolute;
-    top: 36px; /* 距页面顶部 36px */
+    left: 36px;
+    top: 36px;
+}
+
+.navbar .menu {
+    position: absolute;
+    right: 36px;
+    display: flex;
+    gap: 236px;
+}
+
+.navbar .menu a {
+    font-size: 60px;
+    font-weight: bold;
     text-decoration: none;
     color: black;
-    font-size: 18px;
+}
+
+.navbar .menu a:visited {
+    color: gray;
+}
+
+.content {
+    position: absolute;
+    top: 225px;
+    left: 750px;
+    width: 927px;
+    height: 663px;
+}
+
+.description {
+    font-size: 14px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    text-align: left;
+    margin-top: 5px;
 }
 
-.nav-link:hover {
-    color: gray; /* 鼠标悬停时变为灰色 */
-}
-
-/* 主内容样式 */
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 36px;
-}
-
-/* 封面样式 */
-.cover {
-    text-align: center;
-}
-
-.cover img {
-    width: 100%;
-    max-width: 600px; /* 限制图片最大宽度 */
-    height: auto; /* 保持纵横比 */
-    border: 2px solid orange; /* 添加边框 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-}
-
-.cover-text {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #555;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* 文字介绍部分 */
 .about-text {
     position: absolute;
-    top: 314.5px; /* 距离页面顶部 */
-    left: 36px; /* 距离页面左侧 */
-    font-family: 'Bodoni 72', serif; /* 使用 Bodoni 72 字体 */
-    font-weight: 400; /* Book 字重 */
-    font-size: 30px; /* 字体大小 */
-    line-height: 1.6; /* 行高 */
-    max-width: 600px; /* 限制最大宽度 */
+    left: 36px;
+    top: 314.5px;
+    font-size: 30px;
+    font-family: 'Bodoni 72', Book;
+    width: 600px;
 }
 
-/* 个人照片部分 */
-.about-image {
+.about-portrait {
     position: absolute;
-    top: 590px; /* 距离页面顶部 */
-    left: 750px; /* 距离页面左侧 */
-    width: 247.73px; /* 图片宽度 */
-    height: 309.67px; /* 图片高度 */
-}
-
-.about-image img {
-    width: 100%; /* 图片宽度占满容器 */
-    height: 100%; /* 图片高度占满容器 */
-    object-fit: cover; /* 保持图片比例，裁剪溢出部分 */
-    border-radius: 10px; /* 圆角 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    top: 590px;
+    left: 750px;
+    width: auto;
+    height: auto;
 }
