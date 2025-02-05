@@ -143,19 +143,44 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* 翻页按钮容器 */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px; /* 两侧留出间距 */
+    z-index: 5; /* 确保按钮在图片之上 */
+}
+/* 通用翻页按钮样式 */
 .nav-button {
-    background: none;
-    border: 2px solid black;
-    padding: 10px 20px;
-    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    color: white;
+    border: none;
+    border-radius: 50%; /* 圆形按钮 */
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    margin: 0 20px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
 }
 
 .nav-button:hover {
-    background: black;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* 悬停时背景变亮 */
+    color: black; /* 字体颜色变为黑色 */
+    transform: scale(1.1); /* 悬停时略微放大 */
+}
+
+.nav-button:active {
+    transform: scale(0.9); /* 点击时缩小 */
 }
 
 /* 让翻页按钮在小屏幕上适配 */
