@@ -7,21 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <div class="navbar">
-        <div class="name"><a href="index.html">TIAN XIA</a></div>
-        <div class="menu">
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
+    <!-- 返回按钮 -->
+    <div class="back-button">
+        <a href="projects.html">&lt; Back</a>
     </div>
 
-    <!-- Image Viewer -->
+    <!-- 图片展示 -->
     <div class="project-container">
-        <button class="nav-button" id="prev-btn">&lt;</button>
-        <img id="project-image" src="images/plantasia1.jpg" alt="Plantasia">
-        <button class="nav-button" id="next-btn">&gt;</button>
+        <!-- 翻页按钮 -->
+        <div class="nav-buttons">
+            <button class="nav-button" id="prev-btn">&lt;</button>
+            <button class="nav-button" id="next-btn">&gt;</button>
+        </div>
+        <img id="project-image" src="images/plantasia1.jpg" alt="Plantasia Image">
     </div>
 
     <!-- JavaScript -->
@@ -36,7 +34,7 @@
             'images/plantasia7.jpg',
             'images/plantasia8.jpg',
             'images/plantasia9.jpg',
-            'images/plantasia10.jpg'
+            'images/plantasia10.jpg',
             
         ];
         let currentIndex = 0;
