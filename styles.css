@@ -13,14 +13,17 @@ body {
 }
 
 .navbar {
-    justify-content: space-between;
-    width: 100%;
     display: flex;
-    width: 100%;
-    background: white;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 36px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 10;
 }
-
 .navbar .name {
     top: 0;
     position: relative;
@@ -60,22 +63,28 @@ body {
 }
 
 .content {
-    position: absolute;
-    top: 225px;
-    left: 50%;
-    transform: translateX_-50%);
+   position: relative;
+    margin: 100px auto 0; /* 距离导航栏留空 */
     max-width: 927px;
-    width: 100%;
-}
-
-.content img{
-    width: 927px;
-    height: 663px;
+    text-align: center;
 }
 
 .content img{
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .navbar .menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content {
+        padding: 10px;
+    }
 }
 
 .description {
