@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,9 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="title"><a href="index.html">TIAN XIA</a></div>
+        <div class="title">
+            <a href="index.html" class="highlight">TIAN XIA</a>
+        </div>
         <nav class="nav-bar">
             <ul>
                 <li><a href="projects.html">Projects</a></li>
@@ -18,20 +20,14 @@
         </nav>
     </header>
 
-    <main class="project-detail">
-        <h1>Plantasia</h1>
-        <p>We are gazing at the same world.</p>
-
-       <!-- 图片翻页容器 -->
-        <div class="gallery">
-            <button class="prev" onclick="changeImage(-1)">&#8249;</button>
-            <img src="images/plantasia1.jpg" alt="Plantasia Photo" id="gallery-image">
-            <button class="next" onclick="changeImage(1)">&#8250;</button>
-        </div>
+    <main class="slideshow-container">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <img id="slideshow-image" src="images/plantasia-1.jpg" alt="Plantasia">
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </main>
 
     <footer>
-        <p>&copy; 2025 XIA TIAN</p>
+        <p>&copy; 2025 TIAN XIA</p>
     </footer>
 
     <script src="script.js"></script>
