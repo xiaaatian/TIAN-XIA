@@ -57,3 +57,86 @@ body {
     font-weight: Book;
     margin-top: 10px;
 }
+/* 通用样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* 页头样式 */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 36px;
+    border-bottom: 2px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.title .highlight {
+    color: orange;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-bar a:hover {
+    color: gray;
+}
+
+/* About 页面布局 */
+.about-content {
+    position: relative; /* 允许绝对定位 */
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 36px;
+}
+
+/* 文字介绍部分 */
+.about-text {
+    position: absolute;
+    top: 314.5px; /* 距离页面顶部 */
+    left: 36px; /* 距离页面左侧 */
+    font-family: 'Bodoni 72', serif; /* 使用 Bodoni 72 字体 */
+    font-weight: 400; /* Book 字重 */
+    font-size: 30px; /* 字体大小 */
+    line-height: 1.6; /* 行高 */
+    max-width: 600px; /* 限制最大宽度 */
+}
+
+/* 个人照片部分 */
+.about-image {
+    position: absolute;
+    top: 590px; /* 距离页面顶部 */
+    left: 750px; /* 距离页面左侧 */
+    width: 247.73px; /* 图片宽度 */
+    height: 309.67px; /* 图片高度 */
+}
+
+.about-image img {
+    width: 100%; /* 图片宽度占满容器 */
+    height: 100%; /* 图片高度占满容器 */
+    object-fit: cover; /* 保持图片比例，裁剪溢出部分 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
