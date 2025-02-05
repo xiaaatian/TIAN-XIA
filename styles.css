@@ -107,13 +107,14 @@ body {
 
 .about-text {
     margin-top: 280px; /* 确保与导航栏有足够距离 */
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Bodoni 72', Book;
+    font-weight: normal;
     max-width: 600px; /* 限制文字最大宽度 */
     margin-left: auto; /* 水平居中 */
     margin-right: auto;
     text-align: left; /* 左对齐文字 */
-    line-height: 1.5; /* 设置更舒适的行间距 */
+    line-height: 1.4; /* 设置更舒适的行间距 */
 }
 
 .about-portrait {
