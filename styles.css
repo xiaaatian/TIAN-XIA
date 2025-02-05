@@ -217,22 +217,26 @@ body {
 }
 
 /* 返回按钮样式 */
-.back-button {
+.back-container {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 18px;
-    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.back-button a {
+.back-button a, .summary-link a {
+    font-size: 18px; /* 按钮的字体大小 */
+    font-weight: normal; /* 不加粗 */
     text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
+    color: black; /* 默认文字颜色 */
+    transition: color 0.3s ease; /* 添加悬停效果 */
 }
 
-.back-button a:hover {
-    color: darkgray;
+.back-button a:hover, .summary-link a:hover {
+    color: darkgray; /* 鼠标悬停时变灰色 */
+    text-decoration: underline; /* 鼠标悬停时加下划线 */
 }
 
 /* 项目布局 */
