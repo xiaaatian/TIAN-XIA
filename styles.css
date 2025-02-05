@@ -16,10 +16,18 @@ body {
     align-items: center;
     padding: 20px 50px;
     font-weight: bold;
+    position: relative;
 }
 
 .navbar .name {
     font-size: 72px;
+    position: absolute;
+    left: 36px;
+    top: 36px;
+}
+
+.navbar .menu {
+    margin-left: auto;
 }
 
 .navbar .menu a {
