@@ -250,3 +250,20 @@ body {
 .contact-form button:hover {
     background-color: darkgray;
 }
+
+.social-info {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.social-info a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-info a:hover {
+    text-decoration: underline;
+    color: darkgray;
+}
+
