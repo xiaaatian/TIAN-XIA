@@ -118,14 +118,13 @@ body {
 }
 
 .about-portrait {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 247.73px;
-    height: auto;
+    width: 80%; /* 让头像的宽度占父容器的 80% */
+    max-width: 180px; /* 限制最大宽度，之前是 247.73px */
+    height: auto; /* 保持宽高比例 */
     margin: 20px auto;
+    display: block; /* 让图片在 `margin: auto` 下居中 */
 }
+
 
 .project-container {
     display: flex;
