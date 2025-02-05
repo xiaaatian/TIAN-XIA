@@ -107,7 +107,7 @@ body {
 
 .about-text {
     margin-top: 100px; /* 确保与导航栏有足够距离 */
-    font-size: 30px;
+    font-size: 24px;
     font-family: 'Bodoni 72', Book;
     max-width: 600px; /* 限制文字最大宽度 */
     margin-left: auto; /* 水平居中 */
