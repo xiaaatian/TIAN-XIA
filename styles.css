@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'Bodoni 72';
-    src: local('Bodoni 72');
+    font-family: 'Bodoni Moda';
+    src: local('Bodoni Moda');
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Bodoni 72', serif;
+    font-family: 'Bodoni Moda', serif;
     color: black;
 }
 
