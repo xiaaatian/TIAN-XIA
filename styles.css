@@ -106,14 +106,14 @@ body {
 }
 
 .about-text {
-    position: relative;
-    left: 0;
-    top: 0;
+    margin-top: 100px; /* 确保与导航栏有足够距离 */
     font-size: 30px;
     font-family: 'Bodoni 72', Book;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 600px; /* 限制文字最大宽度 */
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto;
+    text-align: left; /* 左对齐文字 */
+    line-height: 1.5; /* 设置更舒适的行间距 */
 }
 
 .about-portrait {
