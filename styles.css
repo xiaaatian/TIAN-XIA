@@ -137,11 +137,10 @@ body {
 }
 
 .project-container img {
-    max-width: 70%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+    width: auto;
+    max-width: 50vw;
+    max-height: 80vh;
+    object-fit: contain;
 
 /* 翻页按钮容器 */
 .nav-buttons {
