@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop - Tian Xia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <div class="back-button">
+        <a href="projects.html">&lt; Back</a>
+    </div>
+
+    <!-- 图片展示和描述 -->
+    <div class="project-layout">
+        <!-- 图片展示 -->
+        <div class="project-container">
+            <button class="nav-button" id="prev-btn">&lt;</button>
+            <img id="project-image" src="images/loop1.jpg" alt="Loop Image">
+            <button class="nav-button" id="next-btn">&gt;</button>
+        </div>
+
+        <!-- 描述文字 -->
+        <div class="description">
+            <h2>Loop</h2>
+            <p>Some descriptive text about this project goes here. It can be multiple lines long.</p>
+            <p><a href="projects.html">Gallery</a> / <a href="index.html">Index</a></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const images = [
+            'images/loop1.jpg', 'images/loop2.jpg', 'images/loop3.jpg', 'images/loop4.jpg',
+            'images/loop5.jpg', 'images/loop6.jpg', 'images/loop7.jpg', 'images/loop8.jpg',
+            'images/loop9.jpg', 'images/loop10.jpg', 'images/loop11.jpg', 'images/loop12.jpg',
+            'images/loop13.jpg', 'images/loop14.jpg', 'images/loop15.jpg', 'images/loop16.jpg',
+            'images/loop17.jpg', 'images/loop18.jpg', 'images/loop19.jpg', 'images/loop20.jpg'
+        ];
+        let currentIndex = 0;
+
+        const projectImage = document.getElementById('project-image');
+        const prevButton = document.getElementById('prev-btn');
+        const nextButton = document.getElementById('next-btn');
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            projectImage.src = images[currentIndex];
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            projectImage.src = images[currentIndex];
+        });
+    </script>
+</body>
+</html>
