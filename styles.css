@@ -158,6 +158,18 @@ body {
     color: white;
 }
 
+/* 让翻页按钮在小屏幕上适配 */
+@media (max-width: 768px) {
+    .project-container img {
+        max-width: 80%; /* 手机屏幕上图片稍大 */
+    }
+
+    .nav-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
 .project-list {
     display: flex;
     flex-direction: column;
