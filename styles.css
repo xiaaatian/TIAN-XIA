@@ -228,57 +228,150 @@ body {
     }
 }
 
-
-/* 🌟 Contact 页面容器 */
+/* 🌟 Contact 页面主体样式 */
 .contact-container {
-    width: calc(100vw - 220px); /* 扣除侧边栏宽度 */
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    margin-left: 220px; /* 为侧边栏留出空间 */
+    background: url('images/about-background.jpg') no-repeat center center/cover; /* 背景图 */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('images/about-background.jpg') no-repeat center center/cover; /* 背景图片 */
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色覆盖 */
-    background-blend-mode: lighten; /* 图片与颜色混合效果 */
+    overflow: hidden;
 }
 
-/* 🌟 Contact 卡片 */
-.contact-card {
-    background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 添加阴影 */
-    text-align: center;
-    font-family: 'Courier New', monospace;
-    font-size: 18px;
-    line-height: 1.8;
-    color: black;
-    max-width: 500px;
+/* 🌟 半透明磨砂效果 */
+.contact-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* 半透明白色 */
+    backdrop-filter: blur(10px); /* 磨砂效果 */
+    z-index: 1;
 }
 
-/* 🌟 链接样式 */
-.contact-card a {
+/* 🌟 Contact 内容样式 */
+.contact-content {
+    position: relative;
+    z-index: 2; /* 确保在磨砂效果上方 */
+    text-align: center;
+    color: black;
+    padding: 20px;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.8); /* 内部再加一层半透明白 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* 🌟 打开覆盖页面按钮 */
+.toggle-overlay-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: black;
+    z-index: 3; /* 确保在最上方 */
+    transition: transform 0.3s ease;
+}
+
+.toggle-overlay-btn:hover {
+    transform: scale(1.2);
+}
+
+/* 🌟 半透明覆盖页面 */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.85); /* 半透明白色 */
+    backdrop-filter: blur(5px); /* 磨砂效果 */
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🌟 覆盖页面内容 */
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 🌟 覆盖页面导航栏 */
+.overlay-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.overlay-menu a {
+    font-size: 24px;
     text-decoration: none;
     color: black;
-    font-weight: normal;
     transition: color 0.3s ease;
 }
 
-.contact-card a:hover {
+.overlay-menu a:hover {
     color: gray;
+}
+
+/* 🌟 关闭按钮 */
+.close-overlay-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.close-overlay-btn:hover {
+    transform: scale(1.2);
 }
 
 /* 🌟 适配移动端 */
 @media (max-width: 768px) {
-    .contact-container {
-        margin-left: 0;
-        width: 100vw;
-        padding: 20px;
+    .contact-content {
+        padding: 15px;
     }
 
-    .contact-card {
-        padding: 20px 30px;
+    .contact-content h1 {
+        font-size: 28px;
+    }
+
+    .contact-content p {
         font-size: 16px;
+    }
+
+    .overlay-menu a {
+        font-size: 20px;
+    }
+
+    .toggle-overlay-btn,
+    .close-overlay-btn {
+        font-size: 20px;
     }
 }
