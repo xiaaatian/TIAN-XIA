@@ -262,7 +262,7 @@ body {
 .contact-card a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    font-weight: normal;
     transition: color 0.3s ease;
 }
 
