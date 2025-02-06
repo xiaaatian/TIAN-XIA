@@ -162,3 +162,57 @@ body {
         text-align: center; /* 文字居中 */
     }
 }
+
+/* 🌟 Contact 页面容器 */
+.contact-container {
+    width: calc(100vw - 220px); /* 扣除侧边栏宽度 */
+    height: 100vh;
+    margin-left: 220px; /* 为侧边栏留出空间 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('images/about-background.jpg') no-repeat center center/cover; /* 背景图片 */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色覆盖 */
+    background-blend-mode: lighten; /* 图片与颜色混合效果 */
+}
+
+/* 🌟 Contact 卡片 */
+.contact-card {
+    background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    line-height: 1.8;
+    color: black;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* 🌟 链接样式 */
+.contact-card a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: gray;
+}
+
+/* 🌟 适配移动端 */
+@media (max-width: 768px) {
+    .contact-container {
+        margin-left: 0;
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .contact-card {
+        padding: 20px 30px;
+        font-size: 16px;
+    }
+}
