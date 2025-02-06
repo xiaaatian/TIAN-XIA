@@ -203,12 +203,10 @@ body {
 
 /* 描述文字区域 */
 .description {
-    max-width: 600px; /* 限制描述文字宽度 */
+    max-width: 90%; /* 限制描述文字宽度 */
     text-align: center;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 20px auto; /* 留出边距 */
+    font-size: 14px;
+    margin: 10px; /* 留出边距 */
 }
 
 .description h2 {
