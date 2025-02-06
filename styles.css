@@ -13,21 +13,15 @@ body {
 }
 
 .navbar {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 36px;
+    position: relative; /* 让导航栏不再固定 */
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+    text-align: center;
     background: white;
-    z-index: 10;
+    padding: 10px 0;
 }
 
 .navbar .name {
-    margin-left: 0;
+    margin-bottom: 10px; /* 在 `Tian Xia` 和导航栏之间留出间距 */
 }
 
 .navbar .name a {
@@ -37,18 +31,10 @@ body {
     color: black;
 }
 
-.navbar .name a:visited {
-    color: gray;
-}
-
-.navbar .name a:hover {
-    color: darkgray;
-}
-
 .navbar .menu {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .navbar .menu a {
@@ -57,9 +43,16 @@ body {
     color: black;
 }
 
-.navbar .menu a:visited {
-    color: gray;
+/* 🌟 让 `Tian Xia` 返回 `home` 页面 */
+.navbar .name a {
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
+
+.navbar .name a:hover {
+    color: darkgray;
+}
+
 
 .content img{
     max-width: 100%;
@@ -177,31 +170,35 @@ body {
     text-decoration: underline; /* 鼠标悬停时加下划线 */
 }
 
-/* 统一图片展示区域，确保正确居中 */
-.project-container {
+/* 🎯 Plantasia 图片横向排列 */
+.horizontal-scroll {
     display: flex;
-    justify-content: center; /* 让图片和按钮居中 */
     align-items: center;
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    padding: 50px 0;
-    gap: 20px; /* 增加按钮和图片的间距 */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
 }
 
-/* 让图片真正居中 */
-.image-wrapper {
+/* 🎯 让图片按顺序横向排列 */
+.image-track {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 55vw;
+    gap: 10px;
+    padding: 20px;
 }
-.project-container img {
-    max-width: 100%;
-    max-height: 75vh;
-    object-fit: contain;
-    border-radius: 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+.image-track img {
+    height: 80vh;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 🎯 鼠标悬停时稍微放大 */
+.image-track img:hover {
+    transform: scale(1.05);
 }
 
 /* 描述文字区域 */
@@ -347,6 +344,11 @@ body {
     text-align: justify; /* 段落两端对齐 */
 }
 
+/* 🌟 鼠标滚动时，页面自动横向滚动 */
+.horizontal-scroll::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+
 @media (max-width: 768px) {
      .welcome-title {
         font-size: 48px; /* 调整字体大小 */
@@ -365,9 +367,8 @@ body {
         max-width: 90%;
         font-size: 14px;
         padding: 0 15px;
-        margin-top: 100px;
     }
-
+    
     .navbar .name a {
         font-size: 48px;
     }
@@ -375,7 +376,7 @@ body {
     .navbar .menu a {
         font-size: 18px;
     }
-
+    
     .back-button a, .summary-link a {
         font-size: 16px;
     }
