@@ -51,21 +51,26 @@
         const nextButton = document.getElementById('next-btn');
 
         // 确保首次加载正确显示第一张图片
-        document.addEventListener('DOMContentLoaded', () => {
-            projectImage.src = images[currentIndex];
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") {
+                prevButton.click();
+            } else if (event.key === "ArrowRight") {
+                nextButton.click();
+            }
         });
 
+        
         function updateImage() {
             projectImage.src = images[currentIndex];
         }
 
         prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+             currentIndex = (currentIndex - 1 + images.length) % images.length; // 防止索引错误
             updateImage();
         });
 
         nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            currentIndex = (currentIndex + 1) % images.length;
             updateImage();
         });
     </script>
