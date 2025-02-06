@@ -385,6 +385,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+}
+
+/* 文字样式 */
+.name {
+    text-align: center;
 }
 
 .welcome-title {
