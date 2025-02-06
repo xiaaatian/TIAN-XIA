@@ -40,5 +40,15 @@
         </div>
     </div>
 
+    <!-- JavaScript：鼠标滚轮左右滚动 -->
+    <script>
+        const scrollContainer = document.querySelector(".horizontal-scroll");
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY * 1.2; // 控制滚动速度
+        });
+    </script>
+
 </body>
 </html>
