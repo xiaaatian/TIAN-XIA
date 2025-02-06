@@ -68,8 +68,7 @@
 
         // 确保首次加载正确显示第一张图片和文本
         document.addEventListener('DOMContentLoaded', () => {
-            projectImage.src = images[currentIndex].src;
-            imageText.innerText = images[currentIndex].text;
+            updateImage();
         });
         
         function updateImage() {
@@ -87,6 +86,5 @@
             updateImage();
         });
     </script>
-    
 </body>
 </html>
