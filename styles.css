@@ -376,3 +376,28 @@ body {
         font-size: 14px;
     }
 }
+
+/* 欢迎页面样式 */
+.welcome-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('images/background.jpg') no-repeat center center/cover; /* 背景图 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-title {
+    font-family: 'Courier New', monospace;
+    font-size: 48px; /* 欢迎文字大小 */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 添加阴影效果 */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.welcome-title:hover {
+    color: lightgray;
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+}
+
