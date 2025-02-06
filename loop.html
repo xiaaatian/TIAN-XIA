@@ -7,84 +7,57 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- BACK 和 SUMMARY 按钮 -->
-    <div class="back-container">
-        <div class="back-button">
-            <a href="projects.html">&lt; Back</a>
-        </div>
-        <div class="summary-link">
-            <a href="loop-summary.html">Summary</a>
+
+    <!-- 侧边导航栏 -->
+    <div class="sidebar">
+        <div class="name"><a href="index.html">TIAN XIA</a></div>
+        <div class="menu">
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
     </div>
 
-   <!-- 图片展示 -->
-    <div class="project-container">
-        <!-- 左侧翻页按钮 -->
-        <button class="nav-button left" id="prev-btn">&lt;</button>
-
-        <!-- 图片 -->
-        <div class="image-wrapper">
-            <img id="project-image" src="" alt="Loop Image">
+    <!-- 图片横向滚动容器 -->
+    <div class="horizontal-scroll">
+        <div class="image-track">
+            <img src="images/loop1.jpg" alt="Loop Image 1">
+            <img src="images/loop2.jpg" alt="Loop Image 2">
+            <img src="images/loop3.jpg" alt="Loop Image 3">
+            <img src="images/loop4.jpg" alt="Loop Image 4">
+            <img src="images/loop5.jpg" alt="Loop Image 5">
+            <img src="images/loop6.jpg" alt="Loop Image 6">
+            <img src="images/loop7.jpg" alt="Loop Image 7">
+            <img src="images/loop8.jpg" alt="Loop Image 8">
+            <img src="images/loop9.jpg" alt="Loop Image 9">
+            <img src="images/loop10.jpg" alt="Loop Image 10">
+            <img src="images/loop11.jpg" alt="Loop Image 11">
+            <img src="images/loop12.jpg" alt="Loop Image 12">
+            <img src="images/loop13.jpg" alt="Loop Image 13">
+            <img src="images/loop14.jpg" alt="Loop Image 14">
+            <img src="images/loop15.jpg" alt="Loop Image 15">
+            <img src="images/loop16.jpg" alt="Loop Image 16">
+            <img src="images/loop17.jpg" alt="Loop Image 17">
+            <img src="images/loop18.jpg" alt="Loop Image 18">
+            <img src="images/loop20.jpg" alt="Loop Image 19">
+            
+            <!-- Summary 放在最右侧 -->
+            <div class="summary">
+                <h2>Loop - 2025</h2>
+                <p>The cycle of places and memory, urban ruins, nature’s reclamation, and industrial fragments. Through Loop, I attempt to capture the vanishing echoes of the past, juxtaposing construction and decay, movement and stagnation. The photographs reflect a continuous transformation of space and identity—a loop of existence.</p>
+            </div>
         </div>
-
-        <!-- 右侧翻页按钮 -->
-        <button class="nav-button right" id="next-btn">&gt;</button>
     </div>
 
-    <!-- 描述文本 -->
-    <div class="description" id="image-text">
-        Description for loop1.jpg
-    </div>
-    
-   <!-- JavaScript -->
+    <!-- JavaScript：鼠标滚动时自动横向滑动 -->
     <script>
-        const images = [
-            { src: 'images/loop1.jpg', text: 'Xiamen Center, Abandoned Mall.' },
-            { src: 'images/loop2.jpg', text: 'Stone Factory. Place of Birth' },
-            { src: 'images/loop3.jpg', text: 'Stone Factory. Place of Birth.' },
-            { src: 'images/loop4.jpg', text: 'Stone Factory. Place of Birth.' },
-            { src: 'images/loop5.jpg', text: 'Stone Factory. Place of Birth.' },
-            { src: 'images/loop6.jpg', text: 'Stone Factory. Place of Birth.' },
-            { src: 'images/loop7.jpg', text: 'Railway. Transportational process.' },
-            { src: 'images/loop8.jpg', text: 'City, Macao. Transportational process.' },
-            { src: 'images/loop9.jpg', text: 'City, Macao.' },
-            { src: 'images/loop10.jpg', text: 'Xiamen, Jimei. Nature and Artifice.' },
-            { src: 'images/loop11.jpg', text: 'Xiamen, Jimei. The Remaining Door.' },
-            { src: 'images/loop12.jpg', text: 'Xiamen, Jimei. The Bridge Leading to the Sea.' },
-            { src: 'images/loop13.jpg', text: 'Xiamen, Jimei. Abandoned Swimming Pool.' },
-            { src: 'images/loop14.jpg', text: 'Xiamen Center Park. Sinking Stairs.' },
-            { src: 'images/loop15.jpg', text: 'Xiamen Center. Sinking.' },
-            { src: 'images/loop16.jpg', text: 'Xiamen Center. Whirlpool of the Universe.' },
-            { src: 'images/loop17.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' },
-            { src: 'images/loop18.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' },
-            { src: 'images/loop20.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' }
-        ];
-        let currentIndex = 0;
+        const scrollContainer = document.querySelector(".horizontal-scroll");
 
-        const projectImage = document.getElementById('project-image');
-        const imageText = document.getElementById('image-text');
-        const prevButton = document.getElementById('prev-btn');
-        const nextButton = document.getElementById('next-btn');
-
-        // 确保首次加载正确显示第一张图片和文本
-        document.addEventListener('DOMContentLoaded', () => {
-            updateImage();
-        });
-        
-        function updateImage() {
-            projectImage.src = images[currentIndex].src;
-            imageText.innerText = images[currentIndex].text;
-        }
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            updateImage();
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            updateImage();
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY * 1.2; // 控制滚动速度
         });
     </script>
+
 </body>
 </html>
