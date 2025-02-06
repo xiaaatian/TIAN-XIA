@@ -31,8 +31,8 @@ body {
 }
 
 .navbar .name a {
-    font-size: 72px;
-    font-weight: bold;
+    font-size: 60px;
+    font-weight: Regular;
     text-decoration: none;
     color: black;
 }
@@ -73,59 +73,11 @@ body {
     text-align: center; /* 图片下方的文字居中 */
 }
 
-/* 🌟 适配移动端 (max-width: 768px 代表小于 768px 的屏幕，例如手机) */
-@media (max-width: 768px) {
-
-    /* 让导航栏变小一点，避免占据太多空间 */
-    .navbar {
-        padding: 10px 20px;
-    }
-
-    .navbar .name a {
-        font-size: 48px; /* 标题缩小 */
-    }
-
-    .navbar .menu a {
-        font-size: 18px; /* 导航栏字体缩小 */
-    }
-
-    /* 让 BACK 和 SUMMARY 按钮不会太大 */
-    .back-button a, .summary-link a {
-        font-size: 16px; /* 让手机端的按钮稍微缩小 */
-    }
-
-    /* 🌟 让图片适应小屏幕，避免超出 */
-    .project-container img {
-        max-width: 90%; /* 让图片最多占 90% 的屏幕 */
-        max-height: 60vh; /* 限制最大高度，防止图片过大 */
-    }
-
-    /* 让翻页按钮不会漂移 */
-    .nav-button {
-        font-size: 24px; /* 手机端按钮变小 */
-        padding: 5px; /* 减少按钮的间距 */
-    }
-
-    .nav-button.left {
-        left: 10px; /* 让按钮靠近图片 */
-    }
-
-    .nav-button.right {
-        right: 10px; /* 让按钮靠近图片 */
-    }
-    
-/* 让 description 文字不会过宽 */
-    .description {
-        max-width: 90%; /* 让文本宽度适应小屏幕 */
-        font-size: 14px; /* 字体缩小 */
-    }
-}
-
 .about-text {
     margin-top: 280px; /* 确保与导航栏有足够距离 */
     font-size: 18px;
-    font-family: 'Courier New', Regular;
-    font-weight: Regular;
+    font-family: 'Courier New', monospace;
+    font-weight: normal;
     max-width: 600px; /* 限制文字最大宽度 */
     margin-left: auto; /* 水平居中 */
     margin-right: auto;
@@ -139,60 +91,6 @@ body {
     height: auto; /* 保持宽高比例 */
     margin: 20px auto;
     display: block; /* 让图片在 `margin: auto` 下居中 */
-}
-
-/* 统一图片大小，防止变形 */
-.project-container img {
-    max-width: 50vw;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 0; /* 取消圆角 */
-}
-
-/* 翻页按钮极简风格 */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 32px;
-    background: none;
-    border: none;
-    color: rgba(0, 0, 0, 0.5); /* 默认半透明黑色 */
-    cursor: pointer;
-    transition: color 0.3 ease, transform 0.2 ease;
-    padding: 10px;
-}
-
-/* 左侧按钮 */
-.nav-button.left {
-    left: 20px; /* 让按钮靠近图片 */
-}
-
-/* 右侧按钮 */
-.nav-button.right {
-    right: 20px; /* 让按钮靠近图片 */
-}
-
-/* 悬停时变为黑色 */
-.nav-button:hover {
-    color: black;
-}
-
-/* 点击时略微缩小 */
-.nav-button:active {
-    transform: translateY(-50%) scale(0.9);
-}
-
-/* 让翻页按钮在小屏幕上适配 */
-@media (max-width: 768px) {
-    .project-container img {
-        max-width: 80%; /* 手机屏幕上图片稍大 */
-    }
-
-    .nav-button {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
 }
 
 .projects-list {
@@ -214,6 +112,55 @@ body {
 .project-title:hover {
     color: darkgray;
     text-decoration: underline;
+}
+
+/* 翻页按钮极简风格 */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.5); /* 默认半透明黑色 */
+    cursor: pointer;
+    transition: color 0.3 ease-in-out, transform 0.2 ease-in-out;
+    padding: 10px;
+}
+
+.nav-button {
+    background: none;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: black;
+    color: white;
+}
+
+/* 左侧按钮 */
+.nav-button.left {
+    left: 5%; /* 让按钮靠近图片 */
+}
+
+/* 右侧按钮 */
+.nav-button.right {
+    right: 5%; /* 让按钮靠近图片 */
+}
+
+/* 悬停时变为黑色 */
+.nav-button:hover {
+    color: black;
+}
+
+/* 点击时略微缩小 */
+.nav-button:active {
+    transform: translateY(-50%) scale(0.9);
 }
 
 /* BACK & SUMMARY 按钮固定在页面左上角 */
@@ -239,16 +186,6 @@ body {
     color: darkgray; /* 鼠标悬停时变灰色 */
     text-decoration: underline; /* 鼠标悬停时加下划线 */
 }
-
-.project-layout {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* 让所有元素居中 */
-    align-items: center;
-    height: calc(100vh - 100px);
-    padding: 0 20px;
-}
-
 
 /* 统一图片展示区域，确保正确居中 */
 .project-container {
@@ -277,19 +214,13 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.nav-button {
-    background: none;
-    border: 2px solid black;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-}
-
-.nav-button:hover {
-    background: black;
-    color: white;
+.project-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 让所有元素居中 */
+    align-items: center;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
 }
 
 /* 描述文字区域 */
@@ -317,6 +248,7 @@ body {
 .description p a:hover {
     color: darkgray;
 }
+
 .contact-container {
     max-width: 600px;
     margin: 120px auto 40px; /* 距导航栏有足够距离，居中 */
@@ -428,6 +360,18 @@ body {
     margin-bottom: 10px;
 }
 
+/* 让翻页按钮在小屏幕上适配 */
+@media (max-width: 768px) {
+    .project-container img {
+        max-width: 80%; /* 手机屏幕上图片稍大 */
+    }
+
+    .nav-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .summary-container {
         max-width: 90%; /* 让 summary 页面不太宽 */
@@ -436,3 +380,50 @@ body {
     }
 }
 
+/* 🌟 适配移动端 (max-width: 768px 代表小于 768px 的屏幕，例如手机) */
+@media (max-width: 768px) {
+
+    /* 让导航栏变小一点，避免占据太多空间 */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .navbar .name a {
+        font-size: 48px; /* 标题缩小 */
+    }
+
+    .navbar .menu a {
+        font-size: 18px; /* 导航栏字体缩小 */
+    }
+
+    /* 让 BACK 和 SUMMARY 按钮不会太大 */
+    .back-button a, .summary-link a {
+        font-size: 16px; /* 让手机端的按钮稍微缩小 */
+    }
+
+    /* 🌟 让图片适应小屏幕，避免超出 */
+    .project-container img {
+        max-width: 90%; /* 让图片最多占 90% 的屏幕 */
+        max-height: 60vh; /* 限制最大高度，防止图片过大 */
+    }
+
+    /* 让翻页按钮不会漂移 */
+    .nav-button {
+        font-size: 24px; /* 手机端按钮变小 */
+        padding: 5px; /* 减少按钮的间距 */
+    }
+
+    .nav-button.left {
+        left: 10px; /* 让按钮靠近图片 */
+    }
+
+    .nav-button.right {
+        right: 10px; /* 让按钮靠近图片 */
+    }
+    
+/* 让 description 文字不会过宽 */
+    .description {
+        max-width: 90%; /* 让文本宽度适应小屏幕 */
+        font-size: 14px; /* 字体缩小 */
+    }
+}
