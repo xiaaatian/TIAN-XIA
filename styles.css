@@ -119,23 +119,28 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 32px;
+    font-size: 48px;
     background: none;
     border: none;
-    color: rgba(0, 0, 0, 0.5); /* 默认半透明黑色 */
+    color: rgba(0, 0, 0, 0.7); /* 默认半透明黑色 */
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
-    padding: 10px;
+    transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    aligh-items: center;
+    justify-content: center;
 }
 
 /* 左侧按钮 */
 .nav-button.left {
-    left: 20px; /* 让按钮靠近图片 */
+    left: 0; /* 让按钮靠近图片 */
 }
 
 /* 右侧按钮 */
 .nav-button.right {
-    right: 20px; /* 让按钮靠近图片 */
+    right: 0; /* 让按钮靠近图片 */
 }
 
 /* 悬停时变为黑色 */
@@ -145,7 +150,7 @@ body {
 
 /* 点击时略微缩小 */
 .nav-button:active {
-    transform: translateY(-50%) scale(0.9);
+    transform: translateY(-50%) scale(0.85);
 }
 
 /* BACK & SUMMARY 按钮固定在页面左上角 */
