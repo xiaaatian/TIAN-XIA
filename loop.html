@@ -24,7 +24,7 @@
 
         <!-- 图片 -->
         <div class="image-wrapper">
-            <img id="project-image" src="images/loop1.jpg" alt="Loop Image">
+            <img id="project-image" src="" alt="Loop Image">
         </div>
 
         <!-- 右侧翻页按钮 -->
@@ -41,9 +41,24 @@
         const images = [
             { src: 'images/loop1.jpg', text: 'Xiamen Center, Abandoned Mall.' },
             { src: 'images/loop2.jpg', text: 'Stone Factory. Place of Birth' },
-            { src: 'images/loop3.jpg', text: 'Place of Birth.' },
-            { src: 'images/loop4.jpg', text: 'Place of Birth.' },
-            { src: 'images/loop5.jpg', text: 'Place of Birth.' }
+            { src: 'images/loop3.jpg', text: 'Stone Factory. Place of Birth.' },
+            { src: 'images/loop4.jpg', text: 'Stone Factory. Place of Birth.' },
+            { src: 'images/loop5.jpg', text: 'Stone Factory. Place of Birth.' },
+            { src: 'images/loop6.jpg', text: 'Stone Factory. Place of Birth.' },
+            { src: 'images/loop7.jpg', text: 'Railway. Transportational process.' },
+            { src: 'images/loop8.jpg', text: 'City, Macao. Transportational process.' },
+            { src: 'images/loop9.jpg', text: 'City, Macao.' },
+            { src: 'images/loop10.jpg', text: 'Xiamen, Jimei. Nature and Artifice.' },
+            { src: 'images/loop11.jpg', text: 'Xiamen, Jimei. The Remaining Door.' },
+            { src: 'images/loop12.jpg', text: 'Xiamen, Jimei. The Bridge Leading to the Sea.' },
+            { src: 'images/loop13.jpg', text: 'Xiamen, Jimei. Abandoned Swimming Pool.' },
+            { src: 'images/loop14.jpg', text: 'Xiamen Center Park. Sinking Stairs.' },
+            { src: 'images/loop15.jpg', text: 'Xiamen Center. Sinking.' },
+            { src: 'images/loop16.jpg', text: 'Xiamen Center. Whirlpool of the Universe.' },
+            { src: 'images/loop17.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' },
+            { src: 'images/loop18.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' },
+            { src: 'images/loop19.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' },
+            { src: 'images/loop20.jpg', text: 'Zhangzhou, seaside. The Process of Vanishing and Retrieval.' }
         ];
         let currentIndex = 0;
 
@@ -52,6 +67,12 @@
         const prevButton = document.getElementById('prev-btn');
         const nextButton = document.getElementById('next-btn');
 
+        // 确保首次加载正确显示第一张图片和文本
+        document.addEventListener('DOMContentLoaded', () => {
+            projectImage.src = images[currentIndex].src;
+            imageText.innerText = images[currentIndex].text;
+        });
+        
         function updateImage() {
             projectImage.src = images[currentIndex].src;
             imageText.innerText = images[currentIndex].text;
@@ -67,5 +88,6 @@
             updateImage();
         });
     </script>
+    
 </body>
 </html>
