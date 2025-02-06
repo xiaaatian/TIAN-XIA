@@ -110,3 +110,55 @@ body {
     max-height: 100%;
     object-fit: cover;
 }
+/* 🌟 About 页面容器 */
+.about-container {
+    display: flex;
+    align-items: flex-start; /* 确保内容从顶部对齐 */
+    margin: 80px 40px; /* 页面边距 */
+    padding-left: 220px; /* 为侧边栏留出空间 */
+    gap: 40px; /* 图片与文字之间的间距 */
+}
+
+/* 🌟 左侧头像 */
+.portrait img {
+    max-width: 150px; /* 限制头像大小 */
+    height: auto; /* 保持比例 */
+    border-radius: 50%; /* 圆形头像 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+/* 🌟 右侧文字 */
+.about-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+    max-width: 600px; /* 限制文字最大宽度 */
+    text-align: left;
+}
+
+.about-text strong {
+    font-size: 20px; /* 突出显示名字 */
+    font-weight: bold;
+}
+
+.about-text em {
+    font-style: italic; /* 斜体显示专业名称 */
+    color: gray; /* 更显对比 */
+}
+
+/* 🌟 适配移动端 */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* 垂直布局 */
+        align-items: center; /* 居中对齐 */
+        padding-left: 20px; /* 减少边距 */
+    }
+
+    .portrait img {
+        margin-bottom: 20px; /* 为图片和文字之间增加间距 */
+    }
+
+    .about-text {
+        text-align: center; /* 文字居中 */
+    }
+}
