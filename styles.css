@@ -125,17 +125,6 @@ body {
     display: block; /* 让图片在 `margin: auto` 下居中 */
 }
 
-/* 图片展示容器 */
-.project-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 80vh; /* 保证图片不会超出视窗 */
-    padding: 50px 0;
-}
-
 /* 统一图片大小，防止变形 */
 .project-container img {
     max-width: 50vw;
@@ -158,14 +147,13 @@ body {
     padding: 10px;
 }
 
-/* 左侧按钮 */
+/* 让翻页按钮紧贴图片两侧 */
 .nav-button.left {
-    left: 5%;
+    left: 10px; /* 确保紧靠图片左侧 */
 }
 
-/* 右侧按钮 */
 .nav-button.right {
-    right: 5%;
+    right: 10px; /* 确保紧靠图片右侧 */
 }
 
 /* 悬停时变为黑色 */
@@ -211,7 +199,7 @@ body {
     text-decoration: underline;
 }
 
-/* 返回按钮样式 */
+/* BACK & SUMMARY 按钮固定在页面左上角 */
 .back-container {
     position: absolute;
     top: 20px;
@@ -219,6 +207,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 100; /* 确保按钮位于最上层 */
 }
 
 .back-button a, .summary-link a {
@@ -234,26 +223,27 @@ body {
     text-decoration: underline; /* 鼠标悬停时加下划线 */
 }
 
-/* 项目布局 */
 .project-layout {
     display: flex;
-    flex-direction: row; /* 左右布局 */
-    justify-content: space-between;
-    align-items: flex-end;
-    height: calc(100vh - 100px); /* 减去导航栏高度 */
+    flex-direction: row;
+    justify-content: center; /* 让所有元素居中 */
+    align-items: center;
+    height: calc(100vh - 100px);
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
-/* 图片展示区域 */
+
+/* 统一图片展示区域，确保正确居中 */
 .project-container {
     display: flex;
-    flex-direction: row;
+    justify-content: center; /* 让图片和按钮居中 */
     align-items: center;
-    justify-content: flex-end; /* 图片靠右 */
-    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    padding: 50px 0;
+    gap: 40px; /* 增加按钮和图片的间距 */
 }
-
 .project-container img {
     max-width: 60%;
     height: auto;
@@ -399,11 +389,10 @@ body {
 
 /* Summary 容器样式 */
 .summary-container {
-    max-width: 700px;
+    max-width: 600px; /* 让文字更紧凑 */
     margin: 120px auto;
-    font-family: 'Bodoni Moda', serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: black;
     padding: 0 20px;
 }
