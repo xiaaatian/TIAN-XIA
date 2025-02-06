@@ -320,20 +320,26 @@ body {
 
 /* Summary 容器样式 */
 .summary-container {
-    max-width: 600px; /* 让文字更紧凑 */
-    margin: 0 auto;
-    font-size: 14px;
-    line-height: 1.4;
-    color: black;
-    padding: 20px;
-    text-align: center; /* 居中对齐文字 */
+    display: flex; /* 启用 flexbox */
+    justify-content: center; /* 水平方向居中 */
+    align-items: center; /* 垂直方向居中 */
+    flex-direction: column; /* 让文字内容垂直排列 */
+    height: 100vh; /* 占满整个视窗高度 */
+    max-width: 600px; /* 限制文字区域宽度 */
+    margin: 0 auto; /* 让内容水平居中 */
+    font-size: 14px; /* 缩小字体大小 */
+    line-height: 1.4; /* 设置行间距 */
+    color: black; /* 文字颜色 */
+    text-align: center; /* 文本居中 */
+    padding: 20px; /* 避免文字太靠近屏幕边缘 */
 }
 
+/* 段落样式 */
 .summary-container p {
-    text-align: justify;
-    font-size: 14px;
-    margin-bottom: 10px;
-    line-height: 1.4;
+    font-size: 14px; /* 缩小段落字体 */
+    margin-bottom: 10px; /* 段落间距 */
+    line-height: 1.4; /* 行间距 */
+    text-align: justify; /* 段落两端对齐 */
 }
 
 @media (max-width: 768px) {
