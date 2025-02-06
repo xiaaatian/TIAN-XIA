@@ -17,18 +17,23 @@
         </div>
     </div>
 
-    <!-- 图片展示 -->
-    <div class="project-layout">
-        <div class="project-container">
-            <button class="nav-button" id="prev-btn">&lt;</button>
+   <!-- 图片展示 -->
+    <div class="project-container">
+        <!-- 左侧翻页按钮 -->
+        <button class="nav-button left" id="prev-btn">&lt;</button>
+
+        <!-- 图片 -->
+        <div class="image-wrapper">
             <img id="project-image" src="images/loop1.jpg" alt="Loop Image">
-            <button class="nav-button" id="next-btn">&gt;</button>
         </div>
 
-        <!-- 右侧文字介绍 -->
-        <div class="image-description" id="image-text">
-            Description for loop1.jpg
-        </div>
+        <!-- 右侧翻页按钮 -->
+        <button class="nav-button right" id="next-btn">&gt;</button>
+    </div>
+
+    <!-- 描述文本 -->
+    <div class="description" id="image-text">
+        Description for loop1.jpg
     </div>
     
    <!-- JavaScript -->
