@@ -1,419 +1,104 @@
-@font-face {
-    font-family: 'Courier New', monospace;
-    src: local('Courier New');
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', monospace;
-    color: black;
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
-.navbar {
-    position: relative; /* 让导航栏不再固定 */
-    width: 100%;
-    text-align: center;
+/* 🌟 侧边栏导航栏 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
     background: white;
-    padding: 10px 0;
-}
-
-.navbar .name {
-    margin-bottom: 10px; /* 在 `Tian Xia` 和导航栏之间留出间距 */
-}
-
-.navbar .name a {
-    font-size: 60px;
-    font-weight: normal;
-    text-decoration: none;
-    color: black;
-}
-
-.navbar .menu {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.navbar .menu a {
-    font-size: 24px;
-    text-decoration: none;
-    color: black;
-}
-
-/* 🌟 让 `Tian Xia` 返回 `home` 页面 */
-.navbar .name a {
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.navbar .name a:hover {
-    color: darkgray;
-}
-
-
-.content img{
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.content {
-    margin-top: 100px; /* 给图片上方留出导航栏空间 */
-    text-align: center; /* 图片下方的文字居中 */
-}
-
-.about-text {
-    margin-top: 280px; /* 确保与导航栏有足够距离 */
-    font-size: 18px;
-    font-family: 'Courier New', monospace;
-    font-weight: normal;
-    max-width: 600px; /* 限制文字最大宽度 */
-    margin-left: auto; /* 水平居中 */
-    margin-right: auto;
-    text-align: left; /* 左对齐文字 */
-    line-height: 1.4; /* 设置更舒适的行间距 */
-}
-
-.about-portrait {
-    width: 50%; /* 让头像的宽度占父容器的 80% */
-    max-width: 140px; /* 限制最大宽度，之前是 247.73px */
-    height: auto; /* 保持宽高比例 */
-    margin: 20px auto;
-    display: block; /* 让图片在 `margin: auto` 下居中 */
-}
-
-.projects-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 150px;
-    gap: 30px;
-}
-
-.project-title {
-    font-size: 28px;
-    font-weight: normal;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.project-title:hover {
-    color: darkgray;
-    text-decoration: underline;
-}
-
-/* 翻页按钮极简风格 */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    background: none;
-    border: none;
-    color: rgba(0, 0, 0, 0.7); /* 默认半透明黑色 */
-    cursor: pointer;
-    transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    align-items: flex-start; /* 让内容靠上 */
     padding: 20px;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    aligh-items: center;
-    justify-content: center;
+    border-right: 2px solid black;
 }
 
-/* 左侧按钮 */
-.nav-button.left {
-    left: 0; /* 让按钮靠近图片 */
+.sidebar .name {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-/* 右侧按钮 */
-.nav-button.right {
-    right: 0; /* 让按钮靠近图片 */
-}
-
-/* 悬停时变为黑色 */
-.nav-button:hover {
-    color: black;
-}
-
-/* 点击时略微缩小 */
-.nav-button:active {
-    transform: translateY(-50%) scale(0.85);
-}
-
-/* BACK & SUMMARY 按钮固定在页面左上角 */
-.back-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.sidebar .menu {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 100; /* 确保按钮位于最上层 */
 }
 
-.back-button a, .summary-link a {
-    font-size: 18px; /* 按钮的字体大小 */
-    font-weight: normal; /* 不加粗 */
+.sidebar .menu a {
     text-decoration: none;
-    color: black; /* 默认文字颜色 */
-    transition: color 0.3s ease; /* 添加悬停效果 */
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-.back-button a:hover, .summary-link a:hover {
-    color: darkgray; /* 鼠标悬停时变灰色 */
-    text-decoration: underline; /* 鼠标悬停时加下划线 */
+.sidebar .menu a:hover {
+    color: gray;
 }
 
-/* 🎯 Plantasia 图片横向排列 */
+/* 🌟 横向滚动容器 */
 .horizontal-scroll {
     display: flex;
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    width: 100vw;
+    width: calc(100vw - 220px); /* 扣除侧边栏宽度 */
     height: 100vh;
     padding: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* iOS 设备支持 */
 }
 
-/* 🎯 让图片按顺序横向排列 */
+/* 🌟 让图片按顺序横向排列 */
 .image-track {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* 图片间距 */
     padding: 20px;
+    min-width: max-content;
 }
 
-.image-track img {
-    height: 80vh;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-/* 🎯 鼠标悬停时稍微放大 */
+/* 🌟 鼠标悬停时稍微放大 */
 .image-track img:hover {
     transform: scale(1.05);
 }
 
-/* 描述文字区域 */
-.description {
-    max-width: 90%; /* 限制描述文字宽度 */
-    text-align: center;
-    font-size: 14px;
-    margin: 10px; /* 留出边距 */
-}
-
-.description h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.description p a {
-    color: black;
-    text-decoration: underline;
-    margin-right: 10px;
-}
-
-.description p a:hover {
-    color: darkgray;
-}
-
-.contact-container {
-    max-width: 600px;
-    margin: 120px auto 40px; /* 距导航栏有足够距离，居中 */
-    padding: 20px;
-    text-align: center;
-    font-family: 'Courier New', monospace;
-    color: black;
-}
-
-.contact-container h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.contact-container p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.contact-container a {
-    color: black;
-    text-decoration: underline;
-}
-
-.contact-form {
+/* 🌟 Summary 文字区域 */
+.summary {
+    min-width: 400px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    text-align: left;
-}
-
-.contact-form label {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.contact-form button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: darkgray;
-}
-
-.social-info {
-    margin: 20px 0;
-    font-size: 18px;
-}
-
-.social-info a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.social-info a:hover {
-    text-decoration: underline;
-    color: darkgray;
-}
-
-/* Sub-link 样式（SUMMARY 或 IMAGE） */
-.name .sub-link {
-    margin-top: 8px; /* 与主标题保持距离 */
-    font-size: 15px;
-    font-weight: normal;
-}
-
-.name .sub-link a {
-    text-decoration: none;
-    color: gray;
-    font-weight: normal;
-    transition: color 0.3s ease;
-}
-
-.name .sub-link a:hover {
-    color: black;
-    text-decoration: underline;
-}
-
-/* Summary 容器样式 */
-.summary-container {
-    display: flex; /* 启用 flexbox */
-    justify-content: center; /* 水平方向居中 */
-    align-items: center; /* 垂直方向居中 */
-    flex-direction: column; /* 让文字内容垂直排列 */
-    height: 100vh; /* 占满整个视窗高度 */
-    max-width: 600px; /* 限制文字区域宽度 */
-    margin: 0 auto; /* 让内容水平居中 */
-    font-size: 14px; /* 缩小字体大小 */
-    line-height: 1.4; /* 设置行间距 */
-    color: black; /* 文字颜色 */
-    text-align: center; /* 文本居中 */
-    padding: 20px; /* 避免文字太靠近屏幕边缘 */
-}
-
-/* 段落样式 */
-.summary-container p {
-    font-size: 14px; /* 缩小段落字体 */
-    margin-bottom: 10px; /* 段落间距 */
-    line-height: 1.4; /* 行间距 */
-    text-align: justify; /* 段落两端对齐 */
-}
-
-/* 🌟 鼠标滚动时，页面自动横向滚动 */
-.horizontal-scroll::-webkit-scrollbar {
-    display: none; /* 隐藏滚动条 */
-}
-
-@media (max-width: 768px) {
-     .welcome-title {
-        font-size: 48px; /* 调整字体大小 */
-    }
-
-    .project-container img {
-        max-width: 80%;
-    }
-
-    .nav-button {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    .summary-container {
-        max-width: 90%;
-        font-size: 14px;
-        padding: 0 15px;
-    }
-    
-    .navbar .name a {
-        font-size: 48px;
-    }
-
-    .navbar .menu a {
-        font-size: 18px;
-    }
-    
-    .back-button a, .summary-link a {
-        font-size: 16px;
-    }
-
-    .description {
-        max-width: 90%;
-        font-size: 14px;
-    }
-}
-
-/* 欢迎页面样式 */
-.welcome-container {
-    width: 100vw;
-    height: 100vh;
-    background: url('images/background.jpg') no-repeat center center/cover; /* 背景图 */
-    display: flex;
     justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
+    background: white;
+    padding: 20px;
+    border-left: 2px solid black;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* 文字样式 */
-.name {
-    text-align: center;
-}
+/* 🌟 适配移动端 */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* 移动端隐藏侧边栏 */
+    }
 
-.welcome-title {
-    font-family: 'Courier New', monospace;
-    font-size: 48px; /* 欢迎文字大小 */
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 添加阴影效果 */
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+    .horizontal-scroll {
+        width: 100vw;
+        margin-left: 0;
+    }
 
-.welcome-title:hover {
-    color: lightgray;
-    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
-}
+    .summary {
+        font-size: 14px;
+        padding: 10px;
+        min-width: 300px;
+    }
 
+    .image-track img {
+        height: 60vh;
+    }
+
+    .navbar .name a {
+        font-size: 36px;
+    }
+}
