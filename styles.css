@@ -321,17 +321,19 @@ body {
 /* Summary 容器样式 */
 .summary-container {
     max-width: 600px; /* 让文字更紧凑 */
-    margin: 120px auto;
-    font-size: 16px;
-    line-height: 1.6;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.4;
     color: black;
-    padding: 0 20px;
+    padding: 20px;
+    text-align: center; /* 居中对齐文字 */
 }
 
 .summary-container p {
     text-align: justify;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 @media (max-width: 768px) {
