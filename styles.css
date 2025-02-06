@@ -113,55 +113,90 @@ body {
 /* 🌟 About 页面容器 */
 .about-container {
     display: flex;
-    align-items: flex-start; /* 确保内容从顶部对齐 */
-    margin: 80px 40px; /* 页面边距 */
-    padding-left: 220px; /* 为侧边栏留出空间 */
-    gap: 40px; /* 图片与文字之间的间距 */
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 水平对齐头像和文字 */
+    height: 100vh;
+    margin-left: 220px; /* 为侧边栏留出空间 */
+    padding: 0 50px;
+    box-sizing: border-box;
 }
 
-/* 🌟 左侧头像 */
-.portrait img {
-    max-width: 150px; /* 限制头像大小 */
-    height: auto; /* 保持比例 */
-    border-radius: 50%; /* 圆形头像 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+/* 🌟 头像样式 */
+.about-portrait {
+    width: 200px; /* 头像宽度 */
+    height: auto; /* 自动调整高度 */
+    border-radius: 0; /* 去掉圆角，变为直角 */
+    margin-right: 30px;
 }
 
-/* 🌟 右侧文字 */
+/* 🌟 文本框样式 */
 .about-text {
-    font-size: 18px;
+    max-width: 600px; /* 限制文字宽度 */
     line-height: 1.6;
-    color: black;
-    max-width: 600px; /* 限制文字最大宽度 */
+    font-size: 18px;
     text-align: left;
+    color: black;
+    font-family: 'Courier New', monospace;
 }
 
-.about-text strong {
-    font-size: 20px; /* 突出显示名字 */
-    font-weight: bold;
+/* 🌟 文本样式调整 */
+.about-text p {
+    margin: 0;
 }
 
-.about-text em {
-    font-style: italic; /* 斜体显示专业名称 */
-    color: gray; /* 更显对比 */
+/* 🌟 Tian Xia 标题调整 */
+.sidebar .name a {
+    font-size: 24px; /* 放大字体但不加粗 */
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.sidebar .name a:hover {
+    color: gray;
+}
+
+/* 🌟 导航栏链接样式 */
+.sidebar .menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.sidebar .menu a:hover {
+    color: gray;
+}
+
+.sidebar .menu a.active {
+    color: gray;
+    pointer-events: none; /* 禁止点击当前页面的链接 */
 }
 
 /* 🌟 适配移动端 */
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* 垂直布局 */
-        align-items: center; /* 居中对齐 */
-        padding-left: 20px; /* 减少边距 */
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;
+        padding: 20px;
+        margin-left: 0; /* 去掉侧边栏空白 */
     }
 
-    .portrait img {
-        margin-bottom: 20px; /* 为图片和文字之间增加间距 */
+    .about-portrait {
+        width: 150px;
+        margin-bottom: 20px;
     }
 
     .about-text {
-        text-align: center; /* 文字居中 */
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .sidebar {
+        display: none; /* 移动端隐藏侧边栏 */
     }
 }
+
 
 /* 🌟 Contact 页面容器 */
 .contact-container {
