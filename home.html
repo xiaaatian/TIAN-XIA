@@ -7,15 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Home 页面主体 -->
+   <button id="toggle-overlay" class="toggle-overlay-btn">&gt;</button>
     <div class="home-container">
-        <button id="toggle-overlay" class="toggle-overlay-btn">&gt;</button>
-        <div class="content">
-            <img src="images/home-cover.jpg" alt="Home Cover" class="home-image">
-            <div class="home-text">
-                <p>Tian Xia | Photojournalism & Documentary Photography</p>
-            </div>
-        </div>
+        <img src="images/home-cover.jpg" alt="Home Cover" class="home-cover">
+        <p class="home-text">Tian Xia - Photographer & Visual Storyteller</p>
     </div>
 
     <!-- 半透明覆盖页面 -->
@@ -32,9 +27,18 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
+     <script>
         const toggleButton = document.getElementById('toggle-overlay');
         const overlay = document.getElementById('overlay');
         const closeButton = document.getElementById('close-overlay');
 
-        to
+        toggleButton.addEventListener('click', () => {
+            overlay.style.display = 'flex';
+        });
+
+        closeButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
