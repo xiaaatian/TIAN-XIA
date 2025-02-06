@@ -139,21 +139,22 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 32px;
-    background: transparent; /* 透明背景 */
+    background: none;
     border: none;
     color: rgba(0, 0, 0, 0.5); /* 默认半透明黑色 */
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3 ease, transform 0.2 ease;
     padding: 10px;
 }
 
-/* 让翻页按钮紧贴图片两侧 */
+/* 左侧按钮 */
 .nav-button.left {
-    left: 10px; /* 确保紧靠图片左侧 */
+    left: 20px; /* 让按钮靠近图片 */
 }
 
+/* 右侧按钮 */
 .nav-button.right {
-    right: 10px; /* 确保紧靠图片右侧 */
+    right: 20px; /* 让按钮靠近图片 */
 }
 
 /* 悬停时变为黑色 */
@@ -244,10 +245,19 @@ body {
     padding: 50px 0;
     gap: 40px; /* 增加按钮和图片的间距 */
 }
+
+/* 让图片真正居中 */
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55vw;
+}
 .project-container img {
-    max-width: 60%;
-    height: auto;
-    border-radius: 10px;
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -268,13 +278,12 @@ body {
 
 /* 描述文字区域 */
 .description {
-    max-width: 300px; /* 限制描述文字宽度 */
-    text-align: left;
+    max-width: 600px; /* 限制描述文字宽度 */
+    text-align: center;
     font-family: 'Bodoni Moda', serif;
     font-size: 16px;
-    line-height: 1.6;
-    margin: 20px; /* 留出边距 */
-    flex: 0 0 auto; /* 固定宽度 */
+    line-height: 1.5;
+    margin: 20px auto; /* 留出边距 */
 }
 
 .description h2 {
