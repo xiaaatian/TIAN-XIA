@@ -3,24 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tian Xia</title>
+    <title>Home - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="name"><a href="index.html">TIAN XIA</a></div>
-        <div class="menu">
+    <!-- 顶部导航栏 -->
+    <div class="home-navbar">
+        <div class="menu-toggle" id="menu-toggle">&gt;</div>
+        <h1 class="home-logo">Tian Xia</h1>
+    </div>
+
+    <!-- 磨砂半透明导航覆盖层 -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <div class="sidebar">
             <a href="projects.html">Projects</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
     </div>
-    <div class="content">
-        <img src="images/home-cover.jpg" alt="Cover Photo" width="927px" height="663px">
-        <div class="description">2025.02.02</div>
+
+    <!-- 中间图片 -->
+    <div class="home-cover">
+        <img src="images/home-cover.jpg" alt="Home Cover">
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = sidebarOverlay.classList.contains('active');
+            sidebarOverlay.classList.toggle('active');
+            menuToggle.innerHTML = isOpen ? '&gt;' : '&times;';
+        });
+
+        sidebarOverlay.addEventListener('click', (e) => {
+            if (e.target === sidebarOverlay) {
+                sidebarOverlay.classList.remove('active');
+                menuToggle.innerHTML = '&gt;';
+            }
+        });
+    </script>
 </body>
 </html>
-
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
-
