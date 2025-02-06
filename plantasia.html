@@ -33,6 +33,7 @@
     <!-- JavaScript -->
     <script>
         const images = [
+            'images/plantasia-cover.jpg',
             'images/plantasia1.jpg',
             'images/plantasia2.jpg',
             'images/plantasia3.jpg',
@@ -52,7 +53,7 @@
         const nextButton = document.getElementById('next-btn');
 
         function updateImage() {
-            projectImage.src = images[currentIndex].src;
+            projectImage.src = images[currentIndex];
         }
 
         prevButton.addEventListener('click', () => {
