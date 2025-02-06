@@ -124,20 +124,18 @@ body {
     border: none;
     color: rgba(0, 0, 0, 0.5); /* 默认半透明黑色 */
     cursor: pointer;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transition: color 0.3s ease, transform 0.2s ease;
     padding: 10px;
 }
 
 /* 左侧按钮 */
 .nav-button.left {
-    left: 0; /* 让按钮靠近图片 */
-    margin-left: -40px;
+    left: 20px; /* 让按钮靠近图片 */
 }
 
 /* 右侧按钮 */
 .nav-button.right {
-    right: 0; /* 让按钮靠近图片 */
-    margin-right: -40px;
+    right: 20px; /* 让按钮靠近图片 */
 }
 
 /* 悬停时变为黑色 */
