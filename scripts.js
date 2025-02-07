@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("footer.html")
         .then(response => response.text())
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    
+    // 让鼠标滚轮可以横向滚动
+    const scrollContainer = document.querySelector(".horizontal-scroll-container");
+
+    if (scrollContainer) {
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY * 1.2; // 控制滚动速度
+        });
+    }
 
     // 鼠标悬停时显示封面图片
     const projectTitles = document.querySelectorAll(".project-title");
