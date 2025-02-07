@@ -22,11 +22,25 @@ body {
     color: white;
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse 1.5s ease-in-out infinite; /* 添加动画 */
 }
 
 .welcome-title:hover {
     color: lightgray;
-    transform: scale(1.1);
+    transform: scale(1.1); /* 鼠标悬停时轻微放大 */
+}
+
+/* 定义关键帧动画 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95); /* 轻微缩小 */
+    }
+    100% {
+        transform: scale(1); /* 恢复原始大小 */
+    }
 }
 
 /* 🌟 顶部导航栏 */
