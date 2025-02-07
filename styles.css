@@ -1,11 +1,13 @@
+/* 🌟 通用设置 */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', monospace;
     color: black;
+    overflow: hidden; /* 避免页面滚动 */
 }
 
-/* Welcome 页面 */
+/* 🌟 Welcome 页面 */
 .welcome-container {
     width: 100vw;
     height: 100vh;
@@ -19,9 +21,15 @@ body {
     font-size: 48px;
     color: white;
     text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* 导航栏 */
+.welcome-title:hover {
+    color: lightgray;
+    transform: scale(1.1);
+}
+
+/* 🌟 顶部导航栏 */
 .navbar {
     position: fixed;
     top: 0;
@@ -32,21 +40,40 @@ body {
     justify-content: center;
     align-items: center;
     background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
     z-index: 1000;
 }
 
-/* > 按钮 */
+.navbar-title {
+    font-size: 36px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-title:hover {
+    color: gray;
+    transform: scale(1.1);
+}
+
+/* 🌟 > 按钮 */
 .toggle-overlay-btn {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 24px;
+    font-size: 30px;
     border: none;
     background: none;
     cursor: pointer;
+    color: black;
+    transition: transform 0.2s ease;
 }
 
-/* 半透明覆盖页面 */
+.toggle-overlay-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 🌟 半透明覆盖页面 */
 .overlay {
     display: none;
     position: fixed;
@@ -56,14 +83,172 @@ body {
     backdrop-filter: blur(10px);
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    z-index: 2000;
 }
 
-/* 关闭按钮 */
+/* 🌟 关闭按钮（叉号） */
 .close-overlay-btn {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 24px;
+    font-size: 30px;
+    border: none;
     background: none;
     cursor: pointer;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+.close-overlay-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 🌟 覆盖页面导航栏 */
+.overlay-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.overlay-menu a {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.overlay-menu a:hover {
+    color: gray;
+}
+
+/* 🌟 Home 页面 */
+.home-container {
+    text-align: center;
+    margin-top: 15vh; /* 调整位置，让图片不过于靠上 */
+}
+
+/* 🌟 Home 页面封面图片 */
+.home-cover {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 🌟 Home 页面底部文字 */
+.home-text {
+    font-size: 18px;
+    color: black;
+    margin: 0;
+}
+
+/* 🌟 About 页面 */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    gap: 30px;
+    min-height: calc(100vh - 80px); /* 计算导航栏后的高度 */
+}
+
+/* 🌟 About 头像 */
+.about-portrait {
+    width: 250px;
+    height: auto;
+    border-radius: 0; /* 直角边 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 About 文字 */
+.about-text {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* 🌟 Contact 页面 */
+.contact-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('images/about-background.jpg') no-repeat center center/cover; /* 背景图 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 🌟 Contact 磨砂效果 */
+.contact-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+/* 🌟 Contact 页面内容 */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: black;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* 🌟 适配移动端 */
+@media (max-width: 768px) {
+    .home-cover {
+        max-width: 80%;
+    }
+
+    .toggle-overlay-btn,
+    .close-overlay-btn {
+        font-size: 24px;
+    }
+
+    .overlay-menu a {
+        font-size: 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-portrait {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .contact-content {
+        padding: 15px;
+    }
+
+    .contact-content h1 {
+        font-size: 28px;
+    }
+
+    .contact-content p {
+        font-size: 16px;
+    }
 }
