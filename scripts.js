@@ -1,12 +1,17 @@
 /** 🌟 确保 DOM 加载后再执行 JS 逻辑 */
 document.addEventListener("DOMContentLoaded", function () {
-    // 🎯 加载导航栏
-    fetch("navbar.html")
+    let navbarContainer = document.getElementById("navbar-placeholder");
+    if (navbarContainer) {
+        fetch("navbar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar-placeholder").innerHTML = data;
             setupOverlayEvents(); // 绑定半透明页面交互
         });
+    } else {
+        console.error("⚠️ Error: navbar-placeholder not found in home.html");
+    }
+});
 
     // 🎯 加载 Footer
     fetch("footer.html")
