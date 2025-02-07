@@ -9,7 +9,12 @@
 </head>
 <body>
     <div id="navbar-placeholder"></div>
-
+    <div id="footer-placeholder"></div>
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+</script>
     <div class="about-container">
         <img src="images/portrait.jpg" alt="Portrait of Tian Xia" class="about-portrait">
         <div class="about-text">
