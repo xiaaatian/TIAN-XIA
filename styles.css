@@ -304,23 +304,6 @@ text-decoration： 无;
     text-align: justify; /* 让文字更整齐 */
 }
 
-/* 🌟 适配移动端 */
-@media (max-width: 768px) {
-    .summary-container {
-        max-width: 90%;
-        font-size: 14px;
-        padding: 0 15px;
-    }
-
-    .summary-container h2 {
-        font-size: 20px;
-    }
-
-    .summary-container p {
-        font-size: 14px;
-        max-width: 90%;
-    }
-}
 
 
 /* 🌟 Plantasia 页面布局 */
@@ -389,25 +372,6 @@ text-decoration： 无;
     transform: scale(1.05);
 }
 
-/* 🌟 适配移动端 */
-@media (max-width: 768px) {
-    .plantasia-container {
-        flex-direction: column;
-    }
-
-    .plantasia-info {
-        width: 100%;
-        text-align: center;
-    }
-
-    .horizontal-scroll {
-        width: 100%;
-    }
-
-    .image-track img {
-        height: 60vh;
-    }
-}
 
 /* 🌟 Loop 页面整体布局 */
 .loop-container {
@@ -560,29 +524,106 @@ footer {
     z-index: 999;
 }
 
-
-/* 🌟 适配移动端 */
+/* 🌟 移动端全局优化 */
 @media (max-width: 768px) {
-    .home-cover {
-        max-width: 80%;
+    /* 🌟 Welcome 页面 */
+    .welcome-title {
+        font-size: 36px; /* 调小字体 */
     }
 
-    .toggle-overlay-btn,
+    /* 🌟 顶部导航栏 */
+    .navbar-title {
+        font-size: 28px; /* 减小字号 */
+    }
+
+    .toggle-overlay-btn {
+        font-size: 24px; /* 调整大小 */
+    }
+
+    /* 🌟 半透明覆盖页面 */
+    .overlay {
+        backdrop-filter: blur(6px); /* 适度模糊 */
+    }
+
+    /* 🌟 关闭按钮 */
     .close-overlay-btn {
-        font-size: 24px;
+        font-size: 28px;
     }
 
+    /* 🌟 覆盖页面菜单 */
     .overlay-menu a {
         font-size: 20px;
     }
 
+    /* 🌟 Home 页面 */
+    .home-container {
+        margin-top: 10vh; /* 适当降低位置 */
+    }
+
+    .home-cover {
+        max-width: 80%; /* 让封面更适合手机屏幕 */
+    }
+
+    .back-to-welcome {
+        font-size: 20px; /* 返回按钮适配 */
+    }
+
+    /* 🌟 Projects 页面 */
+    .projects-container {
+        padding: 60px 15px; /* 适当缩小边距 */
+    }
+
+    .projects-list {
+        gap: 15px;
+    }
+
+    .project-title {
+        font-size: 20px; /* 缩小标题字号 */
+    }
+
+    .project-hover-image {
+        display: none; /* 在移动端不显示悬停封面 */
+    }
+
+    /* 🌟 Plantasia & Loop 页面 */
+    .plantasia-container, .loop-container {
+        flex-direction: column; /* 纵向排列 */
+    }
+
+    .plantasia-info, .loop-description {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .horizontal-scroll {
+        width: 100%; /* 让滚动区域占满全宽 */
+        height: auto;
+    }
+
+    .image-track img {
+        height: 60vh; /* 适配屏幕 */
+    }
+
+    /* 🌟 Summary 页面 */
+    .summary-container {
+        width: 90%;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .summary-container h2 {
+        font-size: 20px;
+    }
+
+    /* 🌟 About 页面 */
     .about-container {
         flex-direction: column;
         text-align: center;
     }
 
     .about-portrait {
-        width: 120px;
+        width: 150px;
         margin-bottom: 15px;
     }
 
@@ -591,8 +632,16 @@ footer {
         padding: 0 15px;
     }
 
+    /* 🌟 Contact 页面 */
+    .contact-container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
     .contact-content {
         padding: 15px;
+        max-width: 80%;
     }
 
     .contact-content h1 {
@@ -603,7 +652,9 @@ footer {
         font-size: 16px;
     }
 
+    /* 🌟 Footer 适配 */
     footer {
         font-size: 12px;
     }
 }
+
