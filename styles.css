@@ -145,6 +145,8 @@ body {
 .home-container {
     text-align: center;
     margin-top: 15vh; /* 调整位置，让图片不过于靠上 */
+    animation: none;
+    transform: none;
 }
 
 /* 🌟 Home 页面封面图片 */
