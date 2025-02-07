@@ -254,7 +254,6 @@ body {
 
 /* 🌟 右侧滚动图片 */
 .horizontal-scroll {
-    flex-grow: 1;
     display: flex;
     align-items: center;
     overflow-x: auto;
