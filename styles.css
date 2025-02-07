@@ -33,6 +33,21 @@ body {
     transform: scale(1.1); /* 鼠标悬停时轻微放大 */
 }
 
+/* > 按钮样式 */
+.menu-toggle {
+    font-size: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-toggle:hover {
+    color: gray;
+    transform: scale(1.1);
+}
+
 body {
     padding-top: 80px; /* 为导航栏留出空间，避免内容被遮挡 */
 }
@@ -122,17 +137,10 @@ body {
     height: 100vh;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(8px);
-    z-index: 100;
+    z-index: 2000;
     justify-content: center;
     align-items: center;
-}
-
-/* 🌟 覆盖页面内容 */
-.overlay-content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
 /* 🌟 覆盖页面导航栏 */
@@ -140,6 +148,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    text-align: center;
 }
 
 .overlay-menu a {
@@ -153,33 +162,51 @@ body {
     color: gray;
 }
 
+.overlay-menu .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 /* 🌟 关闭按钮 */
-.close-overlay-btn {
+.close-btn {
+    font-size: 36px;
+    background: none;
+    border: none;
     position: absolute;
     top: 20px;
-    left: 20px;
-    font-size: 24px;
-    border: none;
-    background: none;
+    right: 20px;
     cursor: pointer;
     color: black;
-    transition: transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.close-overlay-btn:hover {
-    transform: scale(1.2);
+.close-btn:hover {
+    color: gray;
+    transform: scale(1.1);
 }
-
 
 /* 🌟 About 页面容器 */
 .about-container {
     display: flex;
-    align-items: center; /* 垂直居中 */
-    justify-content: space-between; /* 水平对齐头像和文字 */
-    height: 100vh;
-    margin-left: 220px; /* 为侧边栏留出空间 */
-    padding: 0 50px;
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    gap: 30px;
+    min-height: calc(100vh - 80px); /* 减去导航栏高度 */
+}
+
+.about-portrait {
+    width: 300px;
+    height: auto;
+    border-radius: 0; /* 直角边 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
 }
 
 /* 🌟 头像样式 */
