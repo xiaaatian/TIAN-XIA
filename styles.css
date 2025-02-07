@@ -167,12 +167,6 @@ body {
     padding: 100px 20px;
 }
 
-/* 🌟 页面标题 */
-.page-title {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
 /* 🌟 项目列表（竖向排列） */
 .projects-list {
     display: flex;
