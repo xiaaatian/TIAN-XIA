@@ -1,4 +1,4 @@
-/* 通用设置 */
+/* 🌟 通用样式 */
 body {
     margin: 0;
     padding: 0;
@@ -6,51 +6,29 @@ body {
     color: black;
     overflow: hidden;
 }
+
+/* 🌟 导航栏 */
 .navbar {
-    position: fixed; /* 固定导航栏位置 */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* 占满宽度 */
-    height: 80px; /* 导航栏高度 */
+    width: 100%;
+    height: 80px;
+    background: white;
     display: flex;
-    justify-content: center; /* 水平方向居中 */
-    align-items: center; /* 垂直方向居中 */
-    background-color: white; /* 背景颜色 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-    z-index: 1000; /* 确保导航栏始终在最顶层 */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .navbar-title {
-    font-family: 'Courier New', monospace;
-    font-size: 36px; /* 字体大小 */
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-title:hover {
-    color: gray; /* 鼠标悬停时变灰 */
-    transform: scale(1.1); /* 鼠标悬停时轻微放大 */
-}
-
-/* > 按钮样式 */
-.menu-toggle {
     font-size: 36px;
-    background: none;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
     color: black;
-    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.menu-toggle:hover {
-    color: gray;
-    transform: scale(1.1);
-}
-
-/* 🌟 打开及关闭覆盖页面按钮 */
-.toggle-overlay-btn,
-.close-overlay-btn {
+.toggle-overlay-btn {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -58,18 +36,9 @@ body {
     border: none;
     background: none;
     cursor: pointer;
-    color: black;
-    z-index: 200;
-    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.toggle-overlay-btn:hover,
-.close-overlay-btn:hover {
-    transform: scale(1.2);
-    color: gray;
-}
-
-/* 🌟 半透明覆盖页面 */
+/* 🌟 覆盖页面 */
 .overlay {
     display: none;
     position: fixed;
@@ -78,14 +47,13 @@ body {
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 2000;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-/* 🌟 覆盖页面导航栏 */
 .overlay-menu {
     display: flex;
     flex-direction: column;
@@ -93,40 +61,17 @@ body {
     text-align: center;
 }
 
-.overlay-menu a {
+.close-overlay-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     font-size: 24px;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-.overlay-menu a:hover {
-    color: gray;
-}
-
-.overlay-menu .active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* 🌟 导航栏链接样式 */
-.sidebar .menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.sidebar .menu a:hover {
-    color: gray;
-}
-
-.sidebar .menu a.active {
-    color: gray;
-    pointer-events: none; /* 禁止点击当前页面的链接 */
-}
-
-/* Welcome 页面 */
+/* 🌟 Welcome 页面 */
 .welcome-container {
     width: 100vw;
     height: 100vh;
@@ -136,207 +81,21 @@ body {
     align-items: center;
 }
 
-.welcome-title {
-    font-size: 48px;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+/* 🌟 Contact 页面 */
+.contact-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('images/about-background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.welcome-title:hover {
-    color: lightgray;
-    transform: scale(1.1);
-}
-
-/* 🌟 Home 页面样式 */
-body {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-    color: black;
-}
-
-/* 首页图片和文字样式 */
-.home-container {
-    text-align: center;
-    margin: 20vh auto;
-}
-
-/* 🌟 Home 图片样式 */
-.home-cover {
-    max-width: 60%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-/* 🌟 Home 文本样式 */
-.home-text {
-    font-size: 18px;
-    color: black;
-    margin: 0;
-}
-
-
-
-/* 🌟 About 页面容器 */
+/* 🌟 About 页面 */
 .about-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px;
+    padding: 50px;
     gap: 30px;
-    min-height: calc(100vh - 80px); /* 减去导航栏高度 */
-}
-
-.about-portrait {
-    width: 300px;
-    height: auto;
-    border-radius: 0; /* 直角边 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-text {
-    max-width: 600px;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: left;
-}
-
-/* 🌟 头像样式 */
-.about-portrait {
-    width: 200px; /* 头像宽度 */
-    height: auto; /* 自动调整高度 */
-    border-radius: 0; /* 去掉圆角，变为直角 */
-    margin-right: 30px;
-}
-
-/* 🌟 文本框样式 */
-.about-text {
-    max-width: 600px; /* 限制文字宽度 */
-    line-height: 1.6;
-    font-size: 18px;
-    text-align: left;
-    color: black;
-    font-family: 'Courier New', monospace;
-}
-
-/* 🌟 文本样式调整 */
-.about-text p {
-    margin: 0;
-}
-
-/* 🌟 Tian Xia 标题调整 */
-.sidebar .name a {
-    font-size: 24px; /* 放大字体但不加粗 */
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.sidebar .name a:hover {
-    color: gray;
-}
-
-
-/* 🌟 about适配移动端 */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column; /* 垂直排列 */
-        align-items: center;
-        padding: 20px;
-        margin-left: 0; /* 去掉侧边栏空白 */
-    }
-
-    .about-portrait {
-        width: 150px;
-        margin-bottom: 20px;
-    }
-
-    .about-text {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .sidebar {
-        display: none; /* 移动端隐藏侧边栏 */
-    }
-}
-
-/* 🌟 Contact 页面主体样式 */
-.contact-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: url('images/about-background.jpg') no-repeat center center/cover; /* 背景图 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 🌟 半透明磨砂效果 */
-.contact-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.6); /* 半透明白色 */
-    backdrop-filter: blur(10px); /* 磨砂效果 */
-    z-index: 1;
-}
-
-/* 🌟 Contact 内容样式 */
-.contact-content {
-    position: relative;
-    z-index: 2; /* 确保在磨砂效果上方 */
-    text-align: center;
-    color: black;
-    padding: 20px;
-    border: 1px solid black;
-    background: rgba(255, 255, 255, 0.8); /* 内部再加一层半透明白 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.contact-content h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.contact-content p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-
-/* 🌟 覆盖页面内容 */
-.overlay-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* 🌟 适配移动端 */
-@media (max-width: 768px) {
-    .contact-content {
-        padding: 15px;
-    }
-
-    .contact-content h1 {
-        font-size: 28px;
-    }
-
-    .contact-content p {
-        font-size: 16px;
-    }
-
-    .overlay-menu a {
-        font-size: 20px;
-    }
-
-    .toggle-overlay-btn,
-    .close-overlay-btn {
-        font-size: 20px;
-    }
 }
