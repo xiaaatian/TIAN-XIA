@@ -78,6 +78,8 @@ body {
 .overlay {
     display: none;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.85);
@@ -85,7 +87,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 /* 🌟 关闭按钮（叉号） */
