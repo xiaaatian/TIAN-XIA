@@ -368,6 +368,7 @@ body {
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    touch-action: pan-x;
 }
 
 /* Chrome, Safari, Edge 隐藏滚动条 */
