@@ -223,6 +223,35 @@ body {
     transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
+/* 让 < 按钮固定在右下角 */
+.navigation-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+}
+
+/* 样式化按钮 */
+.prev-button {
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 鼠标悬停效果 */
+.prev-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
 /* 🌟 Summary 按钮样式 */
 .summary-link {
     display: inline;
