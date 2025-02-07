@@ -22,8 +22,16 @@
         </div>
     </div>
 
-    <!-- 加载 Footer -->
-    <div id="footer-placeholder"></div>
+    <!-- Footer -->
+    <footer>
+        Copyright © All rights reserved.
+    </footer>
 
+    <!-- 加载 Navbar -->
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar-placeholder").innerHTML = data);
+    </script>
 </body>
 </html>
