@@ -75,15 +75,17 @@ function setupScrolling() {
     let touchStartX = 0;
     scrollContainer.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
+        touchScrollLeft = scrollContainer.scrollLeft;
     });
 
     scrollContainer.addEventListener("touchmove", (event) => {
+        event.preventDefault();
         const touchEndX = event.touches[0].clientX;
         const distance = touchStartX - touchEndX;
         const maxTouchScroll = 50; // 限制最大滚动
         scrollContainer.scrollLeft += Math.max(Math.min(distance * 1.2, maxTouchScroll), -maxTouchScroll);
         touchStartX = touchEndX;
-    });
+    }, { passive: false});
 
     // 🎯 让鼠标 **左键点击** ＝ 左翻，**右键点击** ＝ 右翻
     window.addEventListener("mousedown", (event) => {
