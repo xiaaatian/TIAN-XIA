@@ -260,6 +260,39 @@ body {
     font-size: 22px; /* 适中大小 */
     font-weight: normal; /* 不加粗 */
     margin-bottom: 15px; /* 标题与正文的间距 */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* 🌟 让标题变为可点击的链接 */
+.summary-container h2 a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.summary-container h2 a:hover {
+    color: gray; /* 鼠标悬停时变灰 */
+    transform: scale(1.05); /* 轻微放大 */
+}
+
+/* 🌟 摘要标题可点击 */
+.summary-container h2 {
+字体大小：22px;/* 适中大小 */
+字体粗细：正常;/* 不加粗 */
+下边距：15px;/* 标题与正文的间距 */
+过渡：颜色 0.3s 缓动，变换 0.2s 缓动;
+}
+
+/* 🌟 让标题变为可点击的链接 */
+.summary-container h2 a {
+text-decoration： 无;
+颜色：黑色;
+过渡：颜色 0.3s 缓动，变换 0.2s 缓动;
+}
+
+.summary-container h2 a：悬停 {
+颜色：灰色;/* 鼠标悬停时变灰 */
+变换：scale（1.05）;/* 轻微放大 */
 }
 
 /* 🌟 Summary 段落文本样式 */
