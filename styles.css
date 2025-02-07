@@ -223,6 +223,32 @@ body {
     transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
+/* 🌟 Summary 按钮样式 */
+.summary-link {
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    margin-top: 10px;
+}
+
+.summary-link:hover {
+    color: gray;
+    border-bottom: 1px solid gray;
+}
+
+/* 🌟 Summary 页面布局 */
+.summary-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
 /* 🌟 Plantasia 页面布局 */
 .plantasia-container {
     display: flex;
