@@ -8,17 +8,19 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- 返回 Welcome 页面的按钮 -->
-<button class="back-to-welcome" onclick="window.location.href='index.html'">&lt;</button>
-
-    <div id="footer-placeholder"></div>
-<script>
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
-</script>
     <!-- 导航栏 -->
     <div id="navbar-placeholder"></div>
+
+    <!-- 返回 Welcome 页面的按钮 -->
+    <button class="back-to-welcome" onclick="window.location.href='index.html'">&lt;</button>
+
+    <div id="footer-placeholder"></div>
+    
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    </script>
 
     <!-- 主页内容 -->
     <div class="home-container">
