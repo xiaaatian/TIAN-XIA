@@ -698,6 +698,7 @@ footer {
     /* 🌟 Plantasia & Loop &snaaap 页面 */
     .plantasia-container, .loop-container, .snaaap-container {
         flex-direction: column; /* 纵向排列 */
+        margin-top: 25vh;
         gap: 30px;
     }
 
@@ -705,6 +706,7 @@ footer {
         width: 90%;
         text-align: center;
         padding: 5px 0;
+        margin-top: 25vh;
         margin-bottom: 10px;
     }
 
