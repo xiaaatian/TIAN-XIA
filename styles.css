@@ -668,7 +668,7 @@ footer {
 
     /* 🌟 Home 页面 */
     .home-container {
-        margin-top: 10vh; /* 适当降低位置 */
+        margin-top: 25vh; /* 适当降低位置 */
     }
 
     .home-cover {
@@ -682,6 +682,7 @@ footer {
     /* 🌟 Projects 页面 */
     .projects-container {
         padding: 60px 15px; /* 适当缩小边距 */
+        margin-top: 25vh;
     }
 
     .projects-list {
@@ -699,21 +700,25 @@ footer {
     /* 🌟 Plantasia & Loop &snaaap 页面 */
     .plantasia-container, .loop-container, .snaaap-container {
         flex-direction: column; /* 纵向排列 */
+        gap: 15px;
     }
 
     .plantasia-info, .loop-description, .snaaap-description {
-        width: 100%;
+        width: 90%%;
         text-align: center;
-        padding: 20px;
+        padding: 10px 0;
     }
 
     .horizontal-scroll {
         width: 100%; /* 让滚动区域占满全宽 */
         height: auto;
+        display: flex;
+        justify-content: center;
     }
 
     .image-track img {
-        height: 60vh; /* 适配屏幕 */
+        height: 50vh; /* 适配屏幕 */
+        margin: 10px 0;
     }
 
     /* 🌟 Summary 页面 */
