@@ -1,10 +1,11 @@
+/** 🌟 确保 DOM 加载后再执行 JS 逻辑 */
 document.addEventListener("DOMContentLoaded", function () {
     // 🎯 加载导航栏
     fetch("navbar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar-placeholder").innerHTML = data;
-            setupOverlayEvents();
+            setupOverlayEvents(); // 绑定半透明页面交互
         });
 
     // 🎯 加载 Footer
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 
-    // 🎯 处理页面交互
+    // 🎯 初始化页面交互
     setupScrolling(); // 处理图片滚动交互
     setupProjectHoverEffect(); // 鼠标悬停显示封面
     setupSummaryTitleNavigation(); // 让 Summary 标题可跳转
@@ -43,16 +44,16 @@ function setupScrolling() {
     const images = document.querySelectorAll(".image-track img");
     let imageWidth = images[0]?.offsetWidth + 10 || 300; // 防止获取不到宽度报错，默认300px
 
+    // 🎯 确保图片加载后更新 imageWidth
+    window.addEventListener("load", () => {
+        imageWidth = images[0]?.offsetWidth + 10 || 300;
+    });
+
     // 🎯 鼠标点击左右翻页
     scrollContainer.addEventListener("click", (event) => {
         const clickX = event.clientX;
         const screenWidth = window.innerWidth;
-
-        if (clickX < screenWidth / 2) {
-            scrollContainer.scrollLeft -= imageWidth; // 左侧点击，向左翻页
-        } else {
-            scrollContainer.scrollLeft += imageWidth; // 右侧点击，向右翻页
-        }
+        scrollContainer.scrollLeft += (clickX < screenWidth / 2) ? -imageWidth : imageWidth;
     });
 
     // 🎯 鼠标滚轮（上下滚动控制左右移动）
@@ -72,25 +73,16 @@ function setupScrolling() {
 
     // 🎯 触控板支持横向滑动（适配 Mac 触摸板）
     let touchStartX = 0;
-    let touchStartTime = 0;
     scrollContainer.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
-        touchStartTime = Date.now();
     });
 
     scrollContainer.addEventListener("touchmove", (event) => {
         const touchEndX = event.touches[0].clientX;
         const distance = touchStartX - touchEndX;
-        scrollContainer.scrollLeft += distance * 1.2; // 触控板手势滚动增强
+        const maxTouchScroll = 50; // 限制最大滚动
+        scrollContainer.scrollLeft += Math.max(Math.min(distance * 1.2, maxTouchScroll), -maxTouchScroll);
         touchStartX = touchEndX;
-    });
-
-    scrollContainer.addEventListener("touchend", () => {
-        let touchDuration = Date.now() - touchStartTime;
-        if (touchDuration < 200) {
-            // 轻滑触控板手势，自动滚动一张图
-            scrollContainer.scrollLeft += imageWidth * (touchStartX < window.innerWidth / 2 ? -1 : 1);
-        }
     });
 
     // 🎯 让鼠标 **左键点击** ＝ 左翻，**右键点击** ＝ 右翻
@@ -108,7 +100,7 @@ function setupScrolling() {
             event.preventDefault();
             scrollContainer.scrollLeft += imageWidth;
         }
-    });
+    }, { passive: false });
 
     // 🎯 窗口调整时重新计算图片宽度
     window.addEventListener("resize", () => {
