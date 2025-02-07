@@ -4,34 +4,47 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar-placeholder").innerHTML = data;
-            setupOverlayEvents(); // 确保 overlay 事件绑定
-        })
-        .catch(error => console.error("Error loading navbar:", error));
+            setupOverlayEvents();
+        });
 
     // 加载 Footer
     fetch("footer.html")
         .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading footer:", error));
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 
-    // 设置 Overlay 按钮的点击事件
-    function setupOverlayEvents() {
-        setTimeout(() => {
-            const overlay = document.querySelector(".overlay");
-            const toggleBtn = document.querySelector(".toggle-overlay-btn");
-            const closeBtn = document.querySelector(".close-overlay-btn");
+    // 鼠标悬停时显示封面图片
+    const projectTitles = document.querySelectorAll(".project-title");
+    const hoverImage = document.querySelector(".project-hover-image");
 
-            if (toggleBtn && closeBtn && overlay) {
-                toggleBtn.addEventListener("click", () => {
-                    overlay.style.display = "flex";
-                });
-
-                closeBtn.addEventListener("click", () => {
-                    overlay.style.display = "none";
-                });
+    projectTitles.forEach(title => {
+        title.addEventListener("mouseenter", () => {
+            const imageUrl = title.getAttribute("data-image");
+            if (imageUrl) {
+                hoverImage.style.display = "block";
+                hoverImage.style.background = `url('${imageUrl}') no-repeat center center / cover`;
             }
-        }, 100); // 加入延迟，确保元素已经加载到 DOM
+        });
+
+        title.addEventListener("mouseleave", () => {
+            hoverImage.style.display = "none";
+        });
+    });
+
+    // 处理半透明覆盖页面的显示与隐藏
+    function setupOverlayEvents() {
+        const overlay = document.querySelector(".overlay");
+        const toggleBtn = document.querySelector(".toggle-overlay-btn");
+        const closeBtn = document.querySelector(".close-overlay-btn");
+
+        if (toggleBtn && closeBtn && overlay) {
+            toggleBtn.addEventListener("click", () => {
+                overlay.style.display = "flex";
+            });
+
+            closeBtn.addEventListener("click", () => {
+                overlay.style.display = "none";
+            });
+        }
     }
 });
+
