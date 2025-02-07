@@ -202,93 +202,92 @@ body {
     transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
-/* 🌟 整体布局 */
+/* 🌟 Plantasia 页面布局 */
 .plantasia-container {
     display: flex;
     height: 100vh;
 }
 
 /* 🌟 左侧信息栏 */
-.project-info {
-    width: 20vw; /* 让左侧信息栏占据20%的页面宽度 */
-    padding: 40px;
+.plantasia-info {
+    width: 30vw; /* 仅占左侧30% */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px;
     background: white;
-    border-right: 2px solid black;
 }
 
-.project-info h1 {
-    font-size: 32px;
+/* 🌟 取消标题加粗 */
+.plantasia-info h2 {
+    font-size: 24px;
+    font-weight: normal; /* 不加粗 */
     margin-bottom: 10px;
 }
 
-.project-info p {
-    font-size: 18px;
-    margin: 5px 0;
+/* 🌟 文字样式 */
+.plantasia-info p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-/* 🌟 右侧滚动区域 */
-.horizontal-scroll-container {
-    flex-grow: 1; /* 让滚动区域占据剩余空间 */
+/* 🌟 右侧滚动图片 */
+.horizontal-scroll {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    scroll-behavior: smooth;
-    display: flex;
-    align-items: center;
+    width: calc(100vw - 30vw); /* 右侧占满剩余空间 */
+    height: 100vh;
     padding: 20px;
-    -webkit-overflow-scrolling: touch; /* 适配移动端 */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* 🌟 让图片横向排列 */
-.horizontal-track {
+/* 🌟 图片轨道 */
+.image-track {
     display: flex;
     align-items: center;
-    gap: 10px; /* 图片间距 */
+    gap: 10px;
+    padding: 20px;
     min-width: max-content;
 }
 
 /* 🌟 图片样式 */
-.horizontal-track img {
-    height: 80vh; /* 保持统一高度 */
+.image-track img {
+    height: 80vh;
     width: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-/* 🌟 鼠标悬停时轻微放大 */
-.horizontal-track img:hover {
+/* 🌟 鼠标悬停时稍微放大 */
+.image-track img:hover {
     transform: scale(1.05);
-}
-
-/* 🌟 隐藏滚动条 */
-.horizontal-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-/* 🌟 About 页面 */
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px;
-    gap: 30px;
-    min-height: calc(100vh - 80px); /* 计算导航栏后的高度 */
 }
 
 /* 🌟 适配移动端 */
 @media (max-width: 768px) {
-    .project-info {
-        width: 30vw; /* 移动端信息栏稍微大一点 */
-        padding: 20px;
+    .plantasia-container {
+        flex-direction: column;
     }
 
-    .horizontal-track img {
+    .plantasia-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .horizontal-scroll {
+        width: 100%;
+    }
+
+    .image-track img {
         height: 60vh;
     }
 }
+
 
 /* 🌟 About 头像 */
 .about-portrait {
