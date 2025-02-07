@@ -225,14 +225,21 @@ body {
 
 /* 🌟 Summary 按钮样式 */
 .summary-link {
-    display: inline-block;
+    display: inline;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
     font-size: 18px;
-    text-decoration: none;
     color: black;
     border-bottom: 1px solid black;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     margin-top: 10px;
 }
+
+.summary-link a {
+    display: inline
+    text-decoration: underline;
+    width: auto;
 
 .summary-link:hover {
     color: gray;
