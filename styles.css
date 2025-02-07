@@ -643,7 +643,8 @@ footer {
 
     /* 🌟 顶部导航栏 */
     .navbar-title {
-        font-size: 28px; /* 减小字号 */
+        font-size: 8vw;
+        max-font-size: 36px;
     }
 
     .toggle-overlay-btn {
@@ -681,7 +682,7 @@ footer {
     /* 🌟 Projects 页面 */
     .projects-container {
         padding: 60px 15px; /* 适当缩小边距 */
-        margin-top: 20vh;
+        margin-top: 10vh;
     }
 
     .projects-list {
@@ -706,13 +707,14 @@ footer {
     .plantasia-info, .loop-description, .snaaap-description {
         width: 90%;
         text-align: center;
-        padding: 5px 0;
-        margin-top: 25vh;
-        margin-bottom: 10px;
+        padding: 10px 0;
+        margin-top: 10vh;
+        margin-bottom: 20px;
     }
 
     .horizontal-scroll {
         width: 100%; /* 让滚动区域占满全宽 */
+        max-width: 100%;
         height: auto;
         display: flex;
         overflow-x: auto;
@@ -722,8 +724,8 @@ footer {
 
     .image-track img {
         height: 40vh; /* 适配屏幕 */
-        height: auto;
         margin: 5px 0;
+        object-fit: cover;
     }
 
     /* 🌟 Summary 页面 */
@@ -777,7 +779,8 @@ footer {
 
     /* 🌟 Footer 适配 */
     footer {
-        font-size: 12px;
+        font-size: 14px;
+        padding: 10px 15px;
     }
 }
 
