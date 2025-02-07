@@ -8,9 +8,15 @@
 </head>
 <body>
     <!-- 导航栏 -->
-    <div class="sidebar">
-        <div class="name"><a href="index.html">TIAN XIA</a></div>
-        <div class="menu">
+    <div class="navbar">
+        <a href="home.html" class="navbar-title">Tian Xia</a>
+        <button class="menu-toggle" id="menu-toggle">&gt;</button>
+    </div>
+
+    <!-- 半透明覆盖页面 -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-menu">
+            <button class="close-btn" id="close-btn">&times;</button>
             <a href="projects.html">Projects</a>
             <a href="about.html" class="active">About</a>
             <a href="contact.html">Contact</a>
@@ -22,9 +28,25 @@
         <img src="images/portrait.jpg" alt="Portrait of Tian Xia" class="about-portrait">
         <div class="about-text">
             <p>
-                TIAN XIA is a photographer studying Photojournalism and Documentary Photography at the University of the Arts London, LCC. Fascinated by the relationship between humans and nature, space and memory, and inner exploration through dreams, she captures these themes through photography.
+                Tian Xia is a photographer studying Photojournalism and Documentary Photography at the University of the Arts London, LCC. Fascinated by the relationship between humans and nature, space and memory, and inner exploration through dreams, she captures these themes through photography.
             </p>
         </div>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuToggle.addEventListener('click', () => {
+            overlay.style.display = 'flex'; // 显示覆盖页面
+        });
+
+        closeBtn.addEventListener('click', () => {
+            overlay.style.display = 'none'; // 隐藏覆盖页面
+        });
+    </script>
 </body>
 </html>
+
