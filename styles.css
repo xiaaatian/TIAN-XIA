@@ -22,7 +22,7 @@ body {
     color: white;
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
-    animation: pulse 1.5s ease-in-out for wards; /* 添加动画 */
+    animation: pulse 1.5s ease-in-out forwards; /* 添加动画 */
 }
 
 .welcome-title:hover {
