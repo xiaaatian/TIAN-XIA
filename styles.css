@@ -208,6 +208,46 @@ body {
     transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
+/* 🌟 横向滚动容器 */
+.horizontal-scroll-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    -webkit-overflow-scrolling: touch; /* 适配移动端 */
+}
+
+/* 🌟 让图片横向排列 */
+.horizontal-track {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 图片间距 */
+    min-width: max-content;
+}
+
+/* 🌟 图片样式 */
+.horizontal-track img {
+    height: 80vh; /* 保持统一高度 */
+    width: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 🌟 鼠标悬停时轻微放大 */
+.horizontal-track img:hover {
+    transform: scale(1.05);
+}
+
+/* 🌟 隐藏滚动条 */
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
 /* 🌟 About 页面 */
 .about-container {
     display: flex;
