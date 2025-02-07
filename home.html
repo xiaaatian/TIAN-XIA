@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="scripts.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- 半透明覆盖页面 -->
-    <div class="overlay" id="overlay">
-        <div class="overlay-content">
-            <div class="overlay-menu">
-                <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <button class="toggle-overlay-btn">&gt;</button>
+        <a href="home.html" class="navbar-title">Tian Xia</a>
     </div>
 
-    <!-- JavaScript -->
-     <script>
-        const toggleButton = document.getElementById('toggle-overlay');
-        const overlay = document.getElementById('overlay');
-        const closeButton = document.getElementById('close-overlay');
+    <!-- 主页内容 -->
+    <div class="home-container">
+        <img src="images/home-cover.jpg" alt="Home Cover" class="home-cover">
+        <p class="home-text">Tian Xia</p>
+    </div>
 
-        toggleButton.addEventListener('click', () => {
-            overlay.style.display = 'flex';
-        });
+    <!-- 覆盖页面（导航菜单） -->
+    <div class="overlay">
+        <button class="close-overlay-btn">&times;</button>
+        <nav class="overlay-menu">
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
 
-        closeButton.addEventListener('click', () => {
-            overlay.style.display = 'none';
-        });
-    </script>
 </body>
 </html>
