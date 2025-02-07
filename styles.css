@@ -241,13 +241,54 @@ body {
 
 /* 🌟 Summary 页面布局 */
 .summary-container {
-    max-width: 800px;
-    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    height: 100vh; /* 占满整个视窗高度 */
+    max-width: 800px; /* 限制宽度 */
+    margin: 0 auto; /* 让内容水平居中 */
     padding: 20px;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.6;
+    text-align: center; /* 文字居中 */
+    font-size: 16px; /* 控制字体大小，不要太大 */
+    line-height: 1.6; /* 让行距更舒适 */
+    color: black; /* 保持黑色文字 */
 }
+
+/* 🌟 Summary 标题样式 */
+.summary-container h2 {
+    font-size: 22px; /* 适中大小 */
+    font-weight: normal; /* 不加粗 */
+    margin-bottom: 15px; /* 标题与正文的间距 */
+}
+
+/* 🌟 Summary 段落文本样式 */
+.summary-container p {
+    font-size: 16px; /* 控制字体大小 */
+    max-width: 600px; /* 限制段落宽度 */
+    margin-bottom: 10px; /* 段落间距 */
+    line-height: 1.6; /* 行间距 */
+    text-align: justify; /* 让文字更整齐 */
+}
+
+/* 🌟 适配移动端 */
+@media (max-width: 768px) {
+    .summary-container {
+        max-width: 90%;
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+    .summary-container h2 {
+        font-size: 20px;
+    }
+
+    .summary-container p {
+        font-size: 14px;
+        max-width: 90%;
+    }
+}
+
 
 /* 🌟 Plantasia 页面布局 */
 .plantasia-container {
