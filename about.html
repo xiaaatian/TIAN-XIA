@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="scripts.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- 半透明覆盖页面 -->
-    <div class="overlay" id="overlay">
-        <div class="overlay-menu">
-            <button class="close-btn" id="close-btn">&times;</button>
-            <a href="projects.html">Projects</a>
-            <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <button class="toggle-overlay-btn">&gt;</button>
+        <a href="home.html" class="navbar-title">Tian Xia</a>
     </div>
 
-    <!-- 主体内容 -->
+    <!-- About 页面内容 -->
     <div class="about-container">
         <img src="images/portrait.jpg" alt="Portrait of Tian Xia" class="about-portrait">
         <div class="about-text">
-            <p>
-                Tian Xia is a photographer studying Photojournalism and Documentary Photography at the University of the Arts London, LCC. Fascinated by the relationship between humans and nature, space and memory, and inner exploration through dreams, she captures these themes through photography.
-            </p>
+            <p>Tian Xia is a photographer studying Photojournalism and Documentary Photography at the University of the Arts London, LCC. Fascinated by the relationship between humans and nature, space and memory, and inner exploration through dreams, she captures these themes through photography.</p>
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const overlay = document.getElementById('overlay');
-        const closeBtn = document.getElementById('close-btn');
+    <!-- 覆盖页面（导航菜单） -->
+    <div class="overlay">
+        <button class="close-overlay-btn">&times;</button>
+        <nav class="overlay-menu">
+            <a href="projects.html">Projects</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
 
-        menuToggle.addEventListener('click', () => {
-            overlay.style.display = 'flex'; // 显示覆盖页面
-        });
-
-        closeBtn.addEventListener('click', () => {
-            overlay.style.display = 'none'; // 隐藏覆盖页面
-        });
-    </script>
 </body>
 </html>
 
