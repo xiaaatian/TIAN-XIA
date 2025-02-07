@@ -161,6 +161,53 @@ body {
     transform: scale(1.1);
 }
 
+/* 🌟 Projects 页面容器 */
+.projects-container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* 🌟 页面标题 */
+.page-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* 🌟 项目列表（竖向排列） */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* 🌟 项目标题（仅文字，鼠标悬停后显示图片） */
+.project-title {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.project-title:hover {
+    color: gray;
+}
+
+/* 🌟 悬停时显示的封面图片 */
+.project-hover-image {
+    position: fixed;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: auto;
+    display: none; /* 默认隐藏 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
 /* 🌟 About 页面 */
 .about-container {
     display: flex;
