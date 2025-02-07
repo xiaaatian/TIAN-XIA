@@ -514,6 +514,7 @@ body {
 .horizontal-scroll {
     display: flex;
     align-items: center;
+    max-height: 250px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -526,13 +527,14 @@ body {
 /* 🌟 让图片横向排列 */
 .image-track {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     min-width: max-content;
 }
 
 /* 🌟 图片样式 */
 .image-track img {
-    height: 80vh;
+    height: 80%;
+    width: auto;
     flex-shrink: 0;
     object-fit: cover;
     transition: transform 0.3s ease;
