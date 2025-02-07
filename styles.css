@@ -143,6 +143,24 @@ body {
     margin: 0;
 }
 
+/* 🌟 Home 页面左下角 < 按钮 */
+.back-to-welcome {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.back-to-welcome:hover {
+    color: gray;
+    transform: scale(1.1);
+}
+
 /* 🌟 About 页面 */
 .about-container {
     display: flex;
