@@ -366,14 +366,23 @@ body {
     margin: 10px 0;
 }
 
+/* 🌟 Footer 样式 */
 footer {
-    position: relative; /* 确保 footer 在 contact-container 之上 */
-    z-index: 2; /* 提高层级，避免被覆盖 */
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background: rgba(255, 255, 255, 0.8); /* 让 footer 仍然保持半透明 */
+    height: 50px; /* 高度 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    background: white;
+    color: black;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 添加顶部阴影 */
+    z-index: 999;
 }
+
 
 /* 🌟 适配移动端 */
 @media (max-width: 768px) {
