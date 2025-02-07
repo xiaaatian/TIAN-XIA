@@ -405,8 +405,13 @@ footer {
     }
 
     .about-portrait {
-        width: 200px;
-        margin-bottom: 20px;
+        width: 120px;
+        margin-bottom: 15px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        padding: 0 15px;
     }
 
     .contact-content {
@@ -419,5 +424,9 @@ footer {
 
     .contact-content p {
         font-size: 16px;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
