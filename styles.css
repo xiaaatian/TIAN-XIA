@@ -233,6 +233,15 @@ body {
     margin: 10px 0;
 }
 
+footer {
+    position: relative; /* 确保 footer 在 contact-container 之上 */
+    z-index: 2; /* 提高层级，避免被覆盖 */
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.8); /* 让 footer 仍然保持半透明 */
+}
+
 /* 🌟 适配移动端 */
 @media (max-width: 768px) {
     .home-cover {
