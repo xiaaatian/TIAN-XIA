@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script src="scripts.js" defer></script> <!-- 确保JS代码不会阻塞加载 -->
 </head>
 <body>
+
+    <!-- 加载 Navbar -->
     <div id="navbar-placeholder"></div>
-    <div id="footer-placeholder"></div>
-<script>
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
-</script>
+
+    <!-- About 页面主体 -->
     <div class="about-container">
         <img src="images/portrait.jpg" alt="Portrait of Tian Xia" class="about-portrait">
         <div class="about-text">
@@ -23,5 +21,9 @@
             </p>
         </div>
     </div>
+
+    <!-- 加载 Footer -->
+    <div id="footer-placeholder"></div>
+
 </body>
 </html>
