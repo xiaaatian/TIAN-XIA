@@ -7,22 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 🌟 主页导航栏 -->
-    <div class="navbar">
-        <div class="name">
-            <a href="home.html">Tian Xia</a>
-        </div>
-        <div class="menu">
+    <!-- 顶部导航栏 -->
+    <div class="home-navbar">
+        <div class="menu-toggle" id="menu-toggle">&gt;</div>
+        <h1 class="home-logo">Tian Xia</h1>
+    </div>
+
+    <!-- 磨砂半透明导航覆盖层 -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <div class="sidebar">
             <a href="projects.html">Projects</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
     </div>
 
-    <!-- 🌟 主页内容 -->
-    <div class="content">
-        <h1>Welcome to My Work</h1>
-        <p>Explore my photography projects, inspirations, and more.</p>
+    <!-- 中间图片 -->
+    <div class="home-cover">
+        <img src="images/home-cover.jpg" alt="Home Cover">
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = sidebarOverlay.classList.contains('active');
+            sidebarOverlay.classList.toggle('active');
+            menuToggle.innerHTML = isOpen ? '&gt;' : '&times;';
+        });
+
+        sidebarOverlay.addEventListener('click', (e) => {
+            if (e.target === sidebarOverlay) {
+                sidebarOverlay.classList.remove('active');
+                menuToggle.innerHTML = '&gt;';
+            }
+        });
+    </script>
 </body>
 </html>
