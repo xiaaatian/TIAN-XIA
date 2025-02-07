@@ -273,7 +273,7 @@ body {
 
 /* 🌟 让标题变为可点击的链接 */
 .summary-container h2 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     font-size: 18px;
     transition: color 0.3s ease, transform 0.2s ease;
