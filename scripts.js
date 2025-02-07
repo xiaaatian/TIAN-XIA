@@ -13,13 +13,22 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
     
     // 获取滚动容器
-const scrollContainer = document.querySelector('.horizontal-scroll');
+    const scrollContainer = document.querySelector('.horizontal-scroll');
 
-    // 添加鼠标滚轮事件监听
-    scrollContainer.addEventListener('wheel', (e) => {
-        e.preventDefault(); // 阻止默认垂直滚动
-        scrollContainer.scrollLeft += e.deltaY * 1.5; // 根据滚轮方向滚动
+    // 添加鼠标滚轮和触摸板事件监听
+    scrollContainer.addEventListener('wheel', (event) => {
+        event.preventDefault(); // 阻止默认垂直滚动
+        scrollContainer.scrollLeft += event.deltaY * 1.5; // 根据滚轮方向滚动
     });
+
+    //键盘左右键监听
+    window.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+            scrollContainer.scrollLeft += 50; // 按右箭头滚动 50 像素
+        } else if (event.key === "ArrowLeft") {
+            scrollContainer.scrollLeft -= 50; // 按左箭头滚动 50 像素
+        }
+            
 
 
     // 鼠标悬停时显示封面图片
