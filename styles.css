@@ -67,6 +67,7 @@ body {
     cursor: pointer;
     color: black;
     transition: transform 0.2s ease;
+    z-index: 2000;
 }
 
 .toggle-overlay-btn:hover {
@@ -98,6 +99,7 @@ body {
     cursor: pointer;
     color: black;
     transition: transform 0.2s ease;
+    z-index: 2001;
 }
 
 .close-overlay-btn:hover {
