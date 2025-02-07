@@ -550,7 +550,7 @@ body {
     flex-direction: column; /* 改为垂直排列 */
     align-items: center; /* 水平方向居中 */
     justify-content: center; /* 垂直方向居中 */
-    padding: 20px;
+    padding: 50px;
     text-align: center;
     flex-grow: 1;
 }
@@ -695,12 +695,12 @@ footer {
         display: none; /* 在移动端不显示悬停封面 */
     }
 
-    /* 🌟 Plantasia & Loop 页面 */
-    .plantasia-container, .loop-container {
+    /* 🌟 Plantasia & Loop &snaaap 页面 */
+    .plantasia-container, .loop-container, .snaaap-container {
         flex-direction: column; /* 纵向排列 */
     }
 
-    .plantasia-info, .loop-description {
+    .plantasia-info, .loop-description, .snaaap-description {
         width: 100%;
         text-align: center;
         padding: 20px;
