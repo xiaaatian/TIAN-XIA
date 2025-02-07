@@ -227,7 +227,7 @@ body {
 .summary-link {
     display: inline;
     text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 0.5px;
     text-underline-offset: 4px;
     font-size: 18px;
     color: black;
