@@ -1,17 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const overlay = document.querySelector(".overlay");
-    const toggleBtn = document.querySelector(".toggle-overlay-btn");
-    const closeBtn = document.querySelector(".close-overlay-btn");
-
-    if (toggleBtn && closeBtn && overlay) {
-        // 打开覆盖页面
-        toggleBtn.addEventListener("click", () => {
-            overlay.style.display = "flex";
+    // 加载导航栏
+    fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+            setupOverlayEvents();
         });
 
-        // 关闭覆盖页面
-        closeBtn.addEventListener("click", () => {
-            overlay.style.display = "none";
-        });
+    function setupOverlayEvents() {
+        const overlay = document.querySelector(".overlay");
+        const toggleBtn = document.querySelector(".toggle-overlay-btn");
+        const closeBtn = document.querySelector(".close-overlay-btn");
+
+        if (toggleBtn && closeBtn && overlay) {
+            toggleBtn.addEventListener("click", () => {
+                overlay.style.display = "flex";
+            });
+
+            closeBtn.addEventListener("click", () => {
+                overlay.style.display = "none";
+            });
+        }
     }
 });
