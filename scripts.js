@@ -12,15 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
     
-    // 让鼠标滚轮可以横向滚动
-    const scrollContainer = document.querySelector(".horizontal-scroll-container");
+    // 获取滚动容器
+const scrollContainer = document.querySelector('.horizontal-scroll');
 
-    if (scrollContainer) {
-        scrollContainer.addEventListener("wheel", (evt) => {
-            evt.preventDefault();
-            scrollContainer.scrollLeft += evt.deltaY * 1.2; // 控制滚动速度
-        });
-    }
+    // 添加鼠标滚轮事件监听
+    scrollContainer.addEventListener('wheel', (e) => {
+        e.preventDefault(); // 阻止默认垂直滚动
+        scrollContainer.scrollLeft += e.deltaY * 1.5; // 根据滚轮方向滚动
+    });
+
 
     // 鼠标悬停时显示封面图片
     const projectTitles = document.querySelectorAll(".project-title");
