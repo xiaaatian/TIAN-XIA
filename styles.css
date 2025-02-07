@@ -174,7 +174,7 @@ body {
     cursor: pointer;
     color: black;
     transition: transform 0.2s ease, color 0.3s ease;
-    z-indext: 1000;
+    z-index: 1000;
 }
 
 .back-to-welcome:hover {
@@ -240,6 +240,7 @@ body {
     display: inline;
     text-decoration: underline;
     width: auto;
+}
 
 .summary-link:hover {
     color: gray;
@@ -397,7 +398,7 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    width: 70%;
+    width: calc(100vw - 30vw);
     height: 80vh;
     padding-left: 20px;
     scroll-behavior: smooth;
@@ -432,8 +433,7 @@ body {
     justify-content: center; /* 垂直方向居中 */
     padding: 20px;
     text-align: center;
-    min-height: calc(100vh - 80px - 50px); /* 减去导航栏和 footer 的高度 */
-    box-sizing: border-box;
+    flex-grow: 1;
 }
 
 /* 🌟 About 头像 */
@@ -473,6 +473,7 @@ body {
     height: 100%;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1;
 }
 
