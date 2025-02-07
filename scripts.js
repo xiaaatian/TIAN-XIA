@@ -14,21 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // 获取滚动容器
     const scrollContainer = document.querySelector('.horizontal-scroll');
+    const images = document.querySelectorAll(".image-track img")
+    let imageWidth = images[0].offsetWidth + 10;
 
     // 添加鼠标滚轮和触摸板事件监听
     scrollContainer.addEventListener('wheel', (event) => {
         event.preventDefault(); // 阻止默认垂直滚动
-        scrollContainer.scrollLeft += event.deltaY * 1.5; // 根据滚轮方向滚动
+        scrollContainer.scrollLeft += event.deltaY > 0 ? imageWidth : -imageWidth; // 根据滚轮方向滚动
     });
 
     //键盘左右键监听
     window.addEventListener("keydown", (event) => {
         if (event.key === "ArrowRight") {
-            scrollContainer.scrollLeft += 50; // 按右箭头滚动 50 像素
+            scrollContainer.scrollLeft += imageWidth; 
         } else if (event.key === "ArrowLeft") {
-            scrollContainer.scrollLeft -= 50; // 按左箭头滚动 50 像素
+            scrollContainer.scrollLeft -= imageWidth; 
         }
-            
+
+        // 窗口调整时重新计算图片宽度
+        window.addEventListener("resize", () => {
+            imageWidth = images[0].offsetWidth + 10;
+        });
 
 
     // 鼠标悬停时显示封面图片
