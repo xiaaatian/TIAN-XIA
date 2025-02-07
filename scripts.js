@@ -12,11 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 
-    // 🎯 处理滚动交互
-    setupScrolling();
-
-    // 🎯 鼠标悬停时显示封面图片
-    setupProjectHoverEffect();
+    // 🎯 处理页面交互
+    setupScrolling(); // 处理图片滚动交互
+    setupProjectHoverEffect(); // 鼠标悬停显示封面
+    setupSummaryTitleNavigation(); // 让 Summary 标题可跳转
 });
 
 /** 🌟 处理半透明覆盖页面的显示与隐藏 */
@@ -42,7 +41,7 @@ function setupScrolling() {
     if (!scrollContainer) return;
 
     const images = document.querySelectorAll(".image-track img");
-    let imageWidth = images[0]?.offsetWidth + 10 || 300; // 预防错误，默认宽度300px
+    let imageWidth = images[0]?.offsetWidth + 10 || 300; // 防止获取不到宽度报错，默认300px
 
     // 🎯 鼠标点击左右翻页
     scrollContainer.addEventListener("click", (event) => {
@@ -71,7 +70,7 @@ function setupScrolling() {
         }
     });
 
-    // 🎯 触控板支持横向滑动
+    // 🎯 触控板支持横向滑动（适配 Mac 触摸板）
     let touchStartX = 0;
     scrollContainer.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
@@ -80,8 +79,17 @@ function setupScrolling() {
     scrollContainer.addEventListener("touchmove", (event) => {
         const touchEndX = event.touches[0].clientX;
         const distance = touchStartX - touchEndX;
-        scrollContainer.scrollLeft += distance * 0.5;
+        scrollContainer.scrollLeft += distance * 0.5; // 触控板手势滚动
         touchStartX = touchEndX;
+    });
+
+    // 🎯 让鼠标左右键点击翻页
+    window.addEventListener("mousedown", (event) => {
+        if (event.button === 0) { // 左键点击
+            scrollContainer.scrollLeft -= imageWidth;
+        } else if (event.button === 2) { // 右键点击
+            scrollContainer.scrollLeft += imageWidth;
+        }
     });
 
     // 🎯 窗口调整时重新计算图片宽度
@@ -112,3 +120,13 @@ function setupProjectHoverEffect() {
     });
 }
 
+/** 🌟 让 Summary 标题可点击跳转回作品页面 */
+function setupSummaryTitleNavigation() {
+    const summaryTitle = document.querySelector(".summary-container h2 a");
+    if (summaryTitle) {
+        summaryTitle.style.cursor = "pointer";
+        summaryTitle.addEventListener("click", () => {
+            window.history.back(); // 让用户返回到上一页
+        });
+    }
+}
