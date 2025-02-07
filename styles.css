@@ -338,6 +338,37 @@ body {
     padding: 20px;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge 隐藏滚动条 */
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* 椭圆形拉动带 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 10px; /* 距离底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3); /* 半透明 */
+    border-radius: 50px; /* 椭圆形 */
+    cursor: grab;
+    user-select: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-indicator:active {
+    cursor: grabbing;
+}
+
+/* 当用户不滚动时，隐藏拉动带 */
+.horizontal-scroll:hover .scroll-indicator {
+    opacity: 1;
 }
 
 /* 🌟 图片轨道 */
