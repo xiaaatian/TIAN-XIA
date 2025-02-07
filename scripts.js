@@ -6,37 +6,58 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("navbar-placeholder").innerHTML = data;
             setupOverlayEvents();
         });
-
-    // 加载 Footer
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
     
     // 获取滚动容器
     const scrollContainer = document.querySelector('.horizontal-scroll');
     const images = document.querySelectorAll(".image-track img")
     let imageWidth = images[0].offsetWidth + 10;
 
-    // 添加鼠标滚轮和触摸板事件监听
-    scrollContainer.addEventListener('wheel', (event) => {
-        event.preventDefault(); // 阻止默认垂直滚动
-        scrollContainer.scrollLeft += event.deltaY > 0 ? imageWidth : -imageWidth; // 根据滚轮方向滚动
+    document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.querySelector(".horizontal-scroll"); // 选取滚动容器
+    const images = document.querySelectorAll(".image-track img"); // 获取所有图片
+    let imageWidth = images[0].offsetWidth + 10; // 计算每张图片的宽度（包含间距）
+
+    // 🎯 鼠标点击翻页（左侧区域向左，右侧区域向右）
+    scrollContainer.addEventListener("click", (event) => {
+        const clickX = event.clientX; // 获取点击位置
+        const screenWidth = window.innerWidth; // 获取屏幕宽度
+
+        if (clickX < screenWidth / 2) {
+            // 点击左侧 → 向左翻页
+            scrollContainer.scrollLeft -= imageWidth;
+        } else {
+            // 点击右侧 → 向右翻页
+            scrollContainer.scrollLeft += imageWidth;
+        }
     });
 
-    //键盘左右键监听
+    // 🎯 鼠标滚轮（上下滚动控制左右移动）
+    scrollContainer.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        scrollContainer.scrollLeft += event.deltaY > 0 ? imageWidth : -imageWidth;
+    });
+
+    // 🎯 键盘左右键控制
     window.addEventListener("keydown", (event) => {
         if (event.key === "ArrowRight") {
-            scrollContainer.scrollLeft += imageWidth; 
+            scrollContainer.scrollLeft += imageWidth; // 右箭头，向右移动一张图
         } else if (event.key === "ArrowLeft") {
-            scrollContainer.scrollLeft -= imageWidth; 
+            scrollContainer.scrollLeft -= imageWidth; // 左箭头，向左移动一张图
         }
+    });
 
-        // 窗口调整时重新计算图片宽度
-        window.addEventListener("resize", () => {
-            imageWidth = images[0].offsetWidth + 10;
-        });
+    // 🎯 窗口调整时重新计算图片宽度
+    window.addEventListener("resize", () => {
+        imageWidth = images[0].offsetWidth + 10;
+    });
+});
 
 
+    // 加载 Footer
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+        
     // 鼠标悬停时显示封面图片
     const projectTitles = document.querySelectorAll(".project-title");
     const hoverImage = document.querySelector(".project-hover-image");
