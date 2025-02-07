@@ -231,7 +231,7 @@ body {
     text-underline-offset: 4px;
     font-size: 18px;
     color: black;
-    border-bottom: 1px solid black;
+    border-bottom: none;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     margin-top: 10px;
 }
