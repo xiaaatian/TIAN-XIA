@@ -72,22 +72,40 @@ function setupScrolling() {
 
     // 🎯 触控板支持横向滑动（适配 Mac 触摸板）
     let touchStartX = 0;
+    let touchStartTime = 0;
     scrollContainer.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
+        touchStartTime = Date.now();
     });
 
     scrollContainer.addEventListener("touchmove", (event) => {
         const touchEndX = event.touches[0].clientX;
         const distance = touchStartX - touchEndX;
-        scrollContainer.scrollLeft += distance * 0.5; // 触控板手势滚动
+        scrollContainer.scrollLeft += distance * 1.2; // 触控板手势滚动增强
         touchStartX = touchEndX;
     });
 
-    // 🎯 让鼠标左右键点击翻页
+    scrollContainer.addEventListener("touchend", () => {
+        let touchDuration = Date.now() - touchStartTime;
+        if (touchDuration < 200) {
+            // 轻滑触控板手势，自动滚动一张图
+            scrollContainer.scrollLeft += imageWidth * (touchStartX < window.innerWidth / 2 ? -1 : 1);
+        }
+    });
+
+    // 🎯 让鼠标 **左键点击** ＝ 左翻，**右键点击** ＝ 右翻
     window.addEventListener("mousedown", (event) => {
         if (event.button === 0) { // 左键点击
             scrollContainer.scrollLeft -= imageWidth;
         } else if (event.button === 2) { // 右键点击
+            scrollContainer.scrollLeft += imageWidth;
+        }
+    });
+
+    // 🎯 让键盘 **空格键** 也能翻页（向右）
+    window.addEventListener("keydown", (event) => {
+        if (event.key === " " || event.key === "Spacebar") {
+            event.preventDefault();
             scrollContainer.scrollLeft += imageWidth;
         }
     });
