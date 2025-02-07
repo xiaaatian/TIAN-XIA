@@ -102,6 +102,21 @@ function setupScrolling() {
         }
     }, { passive: false });
 
+    // 🎯 触摸屏支持手势滑动
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    scrollContainer.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchScrollLeft = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener("touchmove", (e) => {
+        const touchMoveX = e.touches[0].clientX;
+        const distance = touchMoveX - touchStartX;
+        scrollContainer.scrollLeft = touchScrollLeft - distance;
+    });
+
     // 🎯 窗口调整时重新计算图片宽度
     window.addEventListener("resize", () => {
         imageWidth = images[0]?.offsetWidth + 10 || 300;
