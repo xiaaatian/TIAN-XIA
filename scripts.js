@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("navbar.html")
         .then(response => response.text())
         .then(data => {
+
+    // 加载 Footer
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
             document.getElementById("navbar-placeholder").innerHTML = data;
             setupOverlayEvents();
         });
