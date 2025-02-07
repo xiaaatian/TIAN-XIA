@@ -698,13 +698,14 @@ footer {
     /* 🌟 Plantasia & Loop &snaaap 页面 */
     .plantasia-container, .loop-container, .snaaap-container {
         flex-direction: column; /* 纵向排列 */
-        gap: 15px;
+        gap: 30px;
     }
 
     .plantasia-info, .loop-description, .snaaap-description {
-        width: 90%%;
+        width: 90%;
         text-align: center;
-        padding: 10px 0;
+        padding: 5px 0;
+        margin-bottom: 10px;
     }
 
     .horizontal-scroll {
@@ -712,6 +713,7 @@ footer {
         height: auto;
         display: flex;
         justify-content: center;
+        margin-bottom: 20px
     }
 
     .image-track img {
