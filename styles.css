@@ -48,8 +48,82 @@ body {
     transform: scale(1.1);
 }
 
-body {
-    padding-top: 80px; /* 为导航栏留出空间，避免内容被遮挡 */
+/* 🌟 打开及关闭覆盖页面按钮 */
+.toggle-overlay-btn,
+.close-overlay-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: black;
+    z-index: 200;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.toggle-overlay-btn:hover,
+.close-overlay-btn:hover {
+    transform: scale(1.2);
+    color: gray;
+}
+
+/* 🌟 半透明覆盖页面 */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 🌟 覆盖页面导航栏 */
+.overlay-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.overlay-menu a {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.overlay-menu a:hover {
+    color: gray;
+}
+
+.overlay-menu .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 🌟 导航栏链接样式 */
+.sidebar .menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.sidebar .menu a:hover {
+    color: gray;
+}
+
+.sidebar .menu a.active {
+    color: gray;
+    pointer-events: none; /* 禁止点击当前页面的链接 */
 }
 
 /* Welcome 页面 */
@@ -102,88 +176,7 @@ body {
     margin: 0;
 }
 
-/* 🌟 打开覆盖页面按钮 */
-.toggle-overlay-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: black;
-    z-index: 200;
-}
 
-.close-overlay-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: black;
-    z-index: 200;
-}
-
-/* 🌟 半透明覆盖页面 */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-/* 🌟 覆盖页面导航栏 */
-.overlay-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-}
-
-.overlay-menu a {
-    font-size: 24px;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.overlay-menu a:hover {
-    color: gray;
-}
-
-.overlay-menu .active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* 🌟 关闭按钮 */
-.close-btn {
-    font-size: 36px;
-    background: none;
-    border: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    color: black;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.close-btn:hover {
-    color: gray;
-    transform: scale(1.1);
-}
 
 /* 🌟 About 页面容器 */
 .about-container {
@@ -244,24 +237,8 @@ body {
     color: gray;
 }
 
-/* 🌟 导航栏链接样式 */
-.sidebar .menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
 
-.sidebar .menu a:hover {
-    color: gray;
-}
-
-.sidebar .menu a.active {
-    color: gray;
-    pointer-events: none; /* 禁止点击当前页面的链接 */
-}
-
-/* 🌟 适配移动端 */
+/* 🌟 about适配移动端 */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column; /* 垂直排列 */
@@ -294,7 +271,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 /* 🌟 半透明磨砂效果 */
@@ -332,39 +308,6 @@ body {
     margin: 10px 0;
 }
 
-/* 🌟 打开覆盖页面按钮 */
-.toggle-overlay-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: black;
-    z-index: 3; /* 确保在最上方 */
-    transition: transform 0.3s ease;
-}
-
-.toggle-overlay-btn:hover {
-    transform: scale(1.2);
-}
-
-/* 🌟 半透明覆盖页面 */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.85); /* 半透明白色 */
-    backdrop-filter: blur(5px); /* 磨砂效果 */
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /* 🌟 覆盖页面内容 */
 .overlay-content {
@@ -372,41 +315,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-/* 🌟 覆盖页面导航栏 */
-.overlay-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.overlay-menu a {
-    font-size: 24px;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.overlay-menu a:hover {
-    color: gray;
-}
-
-/* 🌟 关闭按钮 */
-.close-overlay-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: black;
-    transition: transform 0.3s ease;
-}
-
-.close-overlay-btn:hover {
-    transform: scale(1.2);
 }
 
 /* 🌟 适配移动端 */
