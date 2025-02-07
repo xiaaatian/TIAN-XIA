@@ -262,8 +262,8 @@ body {
     width: calc(100vw - 30vw); /* 右侧占满剩余空间 */
     height: 100vh;
     padding: 20px;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 /* 🌟 图片轨道 */
@@ -280,6 +280,7 @@ body {
     height: 80vh;
     width: auto;
     object-fit: cover;
+    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
 
