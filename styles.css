@@ -510,11 +510,9 @@ body {
     line-height: 1.5;
 }
 
-/* 🌟 右侧滚动图片区域 */
 .horizontal-scroll {
     display: flex;
     align-items: center;
-    max-height: 250px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
