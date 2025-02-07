@@ -172,6 +172,7 @@ body {
     cursor: pointer;
     color: black;
     transition: transform 0.2s ease, color 0.3s ease;
+    z-indext: 1000;
 }
 
 .back-to-welcome:hover {
