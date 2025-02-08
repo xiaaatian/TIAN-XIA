@@ -1,7 +1,3 @@
-function buttonClick() {
-    alert('111222')
-}
-                
 
 /** 🌟 确保 DOM 加载后再执行 JS 逻辑 */
 document.addEventListener("DOMContentLoaded", function () {
