@@ -8,7 +8,10 @@
     <script src="scripts.js" defer></script>
     <script>
         function buttonClick() {
-            alert('111222')
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
         }
     </script>
 </head>
