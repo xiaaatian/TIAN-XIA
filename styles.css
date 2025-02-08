@@ -92,7 +92,7 @@ body {
 
 /* 🌟 半透明覆盖页面 */
 .overlay {
-    /*display: none;*/
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
