@@ -1,4 +1,4 @@
-function buttonClick() :void {
+function buttonClick() : {
     alert('111222')
 }
                 
