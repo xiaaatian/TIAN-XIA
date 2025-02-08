@@ -25,22 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSummaryTitleNavigation(); // 让 Summary 标题可跳转
 });
 
-/** 🌟 处理半透明覆盖页面的显示与隐藏 */
-function setupOverlayEvents() {
-    const overlay = document.querySelector(".overlay");
-    const toggleBtn = document.querySelector(".toggle-overlay-btn");
-    const closeBtn = document.querySelector(".close-overlay-btn");
-
-    if (toggleBtn && closeBtn && overlay) {
-        toggleBtn.addEventListener("click", () => {
-            overlay.style.display = "flex";
-        });
-
-        closeBtn.addEventListener("click", () => {
-            overlay.style.display = "none";
-        });
-    }
-}
 
 /** 🌟 让鼠标、键盘、滚轮、触控板控制滚动 */
 function setupScrolling() {
