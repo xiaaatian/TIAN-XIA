@@ -1,5 +1,5 @@
 function buttonClick() :void {
-    alert('111')
+    alert('111222')
 }
                 
 
