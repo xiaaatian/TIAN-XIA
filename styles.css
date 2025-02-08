@@ -90,9 +90,12 @@ body {
     transform: scale(1.1);
 }
 
+.dis-none {
+    display: none;
+}
+
 /* 🌟 半透明覆盖页面 */
 .overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
