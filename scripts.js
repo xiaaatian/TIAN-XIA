@@ -1,4 +1,4 @@
-function buttonClick() : {
+function buttonClick() :{
     alert('111222')
 }
                 
