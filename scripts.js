@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
     // 🎯 加载 Footer
-    fetch("footer.html")
+    fetch("footer.html"){
         .then(response => response.text())
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 
@@ -58,6 +58,7 @@ function setupScrolling() {
     window.addEventListener("load", () => {
         imageWidth = images[0]?.offsetWidth + 10 || 300;
     });
+}
 
     // 🎯 鼠标点击左右翻页
     scrollContainer.addEventListener("click", (event) => {
