@@ -6,11 +6,39 @@
     <title>Snaaap Summary - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <script>
+        function buttonClick() {
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
+        }
+
+        function closeOverlay() {
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.add('dis-none')
+        }
+    </script>
 </head>
 <body>
 
     <!-- 导航栏 -->
-    <div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder">
+        <div class="navbar">
+            <button onclick="buttonClick()" id="myButton" class="toggle-overlay-btn">></button>   
+            <a href="home.html" class="navbar-title">Tian Xia</a>
+        </div>
+            
+        <div class="overlay dis-none">
+            <button onclick="closeOverlay()" id="closeMyElement" class="close-overlay-btn">x</button>  
+            <nav class="overlay-menu">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
 
     <!-- Summary 页面 -->
     <div class="summary-container">
