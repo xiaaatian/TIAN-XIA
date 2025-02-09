@@ -129,11 +129,11 @@ body {
 
 /* 🌟 覆盖页面导航栏 */
 .overlay-menu {
-    display: flex;
+    display: flex-start;
     flex-direction: column;
     gap: 30px;
     text-align: center;
-    padding-top: 30px
+    padding-top: 40px
 }
 
 .overlay-menu a {
