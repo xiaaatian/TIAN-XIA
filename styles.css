@@ -232,7 +232,7 @@ body {
 /* 让 < 按钮固定在右上角 */
 .navigation-buttons {
     position: absolute;
-    left: 15px;
+    left: 10px;
     top: 70px; 
     display: flex;
     flex-direction: column; /* 垂直排列 */
@@ -249,8 +249,6 @@ body {
     text-decoration: none;
     color: black;
     padding: 10px 15px;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
 }
 
 /* 鼠标悬停效果 */
