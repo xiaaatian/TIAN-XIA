@@ -334,17 +334,19 @@ body {
 /* 🌟 Plantasia 页面布局 */
 .plantasia-container {
     display: flex;
-    height: 100vh;
+    width: 100%;
 }
 
 /* 🌟 左侧信息栏 */
 .plantasia-info {
-    width: 30vw; /* 仅占左侧30% */
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px;
-    background: white;
+    align-items: center;
+    text-align: center;
 }
 
 /* 🌟 取消标题加粗 */
@@ -360,78 +362,41 @@ body {
     line-height: 1.6;
 }
 
-/* 🌟 右侧滚动图片 */
-.horizontal-scroll {
+.image-section {
+    flex: 2;
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: calc(100vw - 30vw); /* 右侧占满剩余空间 */
-    height: 100vh;
-    padding: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    touch-action: pan-x;
+    overflow: hidden;
 }
 
-/* Chrome, Safari, Edge 隐藏滚动条 */
-.horizontal-scroll::-webkit-scrollbar {
-    display: none;
+.image-section img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
 }
 
-/* 椭圆形拉动带 */
-.scroll-indicator {
+.arrow {
     position: absolute;
-    bottom: 10px; /* 距离底部 */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 10px;
-    background-color: rgba(0, 0, 0, 0.3); /* 半透明 */
-    border-radius: 50px; /* 椭圆形 */
-    cursor: grab;
-    user-select: none;
-    transition: opacity 0.3s ease-in-out;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
 }
 
-.scroll-indicator:active {
-    cursor: grabbing;
+.arrow.left {
+    left: 10px;
 }
 
-/* 当用户不滚动时，隐藏拉动带 */
-.horizontal-scroll:hover .scroll-indicator {
-    opacity: 1;
+.arrow.right {
+    right: 10px;
 }
-
-/* 🌟 图片轨道 */
-.image-track {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-left: 100px;
-    min-width: max-content;
-}
-
-/* 🌟 图片样式 */
-.image-track img {
-    height: auto;
-    max-height: 70%;
-    width: 50%;
-    max-width: 70%;
-    object-fit: contain;
-    margin: auto;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-
-/* 🌟 鼠标悬停时稍微放大 */
-.image-track img:hover {
-    transform: scale(1.05);
-}
-
 
 /* 🌟 Loop 页面整体布局 */
 .loop-container {
