@@ -335,12 +335,13 @@ body {
 .plantasia-container {
     display: flex;
     width: 100%;
+    padding-top: 30px;
 }
 
 /* 🌟 左侧信息栏 */
 .plantasia-info {
     flex: 1;
-    background-color: #f4f4f4;
+    background-color: none;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -381,7 +382,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: none;
     color: #fff;
     border: none;
     padding: 10px 20px;
