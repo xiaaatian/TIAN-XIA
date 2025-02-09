@@ -555,18 +555,19 @@ body {
 
 /* 🌟 About 页面 */
 .about-container {
+    max-width: 800px;
+    margin: 0 auto; /* 居中 */
     display: flex;
     flex-direction: column; /* 改为垂直排列 */
     align-items: center; /* 水平方向居中 */
     justify-content: center; /* 垂直方向居中 */
     text-align: center;
     height: 100vh;
-    flex-grow: 1;
 }
 
 /* 🌟 About 头像 */
 .about-portrait {
-    width: 20%; /* 缩小头像宽度 */
+    width: auto; /* 缩小头像宽度 */
     max-width: 120px;
     height: auto;
     margin-bottom: 20px; /* 与文字留出间距 */
@@ -574,6 +575,7 @@ body {
 
 /* 🌟 About 文字 */
 .about-text {
+    width: auto;
     max-width: 60%;
     font-size: 18px;
     line-height: 1.6;
