@@ -419,7 +419,7 @@ body {
 .image-track img {
     height: 60vh;
     width: auto;
-    object-fit: cover;
+    object-fit: contain;
     flex-shrink: 0;
     transition: transform 0.3s ease;
 }
