@@ -392,11 +392,11 @@ body {
 }
 
 .arrow.left {
-    left: -30pxpx;
+    left: 10px;
 }
 
 .arrow.right {
-    right: -30px;
+    right: 10px;
 }
 
 /* 🌟 Loop 页面整体布局 */
