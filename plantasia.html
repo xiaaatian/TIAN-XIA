@@ -49,20 +49,33 @@
             <a href="plantasia-summary.html" class="summary-link">SUMMARY</a> <!-- ✅ 新增 Summary -->
         </div>
 
-        <!-- 右侧滚动图片展示 -->
-        <div class="horizontal-scroll">
-            <div class="image-track">
-                <img src="images/plantasia1.jpg" alt="Plantasia 1">
-                <img src="images/plantasia2.jpg" alt="Plantasia 2">
-                <img src="images/plantasia3.jpg" alt="Plantasia 3">
-                <img src="images/plantasia4.jpg" alt="Plantasia 4">
-                <img src="images/plantasia7.jpg" alt="Plantasia 7">
-                <img src="images/plantasia8.jpg" alt="Plantasia 8">
-                <img src="images/plantasia9.jpg" alt="Plantasia 9">
-                <img src="images/plantasia10.jpg" alt="Plantasia 10">
-            </div>
+        <!-- right section: image gallery -->
+        <div class="image-section">
+            <button class="arrow left" onclick="prevImage()">&lt;</button>
+            <img id="current-image" src="image1.jpg" alt="Plant Image">
+            <button class="arrow right" onclick="nextImage()">&gt;</button>
         </div>
     </div>
+
+    <script>
+        const images = ["plantasia1.jpg", "plantasia2.jpg", "plantasia3.jpg", "plantasia3.jpg", "plantasia4.jpg", "plantasia5.jpg", "plantasia6.jpg", "plantasia7.jpg", "plantasia8.jpg", "plantasia9.jpg", "plantasia10.jpg"]
+        let currentIndex = 0;
+
+        function updateImage() {
+            const imgElement = document.getElementById("current-image");
+            imgElement.src = images[currentIndex];
+        }
+
+        fuction prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+    </script>
 
     <!-- ✅ 添加返回 < 按钮 -->
     <div class="navigation-buttons">
