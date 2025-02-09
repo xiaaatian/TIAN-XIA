@@ -712,22 +712,32 @@ footer {
 
 /* 🌟 适配移动端（屏幕宽度 ≤ 768px） */
 @media screen and (max-width: 768px) {
+    .plantasia-container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
     /* ✅ 调整文本区域，避免内容偏下 */
     .plantasia-info, .loop-description, .snaaap-description {
         margin-top: 3vh; /* ✅ 让文本更靠上，减少顶部空白 */
-        width: 95%; /* ✅ 在小屏幕上稍微放宽 */
+        width: 90%; /* ✅ 在小屏幕上稍微放宽 */
+        font-size: 14px;
+        line-height: 1.4;
     }
 
     /* ✅ 让图片容器适应屏幕 */
     .image-track {
         height: auto; /* ✅ 让容器高度自适应 */
-        padding-top: 0; /* ✅ 避免内容偏下 */
+        padding-top: 0; 
     }
 
     /* ✅ 让图片变大，占据更多屏幕空间 */
     .image-track img {
-        height: 75vh; /* ✅ 让图片在移动端占据 75% 视口高度 */
-        width: 100%; /* ✅ 让图片填满整个屏幕宽度 */
+        height: 80vh; /* ✅ 让图片在移动端占据 75% 视口高度 */
+        width: 100%;
         object-fit: cover; /* ✅ 保持比例填充，可能会裁剪 */
     }
 
