@@ -343,12 +343,13 @@ body {
 .plantasia-info {
     flex: 1;
     background-color: transparent;
-    padding-top: 50px;
+    padding-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
+    padding-left: 15px;
 }
 
 /* 🌟 取消标题加粗 */
@@ -366,8 +367,8 @@ body {
 
 .image-section {
     flex: 1;
-    max-width: 1200px;
-    max-height: 800px;
+    max-width: 2000px;
+    max-height: 1600px;
     position: relative;
     display: flex;
     justify-content: center;
