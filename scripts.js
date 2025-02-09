@@ -25,28 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSummaryTitleNavigation(); // 让 Summary 标题可跳转
 });
 
-
-/** 🌟 让鼠标、键盘、滚轮、触控板控制滚动 */
-function setupScrolling() {
-    const scrollContainer = document.querySelector(".horizontal-scroll");
-    if (!scrollContainer) return;
-
-    const images = document.querySelectorAll(".image-track img");
-    let imageWidth = images[0]?.offsetWidth + 10 || 300; // 防止获取不到宽度报错，默认300px
-
-    // 🎯 确保图片加载后更新 imageWidth
-    window.addEventListener("load", () => {
-        imageWidth = images[0]?.offsetWidth + 10 || 300;
-    });
-}
-
-    // 🎯 鼠标点击左右翻页
-    scrollContainer.addEventListener("click", (event) => {
-        const clickX = event.clientX;
-        const screenWidth = window.innerWidth;
-        scrollContainer.scrollLeft += (clickX < screenWidth / 2) ? -imageWidth : imageWidth;
-    });
-
     /** 🌟 让鼠标、键盘、滚轮、触控板控制滚动 */
 function setupScrolling() {
     const scrollContainer = document.querySelector(".horizontal-scroll");
