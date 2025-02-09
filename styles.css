@@ -409,8 +409,14 @@ body {
 
 /* 🌟 左侧文本信息 */
 .loop-description {
-    width: 30%;
-    padding-left: 50px;
+    flex: 1;
+    background-color: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .loop-description h2 {
@@ -433,8 +439,8 @@ body {
 }
 
 .image-section img{
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 85%;
+    max-height: 85%;
     border-radius: 10px;
     object-fix: cover;
 }
