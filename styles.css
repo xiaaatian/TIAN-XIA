@@ -232,7 +232,7 @@ body {
 /* 让 < 按钮固定在右上角 */
 .navigation-buttons {
     position: absolute;
-    left: 20px;
+    left: 15px;
     top: 70px; 
     display: flex;
     flex-direction: column; /* 垂直排列 */
@@ -244,8 +244,8 @@ body {
 .prev-button {
     display: inline-block;
     text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: normal;
     text-decoration: none;
     color: black;
     padding: 10px 15px;
@@ -255,7 +255,7 @@ body {
 
 /* 鼠标悬停效果 */
 .prev-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: transparent;
 }
 
 /* 🌟 Summary 按钮样式 */
