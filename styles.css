@@ -232,7 +232,7 @@ body {
 /* 让 < 按钮固定在右上角 */
 .navigation-buttons {
     position: absolute;
-    right: 20px;
+    left: 20px;
     top: 70px; 
     display: flex;
     flex-direction: column; /* 垂直排列 */
