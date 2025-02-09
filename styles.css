@@ -463,17 +463,20 @@ body {
 /* 🌟 Snaaap 页面整体布局 */
 .snaaap-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 100vh;
-    padding: 20px;
+    width: 100%;
+    padding-top: 40px;
 }
 
 /* 🌟 左侧文本信息 */
 .snaaap-description {
-    width: 30%;
-    padding-left: 50px;
+    flex: 1;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .snaaap-description h2 {
@@ -484,40 +487,43 @@ body {
 
 .snaaap-description p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-.horizontal-scroll {
+.image-section {
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: calc(100vw - 30vw);
-    height: 80vh;
-    padding-left: 20px;
-    scroll-behavior: smooth;
+    overflow: hidden;
 }
 
-/* 🌟 让图片横向排列 */
-.image-track {
-    display: flex;
-    gap: 15px;
-    min-width: max-content;
+.image-section img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fix: cover;
 }
 
-/* 🌟 图片样式 */
-.image-track img {
-    height: 80%;
-    width: auto;
-    flex-shrink: 0;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #000;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 10;
 }
 
-/* 🌟 鼠标悬停时略微放大 */
-.image-track img:hover {
-    transform: scale(1.05);
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
 }
 
 /* 🌟 About 页面 */
