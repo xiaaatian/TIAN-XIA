@@ -41,30 +41,51 @@
     </div>
 
     <!-- Plantasia 页面布局 -->
-    <div class="snaaap-container">
-        <!-- 左侧信息 -->
-        <div class="snaaap-info">
-            <h2>snaaap</h2>
-            <p>We are gazing at the same world.</p>
-            <a href="snaaap-summary.html" class="summary-link">SUMMARY</a> <!-- ✅ 新增 Summary -->
+    <div class="loop-container">
+        <!-- 左侧项目描述 -->
+        <div class="loop-description">
+            <h2>Loop</h2>
+            <p>A project exploring space, time, and the process of vanishing and retrieval.</p>
+            <a href="loop-summary.html" class="summary-link">SUMMARY</a> <!-- ✅ 新增 Summary -->
         </div>
 
-        <!-- 右侧滚动图片展示 -->
-        <div class="horizontal-scroll">
-            <div class="image-track">
-                <img src="images/snaaap-cover.jpg" alt="snaaap cover">
-                <img src="images/snaaap1.jpg" alt="snaaap 1">
-                <img src="images/snaaap2.jpg" alt="snaaap 2">
-                <img src="images/snaaap3.jpg" alt="snaaap 3">
-                <img src="images/snaaap4.jpg" alt="snaaap 4">
-                <img src="images/snaaap7.jpg" alt="snaaap 7">
-            </div>
+        <!-- right section: image gallery -->
+        <div class="image-section">
+            <button class="arrow left" onclick="prevImage()">&lt;</button>
+            <img id="current-image" src="images/snaaap1.jpg" alt="Snaaap Image">
+            <button class="arrow right" onclick="nextImage()">&gt;</button>
         </div>
     </div>
 
+    <script>
+        const images = [
+            "images/snaaap1.jpg", 
+            "images/snaaap2.jpg", 
+            "images/snaaap3.jpg", 
+            "images/snaaap4.jpg", 
+            "images/snaaap5.jpg", 
+            "images/snaaap6.jpg", 
+            "images/snaaap7.jpg", ]
+        let currentIndex = 0;
+
+        function updateImage() {
+            const imgElement = document.getElementById("current-image");
+            imgElement.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+    </script>
     <!-- ✅ 添加返回 < 按钮 -->
     <div class="navigation-buttons">
-        <a href="projects.html" class="prev-button">&lt;</a> <!-- 返回 projects -->
+        <a href="projects.html" class="prev-button">back</a> <!-- 返回 projects -->
     </div>
 
 
