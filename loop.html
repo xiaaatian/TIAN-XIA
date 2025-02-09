@@ -49,31 +49,53 @@
             <a href="loop-summary.html" class="summary-link">SUMMARY</a> <!-- ✅ 新增 Summary -->
         </div>
 
-        <!-- 图片滚动容器 -->
-        <div class="horizontal-scroll">
-            <div class="image-track">
-                <img src="images/loop1.jpg" alt="Loop 1">
-                <img src="images/loop2.jpg" alt="Loop 2">
-                <img src="images/loop3.jpg" alt="Loop 3">
-                <img src="images/loop4.jpg" alt="Loop 4">
-                <img src="images/loop5.jpg" alt="Loop 5">
-                <img src="images/loop6.jpg" alt="Loop 6">
-                <img src="images/loop7.jpg" alt="Loop 7">
-                <img src="images/loop8.jpg" alt="Loop 8">
-                <img src="images/loop9.jpg" alt="Loop 9">
-                <img src="images/loop10.jpg" alt="Loop 10">
-                <img src="images/loop11.jpg" alt="Loop 11">
-                <img src="images/loop12.jpg" alt="Loop 12">
-                <img src="images/loop14.jpg" alt="Loop 14">
-                <img src="images/loop15.jpg" alt="Loop 15">
-                <img src="images/loop16.jpg" alt="Loop 16">
-                <img src="images/loop17.jpg" alt="Loop 17">
-                <img src="images/loop18.jpg" alt="Loop 18">
-                <img src="images/loop20.jpg" alt="Loop 20">
-            </div>
+        <!-- right section: image gallery -->
+        <div class="image-section">
+            <button class="arrow left" onclick="prevImage()">&lt;</button>
+            <img id="current-image" src="images/loop1.jpg" alt="Loop Image">
+            <button class="arrow right" onclick="nextImage()">&gt;</button>
         </div>
     </div>
 
+    <script>
+        const images = [
+            "images/loop1.jpg", 
+            "images/loop2.jpg", 
+            "images/loop3.jpg", 
+            "images/loop4.jpg", 
+            "images/loop5.jpg", 
+            "images/loop6.jpg", 
+            "images/loop7.jpg", 
+            "images/loop8.jpg", 
+            "images/loop9.jpg", 
+            "images/loop10.jpg",
+            "images/loop11.jpg",
+            "images/loop12.jpg",
+            "images/loop13.jpg",
+            "images/loop14.jpg",
+            "images/loop15.jpg",
+            "images/loop16.jpg",
+            "images/loop17.jpg",
+            "images/loop18.jpg",]
+        let currentIndex = 0;
+
+        function updateImage() {
+            const imgElement = document.getElementById("current-image");
+            imgElement.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+    </script>
+
+        
     <!-- ✅ 添加返回 < 按钮 -->
     <div class="navigation-buttons">
         <a href="projects.html" class="prev-button">&lt;</a> <!-- 返回 projects -->
