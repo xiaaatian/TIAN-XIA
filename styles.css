@@ -401,20 +401,18 @@ body {
 /* 🌟 Loop 页面整体布局 */
 .Loop-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding-top: 40px;
+    height: 100vh;
+    padding: 0 50px;;
 }
 
 /* 🌟 左侧文本信息 */
 .loop-description {
     flex: 1;
-    background-color: none;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    max-width: 500px;
+    text-align: left;
 }
 
 .loop-description h2 {
@@ -429,17 +427,14 @@ body {
 }
 
 .image-section {
-    position: relative;
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    justify-content: flex-end;
 }
 
 .image-section img{
     max-width: 85%;
     max-height: 85%;
-    border-radius: 10px;
     object-fix: cover;
 }
 
