@@ -422,7 +422,7 @@ body {
     padding-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
     text-align: left;
     padding-left: 25px;
@@ -440,7 +440,7 @@ body {
 }
 
 .loop-image-section {
-    flex: 2;
+    flex: 1;
     max-width: 100%;
     max-height: 100%;
     position: relative;
@@ -453,8 +453,8 @@ body {
 }
 
 .image-section img{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 85%;
+    max-height: 85%;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -703,25 +703,41 @@ footer {
     }
 
     /* 🌟 Plantasia & Loop &snaaap 页面 */
-    .plantasia-container, .loop-container, .snaaap-container {
-        flex-direction: column; /* 纵向排列 */
-        margin-top: 15vh;
-        gap: 20px;
-    }
+    /* 🌟 默认样式（适用于 PC 端） */
+.image-track img {
+    height: 40vh; /* 默认 PC 端高度占 40% 视口 */
+    margin: 5px 0;
+    object-fit: cover;
+}
 
+/* 🌟 适配移动端（屏幕宽度 ≤ 768px） */
+@media screen and (max-width: 768px) {
+    /* ✅ 调整文本区域，避免内容偏下 */
     .plantasia-info, .loop-description, .snaaap-description {
-        width: 90%;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 5vh; /* 让文本距离顶部 5% 视口高度 */
-        margin-bottom: 10px; /* 让文本与下方元素间隔 20px */
+        margin-top: 3vh; /* ✅ 让文本更靠上，减少顶部空白 */
+        width: 95%; /* ✅ 在小屏幕上稍微放宽 */
     }
 
-    .image-track img {
-        height: 60vh; /* 适配屏幕 */
-        margin: 5px 0;
-        object-fit: cover;
+    /* ✅ 让图片容器适应屏幕 */
+    .image-track {
+        height: auto; /* ✅ 让容器高度自适应 */
+        padding-top: 0; /* ✅ 避免内容偏下 */
     }
+
+    /* ✅ 让图片变大，占据更多屏幕空间 */
+    .image-track img {
+        height: 75vh; /* ✅ 让图片在移动端占据 75% 视口高度 */
+        width: 100%; /* ✅ 让图片填满整个屏幕宽度 */
+        object-fit: cover; /* ✅ 保持比例填充，可能会裁剪 */
+    }
+
+    /* ✅ 让图片与文本区域之间的间距适当调整 */
+    .image-section {
+        padding-top: 10px; /* ✅ 避免图片区域过低 */
+        padding-right: 0px; /* ✅ 移除右侧间距，让图片更居中 */
+    }
+}
+
 
     /* 🌟 Summary 页面 */
     .summary-container {
