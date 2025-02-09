@@ -233,7 +233,7 @@ body {
 .navigation-buttons {
     position: absolute;
     left: 10px;
-    top: 70px; 
+    top: 78px; 
     display: flex;
     flex-direction: column; /* 垂直排列 */
     align-items: center;
