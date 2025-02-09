@@ -133,6 +133,7 @@ body {
     flex-direction: column;
     gap: 30px;
     text-align: center;
+    padding-top: 30px
 }
 
 .overlay-menu a {
