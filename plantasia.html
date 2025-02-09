@@ -20,6 +20,30 @@
             element[0].classList.add('dis-none')
         }
     </script>
+    <script>
+        function setupScrolling() {
+            const scrollContainer = document.querySelector('.horizontal-scroll')
+            if (!scrollContainer) return;
+            
+            const images = document.querySelectorAll(".image-track img");
+            let imageWidth = images[0]?.offsetWidth + 10 || 300; // 防止获取不到宽度报错，默认300px
+        }
+            
+            // 🎯 确保图片加载后更新 imageWidth
+            window.addEventListener("load", () => {
+                imageWidth = images[0]?.offsetWidth + 10 || 300;
+            });
+            
+            // 🎯 鼠标滚轮 & Mac 触控板滑动
+        scrollContainer.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+                scrollContainer.scrollLeft += event.deltaX; // ✅ Mac 触控板两指滑动
+            } else {
+                scrollContainer.scrollLeft += event.deltaY > 0 ? imageWidth : -imageWidth;
+            }
+        }
+    </script>
 </head>
 <body>
 
