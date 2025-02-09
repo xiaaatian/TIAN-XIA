@@ -42,7 +42,7 @@
             } else {
                 scrollContainer.scrollLeft += event.deltaY > 0 ? imageWidth : -imageWidth;
             }
-        }
+        }, { passive: false });
     </script>
 </head>
 <body>
