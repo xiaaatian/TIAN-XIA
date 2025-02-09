@@ -25,69 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSummaryTitleNavigation(); // 让 Summary 标题可跳转
 });
 
-    /** 🌟 让鼠标、键盘、滚轮、触控板控制滚动 */
-function setupScrolling() {
-    const scrollContainer = document.querySelector(".horizontal-scroll");
-    if (!scrollContainer) return;
-
-    const images = document.querySelectorAll(".image-track img");
-    let imageWidth = images[0]?.offsetWidth + 10 || 300; // 防止获取不到宽度报错，默认300px
-
-    // 🎯 确保图片加载后更新 imageWidth
-    window.addEventListener("load", () => {
-        imageWidth = images[0]?.offsetWidth + 10 || 300;
-    });
-
-    // 🎯 鼠标滚轮 & Mac 触控板滑动
-    scrollContainer.addEventListener("wheel", (event) => {
-        event.preventDefault();
-        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-            scrollContainer.scrollLeft += event.deltaX; // ✅ Mac 触控板两指滑动
-        } else {
-            scrollContainer.scrollLeft += event.deltaY > 0 ? imageWidth : -imageWidth;
-        }
-    }, { passive: false });
-
-    // 🎯 触摸屏支持手势滑动（优化）
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
-
-    scrollContainer.addEventListener("touchstart", (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchScrollLeft = scrollContainer.scrollLeft;
-    });
-
-    scrollContainer.addEventListener("touchmove", (e) => {
-        e.preventDefault();
-        const touchMoveX = e.touches[0].clientX;
-        const distance = touchMoveX - touchStartX;
-        scrollContainer.scrollLeft = touchScrollLeft - distance * 1.5;
-    }, { passive: false });
-
-    // 🎯 让鼠标 **左键点击** ＝ 左翻，**右键点击** ＝ 右翻
-    scrollContainer.addEventListener("mousedown", (event) => {
-        if (event.button === 0) { // 左键点击
-            scrollContainer.scrollLeft -= imageWidth;
-        } else if (event.button === 2) { // 右键点击
-            scrollContainer.scrollLeft += imageWidth;
-        }
-    });
-
-    // 🎯 让键盘 **空格键** 也能翻页（向右）
-    window.addEventListener("keydown", (event) => {
-        if (event.key === " " || event.key === "Spacebar") {
-            event.preventDefault();
-            scrollContainer.scrollLeft += imageWidth;
-        }
-    }, { passive: false });
-
-
-    // 🎯 窗口调整时重新计算图片宽度
-    window.addEventListener("resize", () => {
-        imageWidth = images[0]?.offsetWidth + 10 || 300;
-    });
-}
-
 /** 🌟 处理鼠标悬停时显示封面图片 */
 function setupProjectHoverEffect() {
     const projectTitles = document.querySelectorAll(".project-title");
