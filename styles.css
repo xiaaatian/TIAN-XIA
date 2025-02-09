@@ -336,7 +336,7 @@ body {
     width: 100%;
     padding-top: 40px;
     align-items: center; /* 确保内容在垂直方向上居中 */
-    gap: 20px; /* ✅ 在左右两部分之间增加 20px 间距 */
+    gap: 10px; /* ✅ 在左右两部分之间增加 20px 间距 */
 }
 
 /* 🌟 左侧信息栏 */
@@ -349,7 +349,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 /* 🌟 取消标题加粗 */
@@ -374,7 +374,8 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-right: 30px;
+    padding-right: 50px;
+    padding-top: 50px;
 }
 
 .image-section img{
