@@ -334,7 +334,9 @@ body {
 .plantasia-container {
     display: flex;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 40px;
+    align-items: center; /* 确保内容在垂直方向上居中 */
+    gap: 40px; /* ✅ 在左右两部分之间增加 40px 间距 */
 }
 
 /* 🌟 左侧信息栏 */
@@ -342,6 +344,7 @@ body {
     flex: 1;
     background-color: transparent;
     padding: 20px;
+    padding-right: 40px; /* ✅ 右侧留白，防止靠得太近 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -363,7 +366,10 @@ body {
 }
 
 .image-section {
-    flex:1;
+    flex: 1;
+    max-width: 600px;
+    max-height: 400px;
+    margin-left: 20px; /* ✅ 让图片稍微向右偏移 */
     position: relative;
     display: flex;
     justify-content: center;
