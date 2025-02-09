@@ -335,7 +335,7 @@ body {
 .plantasia-container {
     display: flex;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 /* 🌟 左侧信息栏 */
@@ -364,7 +364,6 @@ body {
 }
 
 .image-section {
-    flex: 2;
     position: relative;
     display: flex;
     justify-content: center;
@@ -376,27 +375,28 @@ body {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
+    object-fix: cover;
 }
 
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: none;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     border: none;
-    padding: 10px 20px;
+    padding: 0;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    z-index: 10;
 }
 
 .arrow.left {
-    left: 10px;
+    left: -30pxpx;
 }
 
 .arrow.right {
-    right: 10px;
+    right: -30px;
 }
 
 /* 🌟 Loop 页面整体布局 */
