@@ -563,14 +563,15 @@ body {
 
 /* 🌟 About 头像 */
 .about-portrait {
-    width: 150px; /* 缩小头像宽度 */
+    width: 20%; /* 缩小头像宽度 */
+    max-width: 120px;
     height: auto;
     margin-bottom: 20px; /* 与文字留出间距 */
 }
 
 /* 🌟 About 文字 */
 .about-text {
-    max-width: 600px;
+    max-width: 60%;
     font-size: 18px;
     line-height: 1.6;
     color: black;
