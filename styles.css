@@ -343,7 +343,7 @@ body {
 .plantasia-info {
     flex: 1;
     background-color: transparent;
-    padding-top: 60px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
