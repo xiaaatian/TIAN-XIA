@@ -334,7 +334,7 @@ body {
 .plantasia-container {
     display: flex;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 /* 🌟 左侧信息栏 */
@@ -345,7 +345,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
+    align-items: flex-start;
     text-align: left;
 }
 
@@ -363,6 +363,7 @@ body {
 }
 
 .image-section {
+    flex:1;
     position: relative;
     display: flex;
     justify-content: center;
