@@ -349,7 +349,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 /* 🌟 取消标题加粗 */
@@ -367,13 +367,14 @@ body {
 
 .image-section {
     flex: 1;
-    max-width: 2000px;
-    max-height: 1600px;
+    max-width: 100%;
+    max-height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding-right: 30px;
 }
 
 .image-section img{
@@ -407,18 +408,23 @@ body {
 /* 🌟 Loop 页面整体布局 */
 .Loop-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    height: 100vh;
-    padding-top: 50px;
+    padding-top: 40px;
+    align-items: center; /* 确保内容在垂直方向上居中 */
+    gap: 20px; /* ✅ 在左右两部分之间增加 20px 间距 */
 }
 
 /* 🌟 左侧文本信息 */
 .loop-description {
     flex: 1;
-    max-width: 500px;
+    background-color: transparent;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     text-align: left;
+    padding-left: 15px;
 }
 
 .loop-description h2 {
@@ -432,17 +438,22 @@ body {
     line-height: 1.5;
 }
 
-.image-section {
-    position: relative;
+.loop-image-section {
     flex: 1;
+    max-width: 2000px;
+    max-height: 1600px;
+    position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .image-section img{
-    max-width: 85%;
-    max-height: 85%;
-    object-fix: cover;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .arrow {
