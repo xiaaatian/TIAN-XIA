@@ -412,20 +412,20 @@ body {
     width: 100%;
     padding-top: 40px;
     align-items: center; /* 确保内容在垂直方向上居中 */
-    gap: 20px; /* ✅ 在左右两部分之间增加 20px 间距 */
+    gap: 10px; /* ✅ 在左右两部分之间增加 20px 间距 */
 }
 
 /* 🌟 左侧文本信息 */
 .loop-description {
     flex: 1;
     background-color: transparent;
-    padding-top: 60px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding-left: 15px;
+    padding-left: 25px;
 }
 
 .loop-description h2 {
@@ -440,14 +440,16 @@ body {
 }
 
 .loop-image-section {
-    flex: 1;
-    max-width: 2000px;
-    max-height: 1600px;
+    flex: 2;
+    max-width: 100%;
+    max-height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding-right: 50px;
+    padding-top: 100px;
 }
 
 .image-section img{
@@ -711,22 +713,12 @@ footer {
         width: 90%;
         text-align: center;
         padding: 10px 0;
-        margin-top: 10vh;
-        margin-bottom: 20px;
-    }
-
-    .horizontal-scroll {
-        width: 100%; /* 让滚动区域占满全宽 */
-        max-width: 100%;
-        height: auto;
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        margin-bottom: 20px
+        margin-top: 5vh; /* 让文本距离顶部 5% 视口高度 */
+        margin-bottom: 10px; /* 让文本与下方元素间隔 20px */
     }
 
     .image-track img {
-        height: 40vh; /* 适配屏幕 */
+        height: 60vh; /* 适配屏幕 */
         margin: 5px 0;
         object-fit: cover;
     }
