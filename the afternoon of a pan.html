@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Afternoon of a Pan - Tian Xia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 🌟 页面整体布局 */
+        .the afternoon of a pan-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding-top: 50px;
+            align-items: center; /* 确保内容在垂直方向上居中 */
+            gap: 40px; /* ✅ 在左右两部分之间增加 10px 间距 */
+        }
+
+        /* 🌟 左侧文本信息 */
+        .the afternoon of a pan-description {
+            flex: 1;
+            background-color: transparent;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 25px;
+        }
+
+        .the afternoon of a pan-description h2 {
+            font-size: 24px;
+            font-weight: normal; /* 不加粗 */
+            margin-bottom: 10px;
+        }
+
+        .the afternoon of a pan-description p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* 🌟 右侧图片区域 */
+        .the afternoon of a pan-image-section {
+            flex: 2;
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding-right: 45px;
+            padding-top: 100px;
+            aspect-ratio: 3/2;
+        }
+
+        .the afternoon of a pan-image-section img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 0;
+            object-fit: cover;
+            gap: 3px;
+        }
+
+        /* 🌟 左右翻页按钮 */
+        .arrow {
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            color: #000;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 1000;
+        }
+
+        .arrow.left {
+            left: 0px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+    </style>
+    
+    <script src="scripts.js" defer></script>
+    <script>
+        function buttonClick() {
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
+        }
+
+        function closeOverlay() {
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.add('dis-none')
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div id="navbar-placeholder">
+        <div class="navbar">
+            <button onclick="buttonClick()" id="myButton" class="toggle-overlay-btn">></button>   
+            <a href="home.html" class="navbar-title">Tian Xia</a>
+        </div>
+            
+        <div class="overlay dis-none">
+            <button onclick="closeOverlay()" id="closeMyElement" class="close-overlay-btn">x</button>  
+            <nav class="overlay-menu">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Loop 页面内容 -->
+    <div class="the afternoon of a pan-container">
+        <!-- 左侧项目描述 -->
+        <div class="the afternoon of a pan-description">
+            <h2>The Afternoon of a Pan</h2>
+            <p>I walked into a dream, the night heavy with luster and silence.
+               Mist coiled around me, floating like dust in the dim light.
+               Through the haze, a tree emerged, giant, ancient, and pure.
+               Its branches stretched like memory, reaching toward something unseen.
+               Then I saw him, Pan.</p>
+            <a href="the afternoon of a pan-summary.html" class="summary-link">SUMMARY</a> <!-- ✅ 新增 Summary -->
+        </div>
+
+        <!-- right section: image gallery -->
+        <div class="the afternoon of a pan-image-section">
+            <button class="arrow left" onclick="prevImage()">&lt;</button>
+            <img id="current-image" src="images/the afternoon of a pan1.jpg" alt="The Afternoon of a Pan Image">
+            <button class="arrow right" onclick="nextImage()">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            "images/the afternoon of a pan1.jpg", 
+            "images/the afternoon of a pan2.jpg", 
+            "images/the afternoon of a pan3.jpg", 
+            "images/the afternoon of a pan4.jpg", 
+            "images/the afternoon of a pan5.jpg", 
+            "images/the afternoon of a pan6.jpg", 
+            "images/the afternoon of a pan7.jpg", 
+            "images/the afternoon of a pan8.jpg", 
+            "images/the afternoon of a pan9.jpg", 
+            "images/the afternoon of a pan10.jpg",
+            "images/the afternoon of a pan11.jpg",
+            "images/the afternoon of a pan12.jpg",
+            "images/the afternoon of a pan13.jpg"]
+        let currentIndex = 0;
+
+        function updateImage() {
+            const imgElement = document.getElementById("current-image");
+            imgElement.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+    </script>
+
+        
+    <!-- ✅ 添加返回 < 按钮 -->
+    <div class="navigation-buttons">
+        <a href="projects.html" class="prev-button">back</a> <!-- 返回 projects -->
+    </div>
+
+
+    <footer class="site-footer">
+        <p>© 2025 Tian Xia. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
