@@ -328,36 +328,6 @@ body {
     text-align: justify; /* 让文字更整齐 */
 }
 
-/* 🌟 About 页面 */
-.about-container {
-    position: relative;
-    width: 100vw;
-    max-width: 70%;
-    display: flex;
-    flex-direction: column; /* 改为垂直排列 */
-    align-items: center; /* 水平方向居中 */
-    justify-content: center; /* 垂直方向居中 */
-    text-align: center;
-    height: 100vh;
-}
-
-/* 🌟 About 头像 */
-.about-portrait {
-    width: 50vw; /* 缩小头像宽度 */
-    max-width: 100vw;
-    height: auto;
-    margin-bottom: 20px; /* 与文字留出间距 */
-}
-
-/* 🌟 About 文字 */
-.about-text {
-    width: 60vw;
-    max-width: 100vw;
-    font-size: 18px;
-    line-height: 1.6;
-    color: black;
-}
-
 /* 🌟 Contact 页面 */
 .contact-container {
     position: relative;
@@ -483,22 +453,6 @@ footer {
 
     .project-hover-image {
         display: none; /* 在移动端不显示悬停封面 */
-    }
-    
-    /* 🌟 About 页面 */
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-portrait {
-        width: 150px;
-        margin-bottom: 15px;
-    }
-
-    .about-text {
-        font-size: 16px;
-        padding: 0 15px;
     }
 
     /* 🌟 Contact 页面 */
