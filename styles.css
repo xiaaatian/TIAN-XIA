@@ -443,6 +443,7 @@ body {
 /* 🌟 Loop 页面整体布局 */
 .Loop-container {
     display: flex;
+    flex-direction: row
     width: 100%;
     padding: 40px 50px;
     align-items: center; /* 确保内容在垂直方向上居中 */
@@ -455,7 +456,7 @@ body {
     background-color: transparent;
     padding-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: left-start;
     align-items: flex-start;
     text-align: left;
