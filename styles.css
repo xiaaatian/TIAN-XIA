@@ -406,6 +406,38 @@ body {
     right: 10px;
 }
 
+@media (min-width: 768px) {
+    .plantasia-container {
+        flex-direction: row;
+        padding: 40px 50px;
+        gap: 30px;
+    }
+
+    .plantasia-info {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .plantasia-info h2 {
+        font-size: 24px;
+    }
+
+    .plantasia-info p {
+        font-size: 16px;
+    }
+
+    .plantasia-image-section {
+        flex: 1;
+        padding: 0;
+        justify-content: flex-end;
+    }
+
+    .plantasia-image-section img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
 /* 🌟 Loop 页面整体布局 */
 .Loop-container {
     display: flex;
@@ -697,67 +729,7 @@ footer {
     .project-hover-image {
         display: none; /* 在移动端不显示悬停封面 */
     }
-
-    /* 🌟 Plantasia & Loop &snaaap 页面 */
-    /* 🌟 默认样式（适用于 PC 端） */
-.image-track img {
-    height: 40vh; /* 默认 PC 端高度占 40% 视口 */
-    margin: 5px 0;
-    object-fit: cover;
-}
-
-/* 🌟 适配移动端（屏幕宽度 ≤ 768px） */
-@media screen and (max-width: 768px) {
-    .plantasia-container {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
     
-    /* ✅ 调整文本区域，避免内容偏下 */
-    .plantasia-info, .loop-description, .snaaap-description {
-        margin-top: 3vh; /* ✅ 让文本更靠上，减少顶部空白 */
-        width: 90%; /* ✅ 在小屏幕上稍微放宽 */
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    /* ✅ 让图片容器适应屏幕 */
-    .image-track {
-        height: auto; /* ✅ 让容器高度自适应 */
-        padding-top: 0; 
-    }
-
-    /* ✅ 让图片变大，占据更多屏幕空间 */
-    .image-track img {
-        height: 80vh; /* ✅ 让图片在移动端占据 75% 视口高度 */
-        width: 100%;
-        object-fit: cover; /* ✅ 保持比例填充，可能会裁剪 */
-    }
-
-    /* ✅ 让图片与文本区域之间的间距适当调整 */
-    .image-section {
-        padding-top: 10px; /* ✅ 避免图片区域过低 */
-        padding-right: 0px; /* ✅ 移除右侧间距，让图片更居中 */
-    }
-}
-
-
-    /* 🌟 Summary 页面 */
-    .summary-container {
-        max-width: 600px;
-        width: 90%;
-        padding: 10px;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .summary-container h2 {
-        font-size: 16px;
-    }
-
     /* 🌟 About 页面 */
     .about-container {
         flex-direction: column;
