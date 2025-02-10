@@ -408,7 +408,7 @@ body {
 
 @media (min-width: 768px) {
     .plantasia-container {
-        flex-direction: row;
+        flex-direction: column;
         padding: 40px 50px;
         gap: 30px;
     }
@@ -416,20 +416,22 @@ body {
     .plantasia-info {
         flex: 1;
         padding: 20px;
+        gap: 10px;
     }
 
     .plantasia-info h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .plantasia-info p {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .plantasia-image-section {
         flex: 1;
         padding: 0;
         justify-content: flex-end;
+        padding-button: 30px;
     }
 
     .plantasia-image-section img {
