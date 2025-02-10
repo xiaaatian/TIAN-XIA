@@ -86,51 +86,64 @@
         }
         /* 🌟 响应式设计（移动端优化） */
 @media screen and (max-width: 768px) {
-    .the-afternoon-of-a-pan-container {
-        flex-direction: column; /* ✅ 让文字和图片上下排列 */
-        align-items: center;
-        padding-top: 20px;
-        gap: 20px;
-    }
-    /* 🌟 文字部分 */
+    /* 🌟 让文字部分在移动端隐藏 */
     .the-afternoon-of-a-pan-description {
-        padding: 0 15px; /* ✅ 让文本更贴合屏幕 */
-        text-align: left;
-        max-width: 90%;
+        display: none; /* ✅ 移动端隐藏文字 */
     }
-    /* 🌟 图片部分 */
+
+    /* 🌟 让图片全屏显示 */
+    .the-afternoon-of-a-pan-container {
+        flex-direction: column; /* ✅ 上下排列 */
+        align-items: center;
+        padding-top: 0; /* ✅ 减少空白 */
+        gap: 0;
+    }
+
     .the-afternoon-of-a-pan-image-section {
-        width: 100%; /* ✅ 让图片充满屏幕 */
-        max-width: 90%;
+        width: 100%; /* ✅ 让图片填满屏幕 */
+        height: 100vh; /* ✅ 图片占满整个视口 */
+        max-width: 100%;
         padding: 0;
     }
+
     .the-afternoon-of-a-pan-image-section img {
-        max-width: 100%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ✅ 让图片铺满不变形 */
     }
 
     /* 🌟 翻页按钮优化（增大点击区域） */
     .arrow {
-        font-size: 1.5rem; /* ✅ 让按钮更大 */
-        padding: 10px;
+        font-size: 2rem; /* ✅ 让按钮更大 */
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.5); /* ✅ 轻微半透明背景提升可见度 */
+        color: white; /* ✅ 让按钮更明显 */
+        border-radius: 50%; /* ✅ 圆形按钮 */
     }
 
     .arrow.left {
-        left: 10px; /* ✅ 调整按钮位置 */
+        left: 15px; /* ✅ 调整按钮位置 */
     }
+
     .arrow.right {
-        right: 10px;
+        right: 15px;
     }
 
     /* 🌟 返回按钮优化 */
     .navigation-buttons {
-        margin-top: 20px;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
         text-align: center;
     }
 
     .prev-button {
         font-size: 16px;
         padding: 12px 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* ✅ 让返回按钮更明显 */
+        color: black;
+        border-radius: 5px;
+        text-decoration: none;
     }
 }
     </style>
