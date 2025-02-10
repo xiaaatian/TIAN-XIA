@@ -6,32 +6,35 @@
     <title>About - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* 🌟 About 页面 */
+        /* 🌟 About 页面整体布局 */
         .about-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* 保持整体居中 */
             justify-content: center;
-            text-align: center;
+            text-align: center; /* 让内容块整体居中 */
             min-height: 100vh; /* 适配不同屏幕 */
             width: 100vw;
             max-width: 70%;
             margin: 0 auto;
-            gap: 20px; /* 统一头像和文字的间距 */
+            gap: 20px; /* 控制头像与文字间距 */
         }
-        /* 🌟 About 头像 */
+        /* 🌟 头像 */
         .about-portrait {
-            max-width: 100%;
-            width: 70px; /* 控制头像大小 */
+            max-width: 100%; /* 头像最大宽度不超过父容器 */
+            width: 100px; /* 控制头像大小 */
             height: auto;
+            display: block;
+            margin: 0 auto; /* 确保头像居中 */
         }
-        /* 🌟 About 文字 */
+        /* 🌟 文字 */
         .about-text {
-            max-width: 600px; /* 让它在小屏幕上自适应 */
-            width: 90%;
+            max-width: 600px; /* 控制文字最大宽度 */
+            width: 90%; /* 让它在小屏幕上自适应 */
             font-size: 18px;
             line-height: 1.6;
             color: black;
+            text-align: left; /* ✅ 文字左对齐 */
         }
     </style>
     <script src="scripts.js" defer></script> <!-- 确保JS代码不会阻塞加载 -->
