@@ -8,25 +8,26 @@
     <style>
         /* 🌟 About 页面 */
         .about-container {
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh; /* 适配不同屏幕 */
             width: 100vw;
             max-width: 70%;
-            display: flex;
-            flex-direction: column; /* 改为垂直排列 */
-            align-items: center; /* 水平方向居中 */
-            justify-content: center; /* 垂直方向居中 */
-            text-align: center;
-            height: 100vh;
+            margin: 0 auto;
+            gap: 20px; /* 统一头像和文字的间距 */
         }
         /* 🌟 About 头像 */
         .about-portrait {
-            width: 270px; /* 缩小头像宽度 */
+            width: 270px; /* 控制头像大小 */
             height: auto;
-            margin-bottom: 20px; /* 与文字留出间距 */
         }
         /* 🌟 About 文字 */
         .about-text {
-            width: 600px;
+            max-width: 600px; /* 让它在小屏幕上自适应 */
+            width: 90%;
             font-size: 18px;
             line-height: 1.6;
             color: black;
