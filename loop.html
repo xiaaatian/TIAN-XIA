@@ -9,7 +9,6 @@
         /* 🌟 页面整体布局 */
         .loop-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             width: 100%;
             height: 100vh;
@@ -19,9 +18,9 @@
         /* 🌟 左侧文本信息 */
         .loop-info {
             flex: 1;
-            padding: 20px;
-            max-width: 400px;
-            text-align: left;
+            padding-top: 100px;
+            width: 500px;
+            text-align: center;
         }
 
         .loop-info h2 {
@@ -37,9 +36,9 @@
 
         /* 🌟 右侧图片区域 */
         .image-section {
-            flex: 2;
-            max-width: 100%;
-            max-height: 100%;
+            flex: 1;
+            max-width: 1000;
+            max-height: auto;
             position: relative;
             display: flex;
             justify-content: center;
@@ -58,7 +57,7 @@
 
         /* 🌟 左右翻页按钮 */
         .arrow {
-            position: absolute;
+            position: relative;
             top: 50%;
             transform: translateY(-50%);
             background-color: transparent;
@@ -71,7 +70,7 @@
         }
 
         .arrow.left {
-            left: 50px;
+            left: 10px;
         }
 
         .arrow.right {
