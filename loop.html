@@ -9,23 +9,29 @@
         /* 🌟 页面整体布局 */
         .loop-container {
             display: flex;
-            align-items: center;
+            flex-direction: row;
             width: 100%;
-            height: 100vh;
-            padding: 30px;
+            padding-top: 40px;
+            align-items: center; /* 确保内容在垂直方向上居中 */
+            gap: 10px; /* ✅ 在左右两部分之间增加 10px 间距 */
         }
 
         /* 🌟 左侧文本信息 */
         .loop-info {
             flex: 1;
-            padding-top: 100px;
-            width: 500px;
-            text-align: center;
+            background-color: transparent;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 25px;
         }
 
         .loop-info h2 {
             font-size: 24px;
-            font-weight: normal;
+            font-weight: normal; /* 不加粗 */
             margin-bottom: 10px;
         }
 
@@ -36,9 +42,9 @@
 
         /* 🌟 右侧图片区域 */
         .loop-image-section {
-            flex: 1;
-            max-width: 1000;
-            max-height: auto;
+            flex: 2;
+            max-width: 100%;
+            max-height: 100%;
             position: relative;
             display: flex;
             justify-content: center;
@@ -61,46 +67,20 @@
             top: 50%;
             transform: translateY(-50%);
             background-color: transparent;
+            color: #000;
             border: none;
-            font-size: 1rem;
             padding: 0;
             cursor: pointer;
-            color: #000;
+            font-size: 1rem;
             z-index: 10;
         }
 
         .arrow.left {
-            left: 10px;
+            left: 6px;
         }
 
         .arrow.right {
-            right: 10px;
-        }
-
-        /* 🌟 移动端适配：变成上下布局 */
-        @media screen and (max-width: 768px) {
-            .loop-container {
-                flex-direction: column;
-                align-items: center;
-                height: auto;
-                padding: 20px;
-                padding-top: 100px;
-            }
-
-            .loop-info {
-                text-align: center;
-                max-width: 50%;
-            }
-
-            .image-section {
-                max-width: 20%;
-                height: auto;
-            }
-
-            .image-section img {
-                width: 20%;
-                height: auto;
-            }
+            right: 6px;
         }
     </style>
     
