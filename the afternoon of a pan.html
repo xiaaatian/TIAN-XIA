@@ -84,6 +84,55 @@
         .arrow.right {
             right: 10px;
         }
+        /* 🌟 响应式设计（移动端优化） */
+@media screen and (max-width: 768px) {
+    .the-afternoon-of-a-pan-container {
+        flex-direction: column; /* ✅ 让文字和图片上下排列 */
+        align-items: center;
+        padding-top: 20px;
+        gap: 20px;
+    }
+    /* 🌟 文字部分 */
+    .the-afternoon-of-a-pan-description {
+        padding: 0 15px; /* ✅ 让文本更贴合屏幕 */
+        text-align: left;
+        max-width: 90%;
+    }
+    /* 🌟 图片部分 */
+    .the-afternoon-of-a-pan-image-section {
+        width: 100%; /* ✅ 让图片充满屏幕 */
+        max-width: 90%;
+        padding: 0;
+    }
+    .the-afternoon-of-a-pan-image-section img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 🌟 翻页按钮优化（增大点击区域） */
+    .arrow {
+        font-size: 1.5rem; /* ✅ 让按钮更大 */
+        padding: 10px;
+    }
+
+    .arrow.left {
+        left: 10px; /* ✅ 调整按钮位置 */
+    }
+    .arrow.right {
+        right: 10px;
+    }
+
+    /* 🌟 返回按钮优化 */
+    .navigation-buttons {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .prev-button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
     </style>
     
     <script src="scripts.js" defer></script>
