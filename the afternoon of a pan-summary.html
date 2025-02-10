@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Afternoon of a Pan Summary - Tian Xia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <script>
+        function buttonClick() {
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
+        }
+
+        function closeOverlay() {
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.add('dis-none')
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div id="navbar-placeholder">
+        <div class="navbar">
+            <button onclick="buttonClick()" id="myButton" class="toggle-overlay-btn">></button>   
+            <a href="home.html" class="navbar-title">Tian Xia</a>
+        </div>
+            
+        <div class="overlay dis-none">
+            <button onclick="closeOverlay()" id="closeMyElement" class="close-overlay-btn">x</button>  
+            <nav class="overlay-menu">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Summary 页面 -->
+    <div class="summary-container">
+        <h2><a href="the afternoon of a pan.html">the afternoon of a pan</a></h2>  <!-- 🌟 让标题变为返回链接 -->
+        <p>On an afternoon in my sophomore year, Debussy’s *Prélude à l’après-midi d’un faune* played through my headphones. Just before falling asleep, I found myself wondering whether it was possible for someone to be strangled by their headphone cord in a dream. Before I could reach a conclusion, I slipped into sleep. When I woke, the 11-minute-and-11-second piece hadn’t yet ended. My body was drenched in sweat, the hair at the nape of my neck clung to my skin, and my face was flushed. I couldn’t remember the dream itself—only the sensation of drinking a bubbling purple potion. In the misty dreamscape, the fluttering wings of little sprites made a crisp sound, like wind passing through wind chimes. They were as fragile as a lie—perhaps they truly were one.  
+
+Back then, I knew nothing of Pan. I had no idea what he looked like or what he represented. My dream was shrouded in mist; I couldn’t see his face. But I wrote the dream down.  
+
+Four years later, I dreamed of Pan again. This time, in the dream, I saw a man dressed in a white shirt. He blew out the candle in his hands, and the moment the flame died, I fell into a thick fog. I stood beside a massive tree, listening to the sound of footsteps, feeling the earth tremble beneath me. Then, I saw him—a half-beast with enormous ram’s horns, walking toward me.  
+
+I knew it was Pan. And his face was the same as the man in the white shirt, the one who had held the candle at the beginning.  
+
+I told him I wanted to find my way out of the mist.</p>
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2025 Tian Xia. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
