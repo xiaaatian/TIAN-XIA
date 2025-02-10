@@ -412,7 +412,7 @@ body {
     width: 100%;
     padding-top: 40px;
     align-items: center; /* 确保内容在垂直方向上居中 */
-    gap: 10px; /* ✅ 在左右两部分之间增加 20px 间距 */
+    gap: 10px; /* ✅ 在左右两部分之间增加 10px 间距 */
 }
 
 /* 🌟 左侧文本信息 */
@@ -443,7 +443,7 @@ body {
     flex: 1;
     max-width: 100%;
     max-height: 100%;
-    position: relative;
+    position: right;
     display: flex;
     justify-content: center;
     align-items: center;
