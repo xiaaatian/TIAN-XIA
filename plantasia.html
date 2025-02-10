@@ -9,16 +9,17 @@
         /* 🌟 Plantasia 页面布局 */
         .plantasia-container {
             display: flex;
+            flex-direction: row;
             width: 100%;
             padding-top: 40px;
             align-items: center; /* 确保内容在垂直方向上居中 */
-            gap: 10px; /* ✅ 在左右两部分之间增加 20px 间距 */
+            gap: 10px; /* ✅ 在左右两部分之间增加 10px 间距 */
         }
         /* 🌟 左侧信息栏 */
         .plantasia-info {
             flex: 1;
             background-color: transparent;
-            padding-top: 100px;
+            padding-top: 70px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -73,37 +74,6 @@
         }
         .arrow.right {
             right: 10px;
-        }
-        @media (min-width: 768px) {
-            .plantasia-container {
-                flex-direction: column;
-                padding: 40px 50px;
-                gap: 30px;
-            }
-
-            .plantasia-info {
-                flex: 1;
-                padding: 20px;
-                gap: 10px;
-            }
-            .plantasia-info h2 {
-                font-size: 16px;
-            }
-            
-            .plantasia-info p {
-                font-size: 10px;
-            }
-            .plantasia-image-section {
-                flex: 1;
-                padding: 0;
-                justify-content: flex-end;
-                padding-button: 30px;
-            }
-            
-            .plantasia-image-section img {
-                max-width: 90%;
-                max-height: 90%;
-            }
         }
     </style>
     <script src="scripts.js" defer></script>
