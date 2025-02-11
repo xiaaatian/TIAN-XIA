@@ -83,6 +83,73 @@
         .arrow.right {
             right: 10px;
         }
+@media screen and (max-width: 768px) {
+    .plantasia-container {
+        flex-direction: column; /* ✅ 让文字和图片上下排列 */
+        align-items: center;
+        padding-top: 50px;
+        gap: 20px;
+    }
+
+    /* 🌟 仅隐藏 `p` 段落内容，保留标题 */
+    .plantasia-info p {
+        display: none; /* ✅ 仅在移动端隐藏描述文本 */
+    }
+
+    /* 🌟 让标题居中 */
+    .plantasia-info h2 {
+        text-align: center;
+        font-size: 18px; /* ✅ 可以适当调整标题大小 */
+        margin-bottom: 10px;
+    }
+
+    /* 🌟 图片部分 */
+    .image-section {
+        width: 100%; /* ✅ 让图片充满屏幕 */
+        max-width: 100%;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    /* 🌟 翻页按钮优化（增大点击区域） */
+    .arrow {
+        font-size: 1rem; /* ✅ 让按钮更大 */
+        padding: 10px;
+        top: 50%;
+    }
+
+    .arrow.left {
+        left: -2px;
+    }
+
+    .arrow.right {
+        right: 12px;
+    }
+
+    /* 🌟 返回按钮优化 */
+    .navigation-buttons {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .prev-button {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    .summary-link {
+        font-size: 14px; /* ✅ 缩小字体 */
+        padding: 6px 12px; /* ✅ 缩小按钮尺寸 */
+        margin-top: 10px; /* ✅ 调整间距 */
+        flex-direction: column;
+        align-items: center;
+    }
+}
     </style>
     <script src="scripts.js" defer></script>
     <script>
