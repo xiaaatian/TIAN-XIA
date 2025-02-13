@@ -6,6 +6,25 @@
     <title>The Afternoon of a Pan Summary - Tian Xia</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <style>
+        @media screen and (max-width: 768px) {
+    .summary-container {
+        max-width: 90%;
+        padding: 10px;
+        text-align: justify;
+        height: auto; /* ✅ 允许容器高度自适应 */
+        max-height: 60vh; /* ✅ 避免过长内容完全撑满屏幕 */
+        overflow-y: auto; /* ✅ 让用户可以上下滑动查看完整内容 */
+        padding-top: 40px;
+    }
+
+    .summary-text {
+        font-size: 14px; /* ✅ 缩小字体 */
+        line-height: 1.2; /* ✅ 让文字更紧凑 */
+        word-spacing: 0.02em; /* ✅ 进一步缩小单词间隙 */
+    }
+}
+    </style>
     <script>
         function buttonClick() {
 
