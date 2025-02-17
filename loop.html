@@ -108,15 +108,17 @@
     .loop-image-section {
         width: 100%; /* ✅ 让图片充满屏幕 */
         max-width: 100%;
+        height: auto;
         padding: 0;
         padding-top: 20px;
-        aspect-ratio: 3/2
     }
 
     .loop-image-section img {
-        max-width: 100%;
+        width: 100%;
+        max-width: 80%;
         height: auto;
-        margin-top: 10px;
+        object-fit: contain;
+        display: block;
     }
 
     /* 🌟 翻页按钮优化（增大点击区域） */
