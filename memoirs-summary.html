@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memoirs Summary - Tian Xia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+@media screen and (max-width: 768px) {
+    .summary-container {
+        max-width: 90%;
+        padding: 10px;
+        height: auto; /* ✅ 允许容器高度自适应 */
+        max-height: 60vh; /* ✅ 避免过长内容完全撑满屏幕 */
+        overflow-y: auto; /* ✅ 让用户可以上下滑动查看完整内容 */
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* ✅ 让 `h2` 和 `p` 内容都水平居中 */
+        text-align: center; /* ✅ 确保文字内容居中 */
+    }
+
+    .summary-text {
+        font-size: 14px; /* ✅ 缩小字体 */
+        line-height: 1.2; /* ✅ 让文字更紧凑 */
+        word-spacing: 0.02em; /* ✅ 进一步缩小单词间隙 */
+    }
+    .plantasia-link {
+        padding-top: 40px;
+    }
+}
+    </style>
+    <script>
+        function buttonClick() {
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
+        }
+
+        function closeOverlay() {
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.add('dis-none')
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div id="navbar-placeholder">
+        <div class="navbar">
+            <button onclick="buttonClick()" id="myButton" class="toggle-overlay-btn">></button>   
+            <a href="home.html" class="navbar-title">Tian Xia</a>
+        </div>
+            
+        <div class="overlay dis-none">
+            <button onclick="closeOverlay()" id="closeMyElement" class="close-overlay-btn">x</button>  
+            <nav class="overlay-menu">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Summary 页面 -->
+    <div class="summary-container">
+        <div class="summary-description">
+            <h2><a href="plantasia.html">Plantasia</a></h2>  <!-- 🌟 让标题变为返回链接 -->
+            <p>
+                 Can memory deceive you? Why does it deceive you? What, after all, is memory?
+            </p>
+            <p>
+                 2023.01.01
+              "Sometimes, words come closer to the truth than memories. Near midnight last night, I tried to recall everything that had happened over the past year, only to realize that it had been a year filled with forgetting—deliberate forgetting and unintentional forgetting intertwined, forming the confusion of this moment. So
+              I began searching through various corners for written traces and photographs,
+              looking at those fragments like clues that string together our past and connect it to the present. 
+              They give me the opportunity to reexamine the authenticity of certain memories and the emotions I once had."
+            </p>
+        </div>
+    
+    <footer class="site-footer">
+        <p>© 2025 Tian Xia. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
