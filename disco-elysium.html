@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disco elysium - Tian Xia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 🌟 disco-elysium 页面布局 */
+        .disco-dlysium-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding-top: 40px;
+            align-items: center; /* 确保内容在垂直方向上居中 */
+            gap: 40px; /* ✅ 在左右两部分之间增加 10px 间距 */
+        }
+        /* 🌟 左侧信息栏 */
+        .disco-dlysium-info {
+            flex: 1;
+            background-color: transparent;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 25px;
+        }
+        /* 🌟 取消标题加粗 */
+        .disco-dlysium-info h2 {
+            font-size: 24px;
+            font-weight: normal; /* 不加粗 */
+            margin-bottom: 10px;
+        }
+
+        /* 🌟 文字样式 */
+        .disco-dlysium-info p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .image-section {
+            flex: 2;
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding-right: 50px;
+            padding-top: 100px;
+        }
+        .image-section img{
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            color: #000;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 10;
+        }
+        .arrow.left {
+            left: 18px;
+        }
+        .arrow.right {
+            right: 14px;
+        }
+@media screen and (max-width: 768px) {
+    .disco-dlysium-container {
+        flex-direction: column; /* ✅ 让文字和图片上下排列 */
+        align-items: center;
+        padding-top: 50px;
+        gap: 20px;
+    }
+
+    /* 🌟 仅隐藏 `p` 段落内容，保留标题 */
+    .disco-dlysium-info p {
+        display: none; /* ✅ 仅在移动端隐藏描述文本 */
+    }
+
+    /* 🌟 让标题居中 */
+    .disco-dlysium-info h2 {
+        text-align: center;
+        font-size: 18px; /* ✅ 可以适当调整标题大小 */
+        margin-bottom: 10px;
+    }
+
+    /* 🌟 图片部分 */
+    .image-section {
+        width: 100%; /* ✅ 让图片充满屏幕 */
+        max-width: 100%;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    /* 🌟 翻页按钮优化（增大点击区域） */
+    .arrow {
+        font-size: 1rem; /* ✅ 让按钮更大 */
+        padding: 10px;
+        top: 50%;
+    }
+
+    .arrow.left {
+        left: 7px;
+    }
+
+    .arrow.right {
+        right: 7px;
+    }
+
+    /* 🌟 返回按钮优化 */
+    .navigation-buttons {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .prev-button {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    .summary-link {
+        display: block;
+        font-size: 14px; /* ✅ 缩小字体 */
+        padding: 6px 12px; /* ✅ 缩小按钮尺寸 */
+        margin-top: 10px; /* ✅ 调整间距 */
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    </style>
+    <script src="scripts.js" defer></script>
+    <script>
+        function buttonClick() {
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
+        }
+
+        function closeOverlay() {
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.add('dis-none')
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div id="navbar-placeholder">
+        <div class="navbar">
+            <button onclick="buttonClick()" id="myButton" class="toggle-overlay-btn">></button>   
+            <a href="home.html" class="navbar-title">Tian Xia</a>
+        </div>
+            
+        <div class="overlay dis-none">
+            <button onclick="closeOverlay()" id="closeMyElement" class="close-overlay-btn">x</button>  
+            <nav class="overlay-menu">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- disco-dlysium 页面布局 -->
+    <div class="disco-dlysium-container">
+        <!-- 左侧信息 -->
+        <div class="disco-dlysium-info">
+            <h2>disco dlysium</h2>
+            <p>Reality is a wasteland. The past is gone, the future has yet to arrive.
+
+               We live in a precarious world where nothing is forever right.
+
+               You must get used to the chaos.</p>
+            <a href="disco-dlysium-summary.html" class="summary-link">SUMMARY</a> <!-- ✅ 新增 Summary -->
+        </div>
+
+        <!-- right section: image gallery -->
+        <div class="image-section">
+            <button class="arrow left" onclick="prevImage()">&lt;</button>
+            <img id="current-image" src="images/plantasia1.jpg" alt="Plantasia Image">
+            <button class="arrow right" onclick="nextImage()">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        const images = ["images/disco-dlysium1.jpg", "images/disco-dlysium2.jpg", "images/disco-dlysium3.jpg", "images/disco-dlysium4.jpg", "images/disco-dlysium7.jpg", "images/disco-dlysium8.jpg", "images/disco-dlysium9.jpg","images/disco-dlysium10.jpg"]
+        let currentIndex = 0;
+
+        function updateImage() {
+            const imgElement = document.getElementById("current-image");
+            imgElement.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+    </script>
+
+    <!-- ✅ 添加返回 back 按钮 -->
+    <div class="navigation-buttons">
+        <a href="projects.html" class="prev-button">back</a> <!-- 返回 projects -->
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2025 Tian Xia. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
