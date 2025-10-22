@@ -7,6 +7,19 @@
 </div>
 
 <!-- 半透明覆盖导航栏 -->
+<style>
+  .overlay-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 居中对齐 */
+  gap: 28px;             /* 行距 */
+  font-size: 24px;
+  line-height: 1.6;
+  
+  /* 👇关键：让文字整体往下移一点 */
+  transform: translateY(8vh);   /* 改成 10vh、12vh 看你视觉感觉 */
+}  
+</style>
 <div class="overlay">
     <button class="close-overlay-btn">&times;</button> <!-- 关闭按钮 -->
     
