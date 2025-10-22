@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disco elysium Summary - Xia Tian</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+@media screen and (max-width: 768px) {
+    .summary-container {
+        max-width: 90%;
+        padding: 10px;
+        height: auto; /* ✅ 允许容器高度自适应 */
+        max-height: 60vh; /* ✅ 避免过长内容完全撑满屏幕 */
+        overflow-y: auto; /* ✅ 让用户可以上下滑动查看完整内容 */
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* ✅ 让 `h2` 和 `p` 内容都水平居中 */
+        text-align: center; /* ✅ 确保文字内容居中 */
+    }
+
+    .summary-text {
+        font-size: 14px; /* ✅ 缩小字体 */
+        line-height: 1.2; /* ✅ 让文字更紧凑 */
+        word-spacing: 0.02em; /* ✅ 进一步缩小单词间隙 */
+    }
+    .disco-elysium-link {
+        padding-top: 40px;
+    }
+}
+    </style>
+    <script>
+        function buttonClick() {
+
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.remove('dis-none')
+        }
+
+        function closeOverlay() {
+            const element = document.getElementsByClassName('overlay')
+            console.log(element[0].classList);
+            element[0].classList.add('dis-none')
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div id="navbar-placeholder">
+        <div class="navbar">
+            <button onclick="buttonClick()" id="myButton" class="toggle-overlay-btn">></button>   
+            <a href="home.html" class="navbar-title">Xia Tian</a>
+        </div>
+            
+        <div class="overlay dis-none">
+            <button onclick="closeOverlay()" id="closeMyElement" class="close-overlay-btn">x</button>  
+            <nav class="overlay-menu">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Summary 页面 -->
+    <div class="summary-container">
+        <div class="summary-description">
+            <h2><a href="disco-elysium.html">disco elysium</a></h2>  <!-- 🌟 让标题变为返回链接 -->
+            <p>
+                 This project did not begin with a concept, but with a feeling—an impulse.
+            </p>
+            <p>Two years ago, I came across a photobook on Soviet architecture. I didn’t expect to cry while flipping through its pages. I still don’t fully understand why. But something about those structures—their monumental scale, desolation, their pale, concrete surfaces bearing faint traces of human presence—touched me in an intimate, almost painful way. They became my point of entry.
+
+Since then, I’ve turned to documentary photography as a way of understanding people, history, place, and culture. Yet the deeper I engage with the world, the more I feel both connected and overwhelmed. There were moments this past winter when I lost the desire to speak altogether. And still, certain spaces—the vast ruins marked by life’s residues, and the quiet persistence of growing plants—continue to pull me in.
+
+To me, Soviet architecture embodies a kind of repressed romanticism. It is immense, heavy, dehumanized—yet it tried to carry the weight of an entire ideological dream. These buildings are failed futures, machines designed to project belief into what is yet to come.
+
+Tallinn exists in a historical interstice—a liminal zone where rewritten geographies and cultural fractures coexist. I often find myself in a similar state: suspended, unfixed, floating somewhere between observer and participant, seeking an exit and a place to belong. I believe many others share this feeling too.
+
+This project is not an answer. It is a way of inhabiting these transitional spaces, where memory falters and the desire to understand presses up against the unknown. It is an attempt to reach into collective histories in search of personal meaning.
+
+Photography, to me, is a vessel for the unresolved—an open form that holds ambiguity and reflects the position from which you see and think. It does not aim to solve, but to hold space for what resists resolution.
+            </p>
+        </div>
+    
+    <footer class="site-footer">
+        <p>© 2025 Xia Tian. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
